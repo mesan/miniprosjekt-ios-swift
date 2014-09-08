@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6BD57C78-628C-4C4B-B0FE-CB74924D6A9E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FaghelgApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</key>
+		<string>https://github.com/mesan/miniprosjekt-ios-swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FaghelgApp/FaghelgApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mesan/miniprosjekt-ios-swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>miniprosjekt-ios-swift</string>
+		</dict>
+	</array>
+</dict>
+</plist>
