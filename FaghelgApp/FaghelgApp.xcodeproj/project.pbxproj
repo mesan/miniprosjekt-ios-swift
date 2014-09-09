@@ -25,26 +25,19 @@
 			remoteGlobalIDString = 9F8D4CAC19BE4A6100DA5A61;
 			remoteInfo = FaghelgApp;
 		};
-		9F8D4CDA19BE4B4700DA5A61 /* PBXContainerItemProxy */ = {
+		9FCD687019BF402700443776 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */;
+			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
 			remoteInfo = Alamofire;
 		};
-		9F8D4CDC19BE4B4700DA5A61 /* PBXContainerItemProxy */ = {
+		9FCD687219BF402700443776 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */;
+			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = AlamofireTests;
-		};
-		9F8D4CDE19BE4B5600DA5A61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -61,7 +54,7 @@
 		9F8D4CC819BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaghelgAppTests.swift; sourceTree = "<group>"; };
 		9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaghelgApi.swift; sourceTree = "<group>"; };
-		9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		9FCD686B19BF402700443776 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = lib/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +78,7 @@
 		9F8D4CA419BE4A6100DA5A61 = {
 			isa = PBXGroup;
 			children = (
-				9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */,
+				9FCD686B19BF402700443776 /* Alamofire.xcodeproj */,
 				9F8D4CAF19BE4A6100DA5A61 /* FaghelgApp */,
 				9F8D4CC619BE4A6100DA5A61 /* FaghelgAppTests */,
 				9F8D4CAE19BE4A6100DA5A61 /* Products */,
@@ -141,11 +134,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9F8D4CD619BE4B4700DA5A61 /* Products */ = {
+		9FCD686C19BF402700443776 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9F8D4CDB19BE4B4700DA5A61 /* Alamofire.framework */,
-				9F8D4CDD19BE4B4700DA5A61 /* AlamofireTests.xctest */,
+				9FCD687119BF402700443776 /* Alamofire.framework */,
+				9FCD687319BF402700443776 /* AlamofireTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,7 +157,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9F8D4CDF19BE4B5600DA5A61 /* PBXTargetDependency */,
 			);
 			name = FaghelgApp;
 			productName = FaghelgApp;
@@ -220,8 +212,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 9F8D4CD619BE4B4700DA5A61 /* Products */;
-					ProjectRef = 9F8D4CD519BE4B4700DA5A61 /* Alamofire.xcodeproj */;
+					ProductGroup = 9FCD686C19BF402700443776 /* Products */;
+					ProjectRef = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -233,18 +225,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9F8D4CDB19BE4B4700DA5A61 /* Alamofire.framework */ = {
+		9FCD687119BF402700443776 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = 9F8D4CDA19BE4B4700DA5A61 /* PBXContainerItemProxy */;
+			remoteRef = 9FCD687019BF402700443776 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9F8D4CDD19BE4B4700DA5A61 /* AlamofireTests.xctest */ = {
+		9FCD687319BF402700443776 /* AlamofireTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = AlamofireTests.xctest;
-			remoteRef = 9F8D4CDC19BE4B4700DA5A61 /* PBXContainerItemProxy */;
+			remoteRef = 9FCD687219BF402700443776 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -296,11 +288,6 @@
 			isa = PBXTargetDependency;
 			target = 9F8D4CAC19BE4A6100DA5A61 /* FaghelgApp */;
 			targetProxy = 9F8D4CC419BE4A6100DA5A61 /* PBXContainerItemProxy */;
-		};
-		9F8D4CDF19BE4B5600DA5A61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 9F8D4CDE19BE4B5600DA5A61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
