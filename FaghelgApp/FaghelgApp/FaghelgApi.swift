@@ -8,7 +8,7 @@ protocol FaghelgApiProtocol {
 class FaghelgApi : NSObject {
     var data: NSMutableData = NSMutableData()
     var delegate: FaghelgApiProtocol?
-    
+    //Ayhan push test
     func getProgram() {
         Alamofire.request(.GET, "http://faghelg.herokuapp.com/program")
             .responseJSON {(request, response, JSON, error) in
