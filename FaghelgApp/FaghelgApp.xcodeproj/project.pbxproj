@@ -21,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 		9F8D4CC419BE4A6100DA5A61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F8D4CA519BE4A6100DA5A61 /* Project object */;
@@ -174,6 +181,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				845FD60119BF4157007B6AE4 /* PBXTargetDependency */,
 			);
 			name = FaghelgApp;
 			productName = FaghelgApp;
@@ -304,6 +312,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		845FD60119BF4157007B6AE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */;
+		};
 		9F8D4CC519BE4A6100DA5A61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F8D4CAC19BE4A6100DA5A61 /* FaghelgApp */;
