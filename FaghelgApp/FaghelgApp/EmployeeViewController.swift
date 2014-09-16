@@ -10,14 +10,22 @@ import UIKit
 
 class EmployeeViewController: UITableViewController, UITableViewDataSource {
 
-    let api: FaghelgApi = FaghelgApi()
+    var employees: [Person] = []
+    var faghelgApi: FaghelgApi = FaghelgApi()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "employeesFetched:", name: Notifications.employeesNotificationId, object: nil)
+        faghelgApi.getEmployees()
     }
+    
+    func employeesFetched(notification: NSNotification) {
+        employees = notification.object as [Person]
+        self.tableView.reloadData()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,7 +34,7 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource {
     
     // return the number of cells needed
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return api.getEmployees().count
+        return employees.count
     }
     
     
@@ -34,10 +42,13 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // create new table cell
         let cell =  UITableViewCell()
+        
+        let person = employees[indexPath.row]
+        
         // set cell image
-        cell.imageView?.image = UIImage(named: "unknown.png")
+        cell.imageView?.image = UIImage(named: "\(person.shortName!).png")
         // set cell text
-        cell.textLabel?.text = api.getEmployees()[indexPath.row]
+        cell.textLabel?.text = person.fullName
         // return the cell
         return cell
     }

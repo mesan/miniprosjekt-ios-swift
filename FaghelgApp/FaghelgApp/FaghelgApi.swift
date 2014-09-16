@@ -28,13 +28,29 @@ class FaghelgApi : NSObject {
                 //println(jsonDict!["numberOfEvents"])
                 //println(jsonDict)
                 
+                
+                
                 NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: Program(dict: jsonDict!))
         }
     }
     
     // get a list of employees
-    func getEmployees() -> [String] {
-        let employees: [String] = ["Patrick", "Dag", "Anders", "Ayhan", "Randi", "Kaja", "Gorm", "Señor Reed"]
-        return employees
+    func getEmployees() {
+        
+        Alamofire.request(.GET, "http://faghelg.herokuapp.com/persons")
+            .responseJSON{(request, response, JSON, error) in
+                
+                var error: NSError?
+                var personsArr = JSON as NSArray
+                
+                var persons:[Person] = []
+                for value in personsArr {
+                    var jsonDict = value as NSDictionary
+                    persons.append(Person(dict: jsonDict));
+                }
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.employeesNotificationId, object: persons)
+                
+        }
     }
 }
