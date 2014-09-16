@@ -33,4 +33,40 @@ class First_CharadeTests: XCTestCase {
         }
     }
     
+    // MARK: Timer
+    
+    // MARK: Actions
+    
+    func testStartSpill() {
+        //
+    }
+    
+    func testVelgOrd() {
+        // Velg ord runden skal begynne med
+    }
+    
+    func testStartRunde() {
+        // Bytt bakgrunnsfarge til blå
+        // Vis gjenstgående tid med hvit tekst
+        // Start timer
+    }
+    
+    func testNesteOrd(sender:UIButton) {
+        // Vis rundeord
+    }
+    
+    func testStoppRunde() {
+        // Stopp timer
+        // Bytt bakgrunnsfarge til grønn
+        // Vis rundeord
+    }
+    
+    func testGameOver() {
+        // Stopp timer
+        // Bytt bakgrunnsfarge til rød
+        // vis rundeord
+        // spill sørgemars
+    }
+    
+    
 }

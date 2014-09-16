@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum rundeStatuser {
+enum rundestatuser {
     case velgOrd
     case igang
     case vunne
@@ -18,12 +18,13 @@ enum rundeStatuser {
 class ViewController: UIViewController {
 
     let rundeTid:Int = 5 // sekunder
+    // TODO: fyll oppgaveord fra ordbok
     var oppgaveord = ["ord 1", "ord 2", "ord 3", "ord 4", "ord 5"]
     
-    // MARK; runde
+    // MARK: runde skal refaktoreres til egen runde-klasse
     var rundeTimer = NSTimer()
     var rundeStatus = rundeStatuser.velgOrd
-    var rundeOrd = ""
+    var rundeord = ""
     var gjenstaendeRundeTid: Int = 0
     
     // MARK: Outlets
@@ -47,12 +48,15 @@ class ViewController: UIViewController {
         velgOrd(sender)
         startRunde()
     }
+
+//TODO: Lag funksjonalitet for å bestemme antall sekunder i rundetiden
     
     @IBAction func velgOrd(sender:UIButton) {
         nesteOrd(sender)
     }
     
     @IBAction func startRunde() {
+        // TODO: reset timer, må være disablet til stoppet
         view.backgroundColor = UIColor.blueColor()
         gjenstaendeRundeTid = rundeTid
         startTimer()
