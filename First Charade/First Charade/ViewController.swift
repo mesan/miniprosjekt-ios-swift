@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
         velgOrd(sender)
-        valgtOppgaveord.text = "hei"
         startRunde()
     }
     
