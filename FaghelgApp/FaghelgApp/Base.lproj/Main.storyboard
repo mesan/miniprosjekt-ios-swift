@@ -35,28 +35,42 @@
         <scene sceneID="Us2-97-1id">
             <objects>
                 <tableViewController title="Ansatte" id="nEK-Lz-r3L" customClass="EmployeeViewController" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ez-nB-SOg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="102" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ez-nB-SOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wN1-zy-G26">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="102" id="wN1-zy-G26" customClass="EmployeeCell" customModule="FaghelgApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wN1-zy-G26" id="rDM-sZ-GqL">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
+                                            <rect key="frame" x="16" y="17" width="84" height="68"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-km-EQF">
+                                            <rect key="frame" x="123" y="30" width="177" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="employeeImage" destination="tg8-oW-doA" id="s5G-Lu-tl3"/>
+                                    <outlet property="fullName" destination="3ht-km-EQF" id="7nd-IM-s3h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nEK-Lz-r3L" id="Szp-7U-GAD"/>
-                            <outlet property="delegate" destination="nEK-Lz-r3L" id="rAA-x0-qjy"/>
-                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Ansatte" id="CEU-qM-QPc"/>
+                    <connections>
+                        <outlet property="employeeList" destination="5ez-nB-SOg" id="Vr0-fz-fft"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iek-3S-jMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="156"/>
+            <point key="canvasLocation" x="-214" y="147"/>
         </scene>
         <!--Faghelgapp-->
         <scene sceneID="AX7-Sl-eHz">

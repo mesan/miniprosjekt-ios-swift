@@ -8,17 +8,21 @@
 
 import UIKit
 
-class EmployeeViewController: UITableViewController, UITableViewDataSource {
+class EmployeeViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     var employees: [Person] = []
     var faghelgApi: FaghelgApi = FaghelgApi()
     
+    @IBOutlet weak var employeeList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "employeesFetched:", name: Notifications.employeesNotificationId, object: nil)
         faghelgApi.getEmployees()
+        
+        self.employeeList.delegate = self
+        self.employeeList.dataSource = self
     }
     
     func employeesFetched(notification: NSNotification) {
@@ -49,8 +53,19 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource {
         cell.imageView?.image = UIImage(named: "\(person.shortName!).png")
         // set cell text
         cell.textLabel?.text = person.fullName
+        
+        //let employeeCell = tableView.cellForRowAtIndexPath(indexPath) as EmployeeCell
+        let employeeCell: EmployeeCell = tableView.dequeueReusableCellWithIdentifier("Cell") as EmployeeCell
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.purpleColor()
+        } else {
+            cell.backgroundColor = UIColor.orangeColor()
+        }
+        
+        employeeCell.setCell(person.fullName!, shortName: person.shortName!)
+        
         // return the cell
-        return cell
+        return employeeCell 
     }
 
     /*
