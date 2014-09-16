@@ -87,13 +87,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stoppRunde() {
-        rundeTimer.invalidate()
-        view.backgroundColor = UIColor.greenColor()
-        visOrd()
+        if (rundeStatus == .igang) {
+            rundeTimer.invalidate()
+            rundeStatus = .vunnet
+            view.backgroundColor = UIColor.greenColor()
+            visOrd()
+        }
     }
     
     @IBAction func gameOver() {
         rundeTimer.invalidate()
+        rundeStatus = .tapt
         view.backgroundColor = UIColor.redColor()
         visOrd()
         // spill sørgemars
