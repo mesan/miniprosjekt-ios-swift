@@ -34,18 +34,37 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
-        
         valgtOppgaveord.text = "hei"
     }
     
-    @IBAction func nyttOrd(sender:UIButton) {
-        valgtOppgaveord.text = "hei"
+    @IBAction func velgOrd(sender:UIButton) {
+        // Velg ord runden skal begynne med
     }
     
-    // Starter timer
     @IBAction func startRunde() {
-        valgtOppgaveord.text = "hei"
+        // Bytt bakgrunnsfarge til blå
+        // Vis gjenstgående tid med hvit tekst
+        // Start timer
     }
+    
+    @IBAction func nesteOrd(sender:UIButton) {
+        // Vis rundeord
+    }
+    
+    @IBAction func stoppRunde() {
+        // Stopp timer
+        // Bytt bakgrunnsfarge til grønn
+        // Vis rundeord
+    }
+    
+    @IBAction func gameOver() {
+        // Stopp timer
+        // Bytt bakgrunnsfarge til rød
+        // vis rundeord
+        // spill sørgemars
+    }
+    
+    
     
     
 
