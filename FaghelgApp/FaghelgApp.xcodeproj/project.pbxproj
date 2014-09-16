@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
-		9F8D4CB519BE4A6100DA5A61 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB419BE4A6100DA5A61 /* RootViewController.swift */; };
 		9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */; };
 		9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */; };
 		9F8D4CBC19BE4A6100DA5A61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */; };
 		9F8D4CBE19BE4A6100DA5A61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */; };
 		9F8D4CCA19BE4A6100DA5A61 /* FaghelgAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */; };
 		9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */; };
+		9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF648FB19C87424004BCFEB /* ProgramViewController.swift */; };
+		9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490C19C87E3E004BCFEB /* Program.swift */; };
+		9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490E19C87EA9004BCFEB /* Event.swift */; };
+		9FF6491119C87FDB004BCFEB /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491019C87FDB004BCFEB /* Responsible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,6 @@
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F8D4CB419BE4A6100DA5A61 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		9F8D4CBB19BE4A6100DA5A61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,10 @@
 		9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaghelgAppTests.swift; sourceTree = "<group>"; };
 		9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaghelgApi.swift; sourceTree = "<group>"; };
 		9FCD686B19BF402700443776 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = lib/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		9FF648FB19C87424004BCFEB /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
+		9FF6490C19C87E3E004BCFEB /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		9FF6490E19C87EA9004BCFEB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9FF6491019C87FDB004BCFEB /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +110,10 @@
 		9F8D4CAF19BE4A6100DA5A61 /* FaghelgApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FF6490B19C87E25004BCFEB /* Domain */,
+				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
 				9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */,
-				9F8D4CB419BE4A6100DA5A61 /* RootViewController.swift */,
 				9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */,
 				9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */,
 				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
@@ -148,6 +155,16 @@
 				9FCD687319BF402700443776 /* AlamofireTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9FF6490B19C87E25004BCFEB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6490E19C87EA9004BCFEB /* Event.swift */,
+				9FF6490C19C87E3E004BCFEB /* Program.swift */,
+				9FF6491019C87FDB004BCFEB /* Responsible.swift */,
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */,
-				9F8D4CB519BE4A6100DA5A61 /* RootViewController.swift in Sources */,
 				9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */,
+				9FF6491119C87FDB004BCFEB /* Responsible.swift in Sources */,
+				9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */,
 				9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
+				9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */,
+				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +423,7 @@
 				INFOPLIST_FILE = FaghelgApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,6 +435,7 @@
 				INFOPLIST_FILE = FaghelgApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
