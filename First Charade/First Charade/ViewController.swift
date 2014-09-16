@@ -45,14 +45,14 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
-        velgOrd(sender)
+        velgOrd()
         startRunde()
     }
 
 //TODO: Lag funksjonalitet for å bestemme antall sekunder i rundetiden
     
-    @IBAction func velgOrd(sender:UIButton) {
-        nesteOrd(sender)
+    @IBAction func velgOrd() {
+        nesteOrd()
     }
     
     @IBAction func startRunde() {
@@ -80,10 +80,16 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func nesteOrd(sender:UIButton) {
-        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
-        rundeOrd = oppgaveord[tilfeldigIndeks]
-        visOrd()
+    @IBAction func nesteOrd() {
+        if (rundeStatus == .vunnet || rundeStatus == .tapt) {
+            rundeStatus = .velgOrd
+            view.backgroundColor = UIColor.blackColor()
+        }
+        if (rundeStatus == .velgOrd) {
+            let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
+            rundeord = oppgaveord[tilfeldigIndeks]
+            visOrd()
+        }
     }
     
     @IBAction func stoppRunde() {
