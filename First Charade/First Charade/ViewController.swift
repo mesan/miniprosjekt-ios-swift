@@ -71,9 +71,6 @@ class ViewController: UIViewController {
     
     func update() {
         gjenstaendeRundeTid--
-        if (gjenstaendeRundeTid < 0) {
-            gjenstaendeRundeTid = 0
-        }
         valgtOppgaveord.text = String(gjenstaendeRundeTid)
         if (gjenstaendeRundeTid < 1) {
             gameOver()
