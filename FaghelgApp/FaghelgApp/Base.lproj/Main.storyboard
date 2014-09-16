@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="-214" y="-496"/>
         </scene>
-        <!--Item-->
+        <!--Ansatte-->
         <scene sceneID="Us2-97-1id">
             <objects>
-                <tableViewController id="nEK-Lz-r3L" customClass="EmployeeViewController" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Ansatte" id="nEK-Lz-r3L" customClass="EmployeeViewController" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ez-nB-SOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="nEK-Lz-r3L" id="rAA-x0-qjy"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="CEU-qM-QPc"/>
+                    <tabBarItem key="tabBarItem" title="Ansatte" id="CEU-qM-QPc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iek-3S-jMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
