@@ -16,8 +16,16 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var abstractLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
     
-    init(event: Event) {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder);
+    }
+    
+    func setEvent(event: Event) {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.dateFormat = "hh:mm"
         timeLabel.text = dateStringFormatter.stringFromDate(event.start)
@@ -27,9 +35,5 @@ class EventTableViewCell: UITableViewCell {
         durationLabel.text = String(format: "%d", durationMinutes)
         abstractLabel.text = event.description
         titleLabel.text = event.title
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
