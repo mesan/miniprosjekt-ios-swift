@@ -19,4 +19,10 @@ class FaghelgApi : NSObject {
                 println(error)
         }
     }
+    
+    // get a list of employees
+    func getEmployees() -> [String] {
+        let employees: [String] = ["Patrick", "Dag", "Anders", "Ayhan", "Randi", "Kaja", "Gorm", "Señor Reed"]
+        return employees
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB34D5A19C8723D00E9D27C /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB34D5919C8723D00E9D27C /* EmployeeViewController.swift */; };
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
 		9F8D4CB519BE4A6100DA5A61 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB419BE4A6100DA5A61 /* RootViewController.swift */; };
 		9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DB34D5919C8723D00E9D27C /* EmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
 				9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */,
 				9F8D4CB419BE4A6100DA5A61 /* RootViewController.swift */,
+				1DB34D5919C8723D00E9D27C /* EmployeeViewController.swift */,
 				9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */,
 				9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */,
 				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
@@ -277,6 +280,7 @@
 				9F8D4CB519BE4A6100DA5A61 /* RootViewController.swift in Sources */,
 				9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */,
 				9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */,
+				1DB34D5A19C8723D00E9D27C /* EmployeeViewController.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
