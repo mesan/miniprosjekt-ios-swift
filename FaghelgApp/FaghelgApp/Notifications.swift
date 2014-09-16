@@ -1,5 +1,5 @@
 //
-//  Responsible.swift
+//  Constants.swift
 //  FaghelgApp
 //
 //  Created by Anders Ullnæss on 16/09/14.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-class Responsible {
-    var id: String?
-    var fullName: String?
-    var shortName: String?
+struct Notifications {
+    static let programNotificationId: String = "ProgramFetchedNotification"
 }

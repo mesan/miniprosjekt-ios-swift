@@ -16,7 +16,15 @@ class ProgramViewController: UIViewController {
         super.viewDidLoad()
         // Do view setup here.
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "programFetched:", name: Notifications.programNotificationId, object: nil)
+
         faghelgApi.getProgram()
     }
     
+    func programFetched(notification: NSNotification) {
+        var program: Program = notification.object as Program
+        println(program.numberOfEvents)
+        println(program.events)
+        
+    }
 }
