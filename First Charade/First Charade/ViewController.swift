@@ -11,7 +11,7 @@ import UIKit
 enum rundestatuser {
     case velgOrd
     case igang
-    case vunne
+    case vunnet
     case tapt
 }
 
@@ -19,11 +19,11 @@ class ViewController: UIViewController {
 
     let rundeTid:Int = 5 // sekunder
     // TODO: fyll oppgaveord fra ordbok
-    var oppgaveord = ["ord 1", "ord 2", "ord 3", "ord 4", "ord 5"]
+    var oppgaveord = ["ord 1", "ord 2", "ord 3", "et langt ord men ikke ekstremt", "et ekstremt langt ord som skulle vært i fnutter"]
     
     // MARK: runde skal refaktoreres til egen runde-klasse
     var rundeTimer = NSTimer()
-    var rundeStatus = rundeStatuser.velgOrd
+    var rundeStatus = rundestatuser.velgOrd
     var rundeord = ""
     var gjenstaendeRundeTid: Int = 0
     
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
             gjenstaendeRundeTid = 0
         }
         valgtOppgaveord.text = String(gjenstaendeRundeTid)
-        if (gjenstaendeRundeTid == 0) {
+        if (gjenstaendeRundeTid < 1) {
             gameOver()
         }
     }
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     }
     
     func visOrd() {
-        valgtOppgaveord.text = rundeOrd
+        valgtOppgaveord.text = rundeord
     }
 
 }
