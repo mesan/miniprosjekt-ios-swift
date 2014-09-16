@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum rundeStatuser {
     case velgOrd
     case igang
@@ -17,7 +16,7 @@ enum rundeStatuser {
 }
 
 class ViewController: UIViewController {
-    
+
     let rundeTid = 60 // sekunder
     var oppgaveord = ["ord 1", "ord 2", "ord 3", "ord 4", "ord 5"]
     
@@ -72,10 +71,6 @@ class ViewController: UIViewController {
         // vis rundeord
         // spill sørgemars
     }
-    
-    
-    
-    
 
 }
 

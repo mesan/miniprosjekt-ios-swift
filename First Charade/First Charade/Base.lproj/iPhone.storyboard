@@ -28,7 +28,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="testknapp:" destination="O7a-0g-p9O" eventType="touchUpInside" id="4p0-4Y-2fG"/>
+                                    <action selector="testknapp:" destination="O7a-0g-p9O" eventType="touchUpInside" id="XC4-fJ-Qzm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,7 +39,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="oppgaveord" destination="eTK-W5-dAw" id="gab-Gh-dpL"/>
+                        <outlet property="valgtOppgaveord" destination="eTK-W5-dAw" id="poE-cB-1vH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOB-yz-thJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
