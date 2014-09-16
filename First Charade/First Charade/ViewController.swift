@@ -44,12 +44,15 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
+        velgOrd(sender)
         valgtOppgaveord.text = "hei"
         startRunde()
     }
     
     @IBAction func velgOrd(sender:UIButton) {
-        // Velg ord runden skal begynne med
+        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
+        rundeOrd = oppgaveord[tilfeldigIndeks]
+        visOrd()
     }
     
     @IBAction func startRunde() {
