@@ -52,9 +52,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startRunde() {
+        view.backgroundColor = UIColor.blueColor()
+        rundeOrd = valgtOppgaveord.text;
+        gjenstaendeRundeTid = rundeTid
+        startTimer()
         // Bytt bakgrunnsfarge til blå
         // Vis gjenstgående tid med hvit tekst
         // Start timer
+    }
+    
+    func startTimer() {
+        rundeStatus = rundeStatuser.igang
+        rundeTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    
+    func update() {
+        valgtOppgaveord.text = gjenstaendeRundeTid
     }
     
     @IBAction func nesteOrd(sender:UIButton) {
@@ -62,6 +75,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stoppRunde() {
+        rundeTimer.invalidate()
         // Stopp timer
         // Bytt bakgrunnsfarge til grønn
         // Vis rundeord
