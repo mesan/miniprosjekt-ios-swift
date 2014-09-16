@@ -49,9 +49,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func velgOrd(sender:UIButton) {
-        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
-        rundeOrd = oppgaveord[tilfeldigIndeks]
-        visOrd()
+        nesteOrd(sender)
     }
     
     @IBAction func startRunde() {
@@ -77,7 +75,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nesteOrd(sender:UIButton) {
-        // Vis rundeord
+        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
+        rundeOrd = oppgaveord[tilfeldigIndeks]
+        visOrd()
     }
     
     @IBAction func stoppRunde() {
