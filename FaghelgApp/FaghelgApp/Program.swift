@@ -9,6 +9,17 @@
 import Foundation
 
 class Program {
-    var numberOfEvents: Int = 0
+    var numberOfEvents: Int?
     var events: [Event]?
+    
+    init(dict: NSDictionary) {
+        numberOfEvents = dict["numberOfEvents"] as? Int
+        
+        events = []
+        var eventsDict: NSArray = dict["events"] as NSArray
+        for value in eventsDict {
+            var eventDict: NSDictionary = value as NSDictionary
+            events!.append(Event(dict: eventDict));
+        }
+    }
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D33E40919C88946000C1794 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33E40819C88946000C1794 /* EmployeeViewController.swift */; };
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
 		9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */; };
 		9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */; };
@@ -18,7 +17,8 @@
 		9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF648FB19C87424004BCFEB /* ProgramViewController.swift */; };
 		9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490C19C87E3E004BCFEB /* Program.swift */; };
 		9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490E19C87EA9004BCFEB /* Event.swift */; };
-		9FF6491119C87FDB004BCFEB /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491019C87FDB004BCFEB /* Responsible.swift */; };
+		9FF6491119C87FDB004BCFEB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491019C87FDB004BCFEB /* Person.swift */; };
+		9FF6491419C88F41004BCFEB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491319C88F41004BCFEB /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D33E40819C88946000C1794 /* EmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +68,8 @@
 		9FF648FB19C87424004BCFEB /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		9FF6490C19C87E3E004BCFEB /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		9FF6490E19C87EA9004BCFEB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		9FF6491019C87FDB004BCFEB /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
+		9FF6491019C87FDB004BCFEB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9FF6491319C88F41004BCFEB /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 			children = (
 				9FF6490B19C87E25004BCFEB /* Domain */,
 				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
-				1D33E40819C88946000C1794 /* EmployeeViewController.swift */,
+				9FF6491319C88F41004BCFEB /* Notifications.swift */,
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
 				9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */,
 				9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */,
@@ -165,7 +165,7 @@
 			children = (
 				9FF6490E19C87EA9004BCFEB /* Event.swift */,
 				9FF6490C19C87E3E004BCFEB /* Program.swift */,
-				9FF6491019C87FDB004BCFEB /* Responsible.swift */,
+				9FF6491019C87FDB004BCFEB /* Person.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -294,14 +294,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */,
-				1D33E40919C88946000C1794 /* EmployeeViewController.swift in Sources */,
 				9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */,
-				9FF6491119C87FDB004BCFEB /* Responsible.swift in Sources */,
+				9FF6491119C87FDB004BCFEB /* Person.swift in Sources */,
 				9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */,
 				9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 				9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */,
 				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
+				9FF6491419C88F41004BCFEB /* Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
