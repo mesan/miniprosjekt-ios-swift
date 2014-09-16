@@ -8,17 +8,24 @@
 
 import UIKit
 
-class ProgramViewController: UIViewController {
+class ProgramViewController: UIViewController, UITableViewDataSource {
     
     var faghelgApi: FaghelgApi = FaghelgApi()
+    @IBOutlet weak var tableView: UITableView!
+    var program : Program!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "programFetched:", name: Notifications.programNotificationId, object: nil)
+        registerNotifications()
+        
 
         faghelgApi.getProgram()
+    }
+    
+    func registerNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "programFetched:", name: Notifications.programNotificationId, object: nil)
     }
     
     func programFetched(notification: NSNotification) {
@@ -26,5 +33,33 @@ class ProgramViewController: UIViewController {
         println(program.numberOfEvents)
         println(program.events)
         
+        self.program = program;
+        self.tableView.reloadData();
+    }
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (program != nil) {
+            return program.numberOfEvents!
+        }
+        
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let identifier = "cell"
+        var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as UITableViewCell
+        
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: identifier)
+        }
+        
+        if (program.events != nil) {
+            var event : Event! = program.events?[indexPath.row]
+            cell.textLabel?.text = event.title
+            cell.detailTextLabel?.text = event.description
+        }
+        
+        return cell
     }
 }

@@ -18,8 +18,10 @@ class Event {
     var tags: String?
     
     init(dict: NSDictionary) {
-        //start = dict["start"]
-        //end = dict["end"]
+        let startTime = dict["start"] as Double
+        start = NSDate(timeIntervalSince1970: startTime)
+        let endTime = dict["end"] as Double
+        end = NSDate(timeIntervalSince1970: endTime)
         title = dict["title"] as String
         description = dict["description"] as? String
         hostNames = dict["hostNames"] as? String

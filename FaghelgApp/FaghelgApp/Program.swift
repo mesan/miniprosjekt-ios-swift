@@ -17,8 +17,7 @@ class Program {
         
         events = []
         var eventsDict: NSArray = dict["events"] as NSArray
-        for value in eventsDict {
-            var eventDict: NSDictionary = value as NSDictionary
+        for eventDict in eventsDict as [NSDictionary] {
             events!.append(Event(dict: eventDict));
         }
     }
