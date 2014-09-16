@@ -20,9 +20,11 @@ class ViewController: UIViewController {
     let rundeTid = 60 // sekunder
     var oppgaveord = ["ord 1", "ord 2", "ord 3", "ord 4", "ord 5"]
     
+    // MARK; runde
+    let rundeTimer = NSTimer()
     var rundeStatus = rundeStatuser.velgOrd
-    
-    let timer = NSTimer()
+    var rundeOrd = ""
+    var gjenstaendeRundeTid
     
     // MARK: Outlets
     @IBOutlet var valgtOppgaveord:UILabel!
