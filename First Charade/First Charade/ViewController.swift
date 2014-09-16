@@ -56,14 +56,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startRunde() {
-        // TODO: reset timer, må være disablet til stoppet
-        view.backgroundColor = UIColor.blueColor()
-        gjenstaendeRundeTid = rundeTid
-        startTimer()
+        if (rundeStatus == .velgOrd) {
+            rundeStatus = .igang
+            view.backgroundColor = UIColor.blueColor()
+            gjenstaendeRundeTid = rundeTid
+            startTimer()
+        }
     }
     
     func startTimer() {
-        rundeStatus = rundeStatuser.igang
+        valgtOppgaveord.text = ""
         rundeTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
