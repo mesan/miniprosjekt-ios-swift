@@ -35,7 +35,7 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource {
         // create new table cell
         let cell =  UITableViewCell()
         // set cell image
-        cell.imageView?.image = UIImage(named: "no-face.jpg")
+        cell.imageView?.image = UIImage(named: "unknown.png")
         // set cell text
         cell.textLabel?.text = api.getEmployees()[indexPath.row]
         // return the cell
