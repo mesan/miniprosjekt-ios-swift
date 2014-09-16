@@ -2,14 +2,17 @@
 //  Responsible.swift
 //  FaghelgApp
 //
-//  Created by Anders Ullnæss on 16/09/14.
+//  Created by Lars Kristian Nymoen on 16/09/14.
 //  Copyright (c) 2014 Mesan. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-class Responsible {
-    var id: String?
-    var fullName: String?
-    var shortName: String?
+class Responsible: NSManagedObject {
+
+    @NSManaged var id: String
+    @NSManaged var fullName: String
+    @NSManaged var shortName: String
+
 }

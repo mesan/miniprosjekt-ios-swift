@@ -2,18 +2,21 @@
 //  Event.swift
 //  FaghelgApp
 //
-//  Created by Anders Ullnæss on 16/09/14.
+//  Created by Lars Kristian Nymoen on 16/09/14.
 //  Copyright (c) 2014 Mesan. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-class Event {
-    var start: NSDate!
-    var end: NSDate!
-    var title: String!
-    var description: String!
-    var hostNames: String?
-    var responsible: Responsible!
-    var tags: String?
+class Event: NSManagedObject {
+
+    @NSManaged var start: NSDate
+    @NSManaged var end: NSDate
+    @NSManaged var title: String
+    @NSManaged var desc: String
+    @NSManaged var hostNames: String
+    @NSManaged var tags: String
+    @NSManaged var responsible: Responsible
+
 }

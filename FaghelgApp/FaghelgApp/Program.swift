@@ -2,13 +2,16 @@
 //  Program.swift
 //  FaghelgApp
 //
-//  Created by Anders Ullnæss on 16/09/14.
+//  Created by Lars Kristian Nymoen on 16/09/14.
 //  Copyright (c) 2014 Mesan. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-class Program {
-    var numberOfEvents: Int = 0
-    var events: [Event]?
+class Program: NSManagedObject {
+
+    @NSManaged var numberOfEvent: NSNumber
+    @NSManaged var events: NSSet
+
 }
