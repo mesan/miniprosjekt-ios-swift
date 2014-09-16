@@ -17,14 +17,14 @@ enum rundeStatuser {
 
 class ViewController: UIViewController {
 
-    let rundeTid = 60 // sekunder
+    let rundeTid:Int = 5 // sekunder
     var oppgaveord = ["ord 1", "ord 2", "ord 3", "ord 4", "ord 5"]
     
     // MARK; runde
-    let rundeTimer = NSTimer()
+    var rundeTimer = NSTimer()
     var rundeStatus = rundeStatuser.velgOrd
     var rundeOrd = ""
-    var gjenstaendeRundeTid
+    var gjenstaendeRundeTid: Int = 0
     
     // MARK: Outlets
     @IBOutlet var valgtOppgaveord:UILabel!
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
         valgtOppgaveord.text = "hei"
+        startRunde()
     }
     
     @IBAction func velgOrd(sender:UIButton) {
@@ -53,21 +54,24 @@ class ViewController: UIViewController {
     
     @IBAction func startRunde() {
         view.backgroundColor = UIColor.blueColor()
-        rundeOrd = valgtOppgaveord.text;
         gjenstaendeRundeTid = rundeTid
         startTimer()
-        // Bytt bakgrunnsfarge til blå
-        // Vis gjenstgående tid med hvit tekst
-        // Start timer
     }
     
     func startTimer() {
         rundeStatus = rundeStatuser.igang
-        rundeTimer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        rundeTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     func update() {
-        valgtOppgaveord.text = gjenstaendeRundeTid
+        gjenstaendeRundeTid--
+        if (gjenstaendeRundeTid < 0) {
+            gjenstaendeRundeTid = 0
+        }
+        valgtOppgaveord.text = String(gjenstaendeRundeTid)
+        if (gjenstaendeRundeTid == 0) {
+            gameOver()
+        }
     }
     
     @IBAction func nesteOrd(sender:UIButton) {
@@ -76,16 +80,19 @@ class ViewController: UIViewController {
     
     @IBAction func stoppRunde() {
         rundeTimer.invalidate()
-        // Stopp timer
-        // Bytt bakgrunnsfarge til grønn
-        // Vis rundeord
+        view.backgroundColor = UIColor.greenColor()
+        visOrd()
     }
     
     @IBAction func gameOver() {
-        // Stopp timer
-        // Bytt bakgrunnsfarge til rød
-        // vis rundeord
+        rundeTimer.invalidate()
+        view.backgroundColor = UIColor.redColor()
+        visOrd()
         // spill sørgemars
+    }
+    
+    func visOrd() {
+        valgtOppgaveord.text = rundeOrd
     }
 
 }

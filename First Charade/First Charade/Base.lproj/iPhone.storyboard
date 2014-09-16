@@ -31,6 +31,33 @@
                                     <action selector="testknapp:" destination="O7a-0g-p9O" eventType="touchUpInside" id="XC4-fJ-Qzm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQF-YT-cqK">
+                                <rect key="frame" x="46" y="230" width="33" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRunde" destination="O7a-0g-p9O" eventType="touchUpInside" id="ZPD-tg-cIU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzU-qZ-u9E">
+                                <rect key="frame" x="142" y="230" width="42" height="30"/>
+                                <state key="normal" title="Stopp">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stoppRunde" destination="O7a-0g-p9O" eventType="touchUpInside" id="hFI-1o-3W5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpd-PX-jlD">
+                                <rect key="frame" x="46" y="186" width="56" height="30"/>
+                                <state key="normal" title="Nytt ord">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nesteOrd:" destination="O7a-0g-p9O" eventType="touchUpInside" id="0of-XY-ub8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
