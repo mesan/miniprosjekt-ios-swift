@@ -44,23 +44,10 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource, UITa
     
     // create table cells
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // create new table cell
-        let cell =  UITableViewCell()
-        
-        let person = employees[indexPath.row]
-        
-        // set cell image
-        cell.imageView?.image = UIImage(named: "\(person.shortName!).png")
-        // set cell text
-        cell.textLabel?.text = person.fullName
-        
-        //let employeeCell = tableView.cellForRowAtIndexPath(indexPath) as EmployeeCell
+        // get cell from tableView
         let employeeCell: EmployeeCell = tableView.dequeueReusableCellWithIdentifier("Cell") as EmployeeCell
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.purpleColor()
-        } else {
-            cell.backgroundColor = UIColor.orangeColor()
-        }
+
+        let person = employees[indexPath.row]
         
         employeeCell.setCell(person.fullName!, shortName: person.shortName!)
         

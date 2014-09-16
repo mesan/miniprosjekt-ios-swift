@@ -20,6 +20,13 @@ class EmployeeCell: UITableViewCell {
         fullName.lineBreakMode = NSLineBreakMode.ByWordWrapping
         fullName.numberOfLines = 0
         
+        // add borders to employeeImage and made it round
+        employeeImage.layer.cornerRadius = employeeImage.frame.size.width / 2
+        employeeImage.clipsToBounds = true
+        employeeImage.layer.borderWidth = 3.0
+        employeeImage.layer.borderColor = UIColor.whiteColor().CGColor
+
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
