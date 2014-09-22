@@ -48,7 +48,7 @@ class Program: NSManagedObject {
         return fetchedEventController
     }
     
-<<<<<<< HEAD
+
     func eventsTaskRequest() -> NSFetchRequest {
         let eventRequest = NSFetchRequest(entityName: "Event")
         let sortDescriptor = NSSortDescriptor(key: "start", ascending: true)
@@ -56,7 +56,7 @@ class Program: NSManagedObject {
         return eventRequest
     }
     
-=======
+
     func getIndexForActualEvent() -> NSInteger{
         
         for (index, value) in enumerate(self.events.allObjects) {
@@ -70,5 +70,4 @@ class Program: NSManagedObject {
         
         return 1;
     }
->>>>>>> 50f875f7549d9a4e23cf9cadb502c8360ee5413c
 }
