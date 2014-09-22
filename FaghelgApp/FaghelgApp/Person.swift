@@ -19,5 +19,7 @@ class Person: NSManagedObject {
         id = dict["id"] as? String
         fullName = dict["fullName"] as? String
         shortName = dict["shortName"] as? String
+        
+        self.managedObjectContext.save(nil)
     }
 }

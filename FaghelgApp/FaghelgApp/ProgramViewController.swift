@@ -55,7 +55,8 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         if (program.events != nil) {
-            var eventsArray: NSArray = program.events.allObjects
+            //var eventsArray: NSArray = program.events.allObjects
+            var eventsArray: NSArray = program.getAllEvents()
             var event : Event! = eventsArray[indexPath.row] as Event
             cell.setEvent(event);
         }
