@@ -11,6 +11,8 @@ import UIKit
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var faghelgApi: FaghelgApi = FaghelgApi()
+    var selectedCell: EventTableViewCell?
+    
     @IBOutlet weak var tableView: UITableView!
     var program : Program!
     let cellIdentifier = "eventCell"
@@ -48,7 +50,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as EventTableViewCell
+        var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as EventTableViewCell
         
         if (cell == nil) {
             cell = EventTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
@@ -64,6 +66,26 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200;
+        var cell : EventTableViewCell
+        if (selectedCell != nil) {
+            cell = selectedCell!;
+        }
+        else {
+            cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
+        }
+        
+        if (cell.isExpanded) {
+            cell.extraInfoView.hidden = false
+            return 160
+        }
+        
+        cell.extraInfoView.hidden = true
+        return 60
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
+        cell.isExpanded = !cell.isExpanded
+        self.tableView(tableView, heightForRowAtIndexPath: indexPath)
     }
 }
