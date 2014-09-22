@@ -17,13 +17,15 @@ class EmployeeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        // Wrap full name
         fullName.lineBreakMode = NSLineBreakMode.ByWordWrapping
         fullName.numberOfLines = 0
         
-        // add borders to employeeImage and made it round
+        // Rounding employee image
         employeeImage.layer.cornerRadius = employeeImage.frame.size.width / 2
         employeeImage.clipsToBounds = true
-        employeeImage.layer.borderWidth = 3.0
+        employeeImage.layer.borderWidth = 1.0
         employeeImage.layer.borderColor = UIColor.whiteColor().CGColor
 
         
