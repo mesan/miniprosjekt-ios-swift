@@ -28,7 +28,7 @@ class OrdvelgerViewController: UIViewController {
     @IBAction func nesteOrd() {
             let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
             valgtOrd.text = oppgaveord[tilfeldigIndeks]
-    }
+    }   
     
     /*
     // MARK: - Navigation

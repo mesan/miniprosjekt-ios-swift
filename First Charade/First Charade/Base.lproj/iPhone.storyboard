@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="O7a-0g-p9O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="O7a-0g-p9O">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -21,7 +21,6 @@
                                 </state>
                                 <connections>
                                     <action selector="testknapp:" destination="O7a-0g-p9O" eventType="touchUpInside" id="XC4-fJ-Qzm"/>
-                                    <segue destination="E9T-d5-PME" kind="custom" identifier="start spill" id="HtU-HF-29g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rQF-YT-cqK">
@@ -32,6 +31,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startRunde" destination="O7a-0g-p9O" eventType="touchUpInside" id="ZPD-tg-cIU"/>
+                                    <segue destination="EXn-8I-pFd" kind="custom" id="g2g-F5-5ko"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charades" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="eTK-W5-dAw">
@@ -42,8 +42,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="INL-JT-o1E"/>
-                                    <outletCollection property="gestureRecognizers" destination="jMt-KH-UQv" appends="YES" id="sDS-eW-fkC"/>
                                     <outletCollection property="gestureRecognizers" destination="XLw-a0-6cE" appends="YES" id="e1p-sy-w2O"/>
                                 </connections>
                             </label>
@@ -62,8 +60,6 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="h8z-gf-mWk"/>
-                            <outletCollection property="gestureRecognizers" destination="jMt-KH-UQv" appends="YES" id="fwf-8Y-HW2"/>
                             <outletCollection property="gestureRecognizers" destination="XLw-a0-6cE" appends="YES" id="Bsb-1g-koF"/>
                         </connections>
                     </view>
@@ -76,23 +72,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOB-yz-thJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="FwV-a1-zD6">
-                    <connections>
-                        <action selector="nesteOrd" destination="O7a-0g-p9O" id="jaX-UX-W76"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="jMt-KH-UQv">
-                    <connections>
-                        <action selector="nesteOrd" destination="O7a-0g-p9O" id="WjN-o2-ae7"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="XLw-a0-6cE">
                     <connections>
                         <action selector="stoppRunde" destination="O7a-0g-p9O" id="yK8-fU-t4E"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-305" y="-124"/>
+            <point key="canvasLocation" x="-566" y="-358"/>
         </scene>
         <!--Instillinger View Controller-->
         <scene sceneID="wZH-4j-HOq">
@@ -115,13 +101,10 @@
                     <navigationItem key="navigationItem" id="Ssd-Sl-eZF"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <segue destination="1tn-AW-3iu" kind="custom" identifier="start runde" id="Px1-cu-jdx"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXU-ha-Chl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="-124"/>
+            <point key="canvasLocation" x="162" y="-358"/>
         </scene>
         <!--Runde Tapt View Controller-->
         <scene sceneID="lNK-s0-J8X">
@@ -138,7 +121,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owO-Md-Z8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344" y="319"/>
+            <point key="canvasLocation" x="157" y="604"/>
+        </scene>
+        <!--Ordvelger View Controller-->
+        <scene sceneID="ld1-Hc-C91">
+            <objects>
+                <viewController id="EXn-8I-pFd" customClass="OrdvelgerViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E4x-Wv-HfN">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charades" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="R4P-o3-YTV">
+                                <rect key="frame" x="16" y="55" width="448" height="209"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="epA-57-R7J"/>
+                                    <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="v2I-MY-nw8"/>
+                                </connections>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jMt-KH-UQv" appends="YES" id="3I5-i2-DFe"/>
+                            <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="q9I-Qh-Xa9"/>
+                        </connections>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="valgtOrd" destination="R4P-o3-YTV" id="I9I-Ml-lQC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgq-va-mx3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="jMt-KH-UQv">
+                    <connections>
+                        <action selector="nesteOrd" destination="EXn-8I-pFd" id="v5J-yd-GQZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="FwV-a1-zD6">
+                    <connections>
+                        <action selector="nesteOrd" destination="EXn-8I-pFd" id="Obs-pS-fIf"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-566" y="108"/>
         </scene>
         <!--Timeglass View Controller-->
         <scene sceneID="kuF-Ai-7px">
@@ -164,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTL-Eg-0lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="558"/>
+            <point key="canvasLocation" x="-571" y="604"/>
         </scene>
         <!--Runde Vunnet View Controller-->
         <scene sceneID="p7Z-XZ-JIX">
@@ -181,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbO-5t-Gpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344" y="791"/>
+            <point key="canvasLocation" x="157" y="1073"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
