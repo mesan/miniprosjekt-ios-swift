@@ -6,14 +6,19 @@
 //  Copyright (c) 2014 Mesan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var faghelgApi: FaghelgApi = FaghelgApi()
+    
     @IBOutlet weak var tableView: UITableView!
     var program : Program!
     let cellIdentifier = "eventCell"
+    var cellHidden : Bool = true
+    
+    var selectedIndexPath: NSIndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +36,21 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func programFetched(notification: NSNotification) {
         var program: Program = notification.object as Program
-        println(program.numberOfEvents)
-        println(program.events)
-        
         self.program = program;
         self.tableView.reloadData();
+        
+        scrollToActualEvent()
+        //Vi ønsker å scrolle når appen åpnes og første viewet som dukker opp er ProgramViewet.
+        //Må også håndtere at brukeren kan trykke på home knappen, åpne knappen og få appen til å scrolle til aktuelle da også.
+    }
+    
+    func scrollToActualEvent() {
+        if (self.program != nil) {
+            var eventer: NSArray = self.program.events.allObjects
+            var indexForActualEvent = self.program.getIndexForActualEvent()
+            var indexPath = NSIndexPath(forRow: indexForActualEvent, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition:UITableViewScrollPosition.Top, animated: true)
+        }
     }
     
     
@@ -48,7 +63,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as EventTableViewCell
+        var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as EventTableViewCell
         
         if (cell == nil) {
             cell = EventTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
@@ -65,6 +80,38 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200;
+        //var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
+        
+        if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
+            //cell.extraInfoView.hidden = false
+            return 160
+        }
+        
+        //cell.extraInfoView.hidden = true
+        return 60
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = self.tableView.cellForRowAtIndexPath(indexPath) as EventTableViewCell
+        if (self.selectedIndexPath == nil) {
+            self.selectedIndexPath = indexPath
+            cell.extraInfoView.hidden = false
+        }
+        else if (self.selectedIndexPath?.row == indexPath.row) {
+            self.selectedIndexPath = nil
+            cell.extraInfoView.hidden = false
+        }
+        else {
+            var previousCell = self.tableView.cellForRowAtIndexPath(self.selectedIndexPath!) as EventTableViewCell
+            previousCell.extraInfoView.hidden = true
+            cell.extraInfoView.hidden = true
+
+            self.tableView.reloadRowsAtIndexPaths([self.selectedIndexPath!], withRowAnimation: UITableViewRowAnimation.None)
+            self.selectedIndexPath = indexPath
+        }
+        
+
+        //cell.extraInfoView.hidden = !cell.extraInfoView.hidden
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
     }
 }

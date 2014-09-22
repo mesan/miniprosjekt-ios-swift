@@ -16,6 +16,9 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var abstractLabel: UILabel!
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var extraInfoView: UIView!
+    
+    var isExpanded : Bool = false
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,7 +32,9 @@ class EventTableViewCell: UITableViewCell {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.dateFormat = "hh:mm"
         timeLabel.text = dateStringFormatter.stringFromDate(event.start)
-        nameLabel.text = event.hostNames
+        if (event.hostNames != nil) {
+            nameLabel.text = event.hostNames
+        }
         var durationSeconds = event.end.timeIntervalSinceDate(event.start)
         var durationMinutes = durationSeconds / 60
         durationLabel.text = String(format: "%d", durationMinutes)
