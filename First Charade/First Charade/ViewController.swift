@@ -19,8 +19,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var velgord:OrdvelgerViewController!
 
-//    var spill: Spill?
-    var spill = Spill()
+    var spill: Spill!
     
     // MARK: runde skal refaktoreres til egen runde-klasse
     var rundeTimer = NSTimer()
@@ -34,7 +33,9 @@ class ViewController: UIViewController {
     // MARK: Constructor / Destructor
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.spill = appDelegate.spill
     }
 
     override func didReceiveMemoryWarning() {
