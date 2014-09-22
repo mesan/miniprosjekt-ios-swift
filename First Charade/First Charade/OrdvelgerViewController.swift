@@ -9,15 +9,16 @@
 import UIKit
 
 class OrdvelgerViewController: UIViewController {
-    var oppgaveord = ["ord 1", "ord 2", "ord 3", "et langt ord men ikke ekstremt", "et ekstremt langt ord som skulle vært i fnutter"]
-    
     @IBOutlet var timeglass : TimeglassViewController!
     @IBOutlet var valgtOrd : UILabel!
+
+    var spill: Spill!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.spill = appDelegate.spill
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +27,7 @@ class OrdvelgerViewController: UIViewController {
     }
     
     @IBAction func nesteOrd() {
-            let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
-            valgtOrd.text = oppgaveord[tilfeldigIndeks]
+        valgtOrd.text = spill.hentNesteOrd();
     }
     
     /*

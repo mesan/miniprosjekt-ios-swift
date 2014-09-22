@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         if (rundeStatus == .velgOrd) {
             rundeStatus = .igang
             view.backgroundColor = UIColor.blueColor()
-            gjenstaendeRundeTid = spill.rundeTid
+            gjenstaendeRundeTid = spill.rundetid
             startTimer()
         }
     }

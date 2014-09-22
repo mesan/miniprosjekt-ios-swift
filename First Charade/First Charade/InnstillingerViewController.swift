@@ -23,9 +23,9 @@ class InnstillingerViewController: UIViewController, UIPickerViewDelegate, UIPic
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.spill = appDelegate.spill
         
-        rundetider = [30, 60, 90, 120, 180]
-        ordbøker = ["Matretter", "Dyr", "Programmeringspråk"]
-}
+        rundetider = spill.rundetider
+        ordbøker = spill.ordbøker
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,6 +59,14 @@ class InnstillingerViewController: UIViewController, UIPickerViewDelegate, UIPic
             return "\(rundetider[row])"
         } else {
             return "\(ordbøker[row])"
+        }
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if (pickerView == rundetid) {
+            spill.rundetid = rundetider[row] as NSNumber
+        } else if (pickerView == ordbok) {
+            spill.ordbok = row
         }
     }
 }

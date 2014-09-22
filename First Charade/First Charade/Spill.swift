@@ -9,20 +9,29 @@
 import Foundation
 
 class Spill {
-    let rundeTid:Int = 5 // sekunder
-    // TODO: fyll oppgaveord fra ordbok
-    var oppgaveord = ["ord 1", "ord 2", "ord 3", "et langt ord men ikke ekstremt", "et ekstremt langt ord som skulle vært i fnutter"]
+    let rundetider = [30, 60, 90, 120, 180] // sekunder
+    let ordbøker = ["Matretter", "Dyr", "Programmeringspråk"]
+    let ord = [
+        ["Bacalao", "Spagetti bolognese", "Pizza", "Fenalår"],
+        ["Elefant", "Mus", "Ulv", "Sau", "Sommerfugl", "Dinosaur"],
+        ["C++", "ASM", "Swift", "Perl", "JavaScript", "Java"]
+    ]
 
-    init() {
-        
-    }
-    
-    func ordbøker() {
-        
+    var rundetid:Int = 30
+    var ordbok:Int = 0;
+
+    func ordbokNavn() -> String {
+        if (ordbok >= 0 && ordbok < ordbøker.count) {
+            return ordbøker[ordbok]
+        }
+        return ""
     }
     
     func hentNesteOrd() -> String {
-        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
-        return oppgaveord[tilfeldigIndeks]
+        if (ordbok < 0 || ordbok > ord.count) {
+            ordbok = 0
+        }
+        let tilfeldigIndeks = Int(arc4random_uniform(UInt32(ord[ordbok].count)))
+        return ord[ordbok][tilfeldigIndeks]
     }
 }
