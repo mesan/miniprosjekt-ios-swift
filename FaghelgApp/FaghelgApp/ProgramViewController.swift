@@ -11,11 +11,13 @@ import UIKit
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var faghelgApi: FaghelgApi = FaghelgApi()
-    var selectedCell: EventTableViewCell?
     
     @IBOutlet weak var tableView: UITableView!
     var program : Program!
     let cellIdentifier = "eventCell"
+    var cellHidden : Bool = true
+    
+    var selectedIndexPath: NSIndexPath?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +35,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func programFetched(notification: NSNotification) {
         var program: Program = notification.object as Program
-        println(program.numberOfEvents)
-        println(program.events)
-        
         self.program = program;
         self.tableView.reloadData();
     }
@@ -66,26 +65,38 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var cell : EventTableViewCell
-        if (selectedCell != nil) {
-            cell = selectedCell!;
-        }
-        else {
-            cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
-        }
+        //var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
         
-        if (cell.isExpanded) {
-            cell.extraInfoView.hidden = false
+        if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
+            //cell.extraInfoView.hidden = false
             return 160
         }
         
-        cell.extraInfoView.hidden = true
+        //cell.extraInfoView.hidden = true
         return 60
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
-        cell.isExpanded = !cell.isExpanded
-        self.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        var cell = self.tableView.cellForRowAtIndexPath(indexPath) as EventTableViewCell
+        if (self.selectedIndexPath == nil) {
+            self.selectedIndexPath = indexPath
+            cell.extraInfoView.hidden = false
+        }
+        else if (self.selectedIndexPath?.row == indexPath.row) {
+            self.selectedIndexPath = nil
+            cell.extraInfoView.hidden = false
+        }
+        else {
+            var previousCell = self.tableView.cellForRowAtIndexPath(self.selectedIndexPath!) as EventTableViewCell
+            previousCell.extraInfoView.hidden = true
+            cell.extraInfoView.hidden = true
+
+            self.tableView.reloadRowsAtIndexPaths([self.selectedIndexPath!], withRowAnimation: UITableViewRowAnimation.None)
+            self.selectedIndexPath = indexPath
+        }
+        
+
+        //cell.extraInfoView.hidden = !cell.extraInfoView.hidden
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
     }
 }
