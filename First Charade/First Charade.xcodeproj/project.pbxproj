@@ -17,6 +17,8 @@
 		95F2191519D05CC200468278 /* OrdvelgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191419D05CC200468278 /* OrdvelgerViewController.swift */; };
 		95F2191719D05D3000468278 /* TimeglassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191619D05D3000468278 /* TimeglassViewController.swift */; };
 		95F2191919D0605700468278 /* RundeTaptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191819D0605700468278 /* RundeTaptViewController.swift */; };
+		F211048A19D05AA60000BDD8 /* Spill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F211048919D05AA60000BDD8 /* Spill.swift */; };
+		F211048C19D065E90000BDD8 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F211048B19D065E90000BDD8 /* InstillingerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		95F2191419D05CC200468278 /* OrdvelgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdvelgerViewController.swift; sourceTree = "<group>"; };
 		95F2191619D05D3000468278 /* TimeglassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeglassViewController.swift; sourceTree = "<group>"; };
 		95F2191819D0605700468278 /* RundeTaptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RundeTaptViewController.swift; sourceTree = "<group>"; };
+		F211048919D05AA60000BDD8 /* Spill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spill.swift; sourceTree = "<group>"; };
+		F211048B19D065E90000BDD8 /* InstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstillingerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +94,13 @@
 				95F2191819D0605700468278 /* RundeTaptViewController.swift */,
 				95F2191619D05D3000468278 /* TimeglassViewController.swift */,
 				95F2191419D05CC200468278 /* OrdvelgerViewController.swift */,
+				F211048B19D065E90000BDD8 /* InstillingerViewController.swift */,
 				9576ADCB19C8764E004C00ED /* AppDelegate.swift */,
 				9576ADCD19C8764E004C00ED /* ViewController.swift */,
 				9576ADD219C8764E004C00ED /* Images.xcassets */,
 				9576ADD419C8764E004C00ED /* LaunchScreen.xib */,
 				9576ADC919C8764E004C00ED /* Supporting Files */,
+				F211048919D05AA60000BDD8 /* Spill.swift */,
 			);
 			path = "First Charade";
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 				95F2191919D0605700468278 /* RundeTaptViewController.swift in Sources */,
 				95F2191319D05AC700468278 /* RundeVunnetViewController.swift in Sources */,
 				95F2191519D05CC200468278 /* OrdvelgerViewController.swift in Sources */,
+				F211048C19D065E90000BDD8 /* InstillingerViewController.swift in Sources */,
+				F211048A19D05AA60000BDD8 /* Spill.swift in Sources */,
 				9576ADCE19C8764E004C00ED /* ViewController.swift in Sources */,
 				95F2191719D05D3000468278 /* TimeglassViewController.swift in Sources */,
 				9576ADCC19C8764E004C00ED /* AppDelegate.swift in Sources */,
