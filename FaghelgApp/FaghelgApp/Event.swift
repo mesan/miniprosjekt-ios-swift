@@ -32,6 +32,8 @@ class Event: NSManagedObject {
         responsible = Person(entity: NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: self.managedObjectContext)
         responsible.setData(responsibleDict)
         tags = dict["tags"] as? String
+        
+        self.managedObjectContext.save(nil)
     }
     
 }
