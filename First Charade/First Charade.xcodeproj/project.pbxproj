@@ -13,6 +13,8 @@
 		9576ADD619C8764E004C00ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9576ADD419C8764E004C00ED /* LaunchScreen.xib */; };
 		9576ADE219C8764E004C00ED /* First_CharadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576ADE119C8764E004C00ED /* First_CharadeTests.swift */; };
 		9576ADED19C87E01004C00ED /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9576ADEB19C87E01004C00ED /* iPhone.storyboard */; };
+		F211048A19D05AA60000BDD8 /* Spill.swift in Sources */ = {isa = PBXBuildFile; fileRef = F211048919D05AA60000BDD8 /* Spill.swift */; };
+		F211048C19D065E90000BDD8 /* InstillingerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F211048B19D065E90000BDD8 /* InstillingerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		9576ADE019C8764E004C00ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9576ADE119C8764E004C00ED /* First_CharadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_CharadeTests.swift; sourceTree = "<group>"; };
 		9576ADEC19C87E01004C00ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "First Charade/Base.lproj/iPhone.storyboard"; sourceTree = "<group>"; };
+		F211048919D05AA60000BDD8 /* Spill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spill.swift; sourceTree = "<group>"; };
+		F211048B19D065E90000BDD8 /* InstillingerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstillingerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,13 @@
 			isa = PBXGroup;
 			children = (
 				9576ADEB19C87E01004C00ED /* iPhone.storyboard */,
+				F211048B19D065E90000BDD8 /* InstillingerViewController.swift */,
 				9576ADCB19C8764E004C00ED /* AppDelegate.swift */,
 				9576ADCD19C8764E004C00ED /* ViewController.swift */,
 				9576ADD219C8764E004C00ED /* Images.xcassets */,
 				9576ADD419C8764E004C00ED /* LaunchScreen.xib */,
 				9576ADC919C8764E004C00ED /* Supporting Files */,
+				F211048919D05AA60000BDD8 /* Spill.swift */,
 			);
 			path = "First Charade";
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F211048C19D065E90000BDD8 /* InstillingerViewController.swift in Sources */,
+				F211048A19D05AA60000BDD8 /* Spill.swift in Sources */,
 				9576ADCE19C8764E004C00ED /* ViewController.swift in Sources */,
 				9576ADCC19C8764E004C00ED /* AppDelegate.swift in Sources */,
 			);

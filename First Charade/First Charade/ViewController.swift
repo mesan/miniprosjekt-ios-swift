@@ -17,9 +17,8 @@ enum rundestatuser {
 
 class ViewController: UIViewController {
 
-    let rundeTid:Int = 5 // sekunder
-    // TODO: fyll oppgaveord fra ordbok
-    var oppgaveord = ["ord 1", "ord 2", "ord 3", "et langt ord men ikke ekstremt", "et ekstremt langt ord som skulle vært i fnutter"]
+//    var spill: Spill?
+    var spill = Spill()
     
     // MARK: runde skal refaktoreres til egen runde-klasse
     var rundeTimer = NSTimer()
@@ -40,7 +39,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: Timer
     
     // MARK: Actions
@@ -59,7 +58,7 @@ class ViewController: UIViewController {
         if (rundeStatus == .velgOrd) {
             rundeStatus = .igang
             view.backgroundColor = UIColor.blueColor()
-            gjenstaendeRundeTid = rundeTid
+            gjenstaendeRundeTid = spill.rundeTid
             startTimer()
         }
     }
@@ -83,8 +82,7 @@ class ViewController: UIViewController {
             view.backgroundColor = UIColor.blackColor()
         }
         if (rundeStatus == .velgOrd) {
-            let tilfeldigIndeks = Int(arc4random_uniform(UInt32(oppgaveord.count)))
-            rundeord = oppgaveord[tilfeldigIndeks]
+            rundeord = spill.hentNesteOrd();
             visOrd()
         }
     }
