@@ -12,6 +12,8 @@
 	<dict>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
 		<string>https://github.com/Alamofire/Alamofire</string>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>github.com:Thomvis/BrightFutures.git</string>
 		<key>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</key>
 		<string>https://github.com/mesan/miniprosjekt-ios-swift.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
 		<string>../../../../rammeverk/Alamofire</string>
+		<key>93608FFF008CD82ADDFA850BB9C1630FA754586F</key>
+		<string>../../../FaghelgApp/lib/BrightFutures/</string>
 		<key>DE2379CA889BC978329F502B4FC1AAC5FAA612E2</key>
 		<string>../../..</string>
 	</dict>
@@ -39,6 +43,14 @@
 			<string>67620B5EFA902936DF04070AF595B76AB0333747</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Alamofire</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>93608FFF008CD82ADDFA850BB9C1630FA754586F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrightFutures</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

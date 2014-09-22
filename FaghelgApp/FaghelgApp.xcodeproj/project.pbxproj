@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D33E41419C897A5000C1794 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D33E41319C897A5000C1794 /* EmployeeViewController.swift */; };
+		1D9F2D8219D05885004D72E2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCD687119BF402700443776 /* Alamofire.framework */; };
+		1D9F2D8319D05885004D72E2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCD687119BF402700443776 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D9F2D9C19D06703004D72E2 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9F2D8D19D05FA4004D72E2 /* BrightFutures.framework */; };
+		1D9F2D9D19D06703004D72E2 /* BrightFutures.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9F2D8D19D05FA4004D72E2 /* BrightFutures.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4569861019C8A3DD0018D3A8 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4569860F19C8A3DD0018D3A8 /* EmployeeCell.swift */; };
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
 		9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */; };
@@ -24,6 +28,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D9F2D8419D05885004D72E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		1D9F2D8C19D05FA4004D72E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9DF0815194470060083F7F2;
+			remoteInfo = BrightFutures;
+		};
+		1D9F2D8E19D05FA4004D72E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E9DF0820194470060083F7F2;
+			remoteInfo = BrightFuturesTests;
+		};
+		1D9F2D9E19D06703004D72E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E9DF0814194470060083F7F2;
+			remoteInfo = BrightFutures;
+		};
 		845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
@@ -54,8 +86,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D9F2D8619D05885004D72E2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D9F2D8319D05885004D72E2 /* Alamofire.framework in Embed Frameworks */,
+				1D9F2D9D19D06703004D72E2 /* BrightFutures.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1D33E41319C897A5000C1794 /* EmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
+		1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = lib/BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		4569860F19C8A3DD0018D3A8 /* EmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D9F2D8219D05885004D72E2 /* Alamofire.framework in Frameworks */,
+				1D9F2D9C19D06703004D72E2 /* BrightFutures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +144,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D9F2D8819D05FA4004D72E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D9F2D8D19D05FA4004D72E2 /* BrightFutures.framework */,
+				1D9F2D8F19D05FA4004D72E2 /* BrightFuturesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9F8D4CA419BE4A6100DA5A61 = {
 			isa = PBXGroup;
 			children = (
+				1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */,
 				9FCD686B19BF402700443776 /* Alamofire.xcodeproj */,
 				9F8D4CAF19BE4A6100DA5A61 /* FaghelgApp */,
 				9F8D4CC619BE4A6100DA5A61 /* FaghelgAppTests */,
@@ -186,11 +246,14 @@
 				9F8D4CA919BE4A6100DA5A61 /* Sources */,
 				9F8D4CAA19BE4A6100DA5A61 /* Frameworks */,
 				9F8D4CAB19BE4A6100DA5A61 /* Resources */,
+				1D9F2D8619D05885004D72E2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				845FD60119BF4157007B6AE4 /* PBXTargetDependency */,
+				1D9F2D8519D05885004D72E2 /* PBXTargetDependency */,
+				1D9F2D9F19D06703004D72E2 /* PBXTargetDependency */,
 			);
 			name = FaghelgApp;
 			productName = FaghelgApp;
@@ -249,6 +312,10 @@
 					ProductGroup = 9FCD686C19BF402700443776 /* Products */;
 					ProjectRef = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 1D9F2D8819D05FA4004D72E2 /* Products */;
+					ProjectRef = 1D9F2D8719D05FA4004D72E2 /* BrightFutures.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -259,6 +326,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		1D9F2D8D19D05FA4004D72E2 /* BrightFutures.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BrightFutures.framework;
+			remoteRef = 1D9F2D8C19D05FA4004D72E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1D9F2D8F19D05FA4004D72E2 /* BrightFuturesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BrightFuturesTests.xctest;
+			remoteRef = 1D9F2D8E19D05FA4004D72E2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		9FCD687119BF402700443776 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -324,6 +405,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D9F2D8519D05885004D72E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 1D9F2D8419D05885004D72E2 /* PBXContainerItemProxy */;
+		};
+		1D9F2D9F19D06703004D72E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BrightFutures;
+			targetProxy = 1D9F2D9E19D06703004D72E2 /* PBXContainerItemProxy */;
+		};
 		845FD60119BF4157007B6AE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
