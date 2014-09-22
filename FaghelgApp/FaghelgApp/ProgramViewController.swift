@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Mesan. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -38,6 +39,19 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.program = program;
         self.tableView.reloadData();
+        
+        scrollToActualEvent()
+        //Vi ønsker å scrolle når appen åpnes og første viewet som dukker opp er ProgramViewet.
+        //Må også håndtere at brukeren kan trykke på home knappen, åpne knappen og få appen til å scrolle til aktuelle da også.
+    }
+    
+    func scrollToActualEvent() {
+        if (self.program != nil) {
+            var eventer: NSArray = self.program.events.allObjects
+            var indexForActualEvent = self.program.getIndexForActualEvent()
+            var indexPath = NSIndexPath(forRow: indexForActualEvent, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition:UITableViewScrollPosition.Top, animated: true)
+        }
     }
     
     
