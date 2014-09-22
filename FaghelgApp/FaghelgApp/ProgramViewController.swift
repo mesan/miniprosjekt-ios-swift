@@ -73,6 +73,12 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             var eventsArray: NSArray = program.events.allObjects
             var event : Event! = eventsArray[indexPath.row] as Event
             cell.setEvent(event);
+            
+            if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
+                cell.extraInfoView.hidden = false
+            } else {
+                cell.extraInfoView.hidden = true;
+            }
         }
         
         return cell
@@ -82,35 +88,36 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         //var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            //cell.extraInfoView.hidden = false
             return 160
         }
         
-        //cell.extraInfoView.hidden = true
         return 60
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var cell = self.tableView.cellForRowAtIndexPath(indexPath) as EventTableViewCell
+        var previousIndexPath : NSIndexPath?
+        
         if (self.selectedIndexPath == nil) {
             self.selectedIndexPath = indexPath
-            cell.extraInfoView.hidden = false
         }
         else if (self.selectedIndexPath?.row == indexPath.row) {
             self.selectedIndexPath = nil
-            cell.extraInfoView.hidden = false
         }
         else {
-            var previousCell = self.tableView.cellForRowAtIndexPath(self.selectedIndexPath!) as EventTableViewCell
-            previousCell.extraInfoView.hidden = true
-            cell.extraInfoView.hidden = true
-
-            self.tableView.reloadRowsAtIndexPaths([self.selectedIndexPath!], withRowAnimation: UITableViewRowAnimation.None)
+            previousIndexPath = self.selectedIndexPath
             self.selectedIndexPath = indexPath
         }
         
 
         //cell.extraInfoView.hidden = !cell.extraInfoView.hidden
-        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        
+        var indexPaths = [NSIndexPath]()
+        indexPaths.append(indexPath);
+        if (previousIndexPath != nil) {
+            indexPaths.append(previousIndexPath!)
+        }
+        
+        self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.None)
     }
 }
