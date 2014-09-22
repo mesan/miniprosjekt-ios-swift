@@ -34,8 +34,8 @@
                                     <action selector="startRunde" destination="O7a-0g-p9O" eventType="touchUpInside" id="ZPD-tg-cIU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="eTK-W5-dAw">
-                                <rect key="frame" x="0.0" y="53" width="480" height="209"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charades" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="eTK-W5-dAw">
+                                <rect key="frame" x="16" y="58" width="448" height="209"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
@@ -115,10 +115,73 @@
                     <navigationItem key="navigationItem" id="Ssd-Sl-eZF"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="1tn-AW-3iu" kind="custom" identifier="start runde" id="Px1-cu-jdx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXU-ha-Chl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243" y="-124"/>
+        </scene>
+        <!--Runde Tapt View Controller-->
+        <scene sceneID="lNK-s0-J8X">
+            <objects>
+                <viewController id="bmZ-P2-Xe8" customClass="RundeTaptViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IqG-pW-R0V">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="d0x-Gw-Ts9"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owO-Md-Z8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="319"/>
+        </scene>
+        <!--Timeglass View Controller-->
+        <scene sceneID="kuF-Ai-7px">
+            <objects>
+                <viewController id="1tn-AW-3iu" customClass="TimeglassViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="llQ-J9-Wxs">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="naviger" destination="1tn-AW-3iu" eventType="touchUpInside" id="3Ih-4b-SDE"/>
+                        </connections>
+                    </button>
+                    <navigationItem key="navigationItem" id="oeg-M6-7tk"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="bmZ-P2-Xe8" kind="custom" identifier="tapt" id="YL7-U9-wQ4"/>
+                        <segue destination="NcV-qJ-T1z" kind="custom" identifier="vunnet" id="f9x-ae-CYw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTL-Eg-0lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="558"/>
+        </scene>
+        <!--Runde Vunnet View Controller-->
+        <scene sceneID="p7Z-XZ-JIX">
+            <objects>
+                <viewController id="NcV-qJ-T1z" customClass="RundeVunnetViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oDZ-Gy-ymg" customClass="Runde">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9al-mj-KI2"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FbO-5t-Gpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="344" y="791"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
