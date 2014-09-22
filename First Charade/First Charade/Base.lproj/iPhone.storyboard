@@ -113,7 +113,7 @@
                     <view key="view" contentMode="scaleToFill" id="IqG-pW-R0V">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0" blue="0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.74312420280612246" green="0.0080636454339447772" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="d0x-Gw-Ts9"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -143,6 +143,16 @@
                                     <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="v2I-MY-nw8"/>
                                 </connections>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Stj-Wk-ydz">
+                                <rect key="frame" x="109" y="270" width="262" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Start runde">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1tn-AW-3iu" kind="custom" id="nyt-gI-Yat"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -175,27 +185,32 @@
         <scene sceneID="kuF-Ai-7px">
             <objects>
                 <viewController id="1tn-AW-3iu" customClass="TimeglassViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="llQ-J9-Wxs">
+                    <view key="view" contentMode="scaleToFill" id="QbS-Oz-gpg">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="naviger" destination="1tn-AW-3iu" eventType="touchUpInside" id="3Ih-4b-SDE"/>
-                        </connections>
-                    </button>
-                    <navigationItem key="navigationItem" id="oeg-M6-7tk"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="20" id="ILb-8y-bd5">
+                                <rect key="frame" x="16" y="55" width="448" height="209"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="tidIgjenLabel" destination="ILb-8y-bd5" id="LxM-Sb-vaZ"/>
                         <segue destination="bmZ-P2-Xe8" kind="custom" identifier="tapt" id="YL7-U9-wQ4"/>
                         <segue destination="NcV-qJ-T1z" kind="custom" identifier="vunnet" id="f9x-ae-CYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTL-Eg-0lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-571" y="604"/>
+            <point key="canvasLocation" x="-566" y="604"/>
         </scene>
         <!--Runde Vunnet View Controller-->
         <scene sceneID="p7Z-XZ-JIX">
@@ -204,7 +219,7 @@
                     <view key="view" contentMode="scaleToFill" id="oDZ-Gy-ymg" customClass="Runde">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.15026472998178542" green="0.86581234056122447" blue="0.28414566082788117" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="9al-mj-KI2"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
