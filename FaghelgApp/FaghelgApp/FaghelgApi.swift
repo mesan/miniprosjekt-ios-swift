@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import BrightFutures
 
 protocol FaghelgApiProtocol {
     func didRecieveResponse(results: NSDictionary)
@@ -29,11 +30,39 @@ class FaghelgApi : NSObject {
                 //println(jsonDict!["numberOfEvents"])
                 //println(jsonDict)
                 
+                
+                
                 var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
                 
                 var program = Program(entity: NSEntityDescription.entityForName("Program", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: managedObjectContext)
                 program.setData(jsonDict!)
-                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: program)
+                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: program)       }
+    }
+    
+    // returns a promise of a list of employees
+    func getEmployees() -> Future<[Person]> {
+        let promise = Promise<[Person]>()
+        Alamofire.request(.GET, "http://faghelg.herokuapp.com/persons")
+            .responseJSON{(request, response, JSON, error) in
+                
+                // handle errors
+                if error != nil {
+                    promise.error(error!)
+                    return
+                }
+                
+                // success: convert from JSON object to list of persons
+                var personsArr = JSON as NSArray
+                var persons:[Person] = []
+                for value in personsArr {
+                    var jsonDict = value as NSDictionary
+                    let context = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+                    let person = Person(entity: NSEntityDescription.entityForName("Person", inManagedObjectContext: context)!, insertIntoManagedObjectContext: context)
+                    person.setData(jsonDict)
+                    persons.append(person)
+                }
+                promise.success(persons)
         }
+        return promise.future
     }
 }
