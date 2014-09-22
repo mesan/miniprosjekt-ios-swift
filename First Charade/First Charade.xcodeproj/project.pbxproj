@@ -81,6 +81,7 @@
 		9576ADC819C8764E004C00ED /* First Charade */ = {
 			isa = PBXGroup;
 			children = (
+				95F2191219D05AC700468278 /* RundeVunnetViewController.swift */,
 				9576ADEB19C87E01004C00ED /* iPhone.storyboard */,
 				F211048B19D065E90000BDD8 /* InstillingerViewController.swift */,
 				9576ADCB19C8764E004C00ED /* AppDelegate.swift */,
@@ -221,6 +222,7 @@
 				F211048C19D065E90000BDD8 /* InstillingerViewController.swift in Sources */,
 				F211048A19D05AA60000BDD8 /* Spill.swift in Sources */,
 				9576ADCE19C8764E004C00ED /* ViewController.swift in Sources */,
+				95F2191719D05D3000468278 /* TimeglassViewController.swift in Sources */,
 				9576ADCC19C8764E004C00ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

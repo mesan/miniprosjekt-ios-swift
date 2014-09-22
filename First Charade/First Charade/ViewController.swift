@@ -16,6 +16,8 @@ enum rundestatuser {
 }
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var velgord:OrdvelgerViewController!
 
 //    var spill: Spill?
     var spill = Spill()
@@ -44,8 +46,8 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
-        velgOrd()
-        startRunde()
+//        velgOrd()
+//        startRunde()
     }
 
 //TODO: Lag funksjonalitet for å bestemme antall sekunder i rundetiden
