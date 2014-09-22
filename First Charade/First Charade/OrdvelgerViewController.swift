@@ -34,8 +34,4 @@ class OrdvelgerViewController: UIViewController {
     }
     */
     
-    func startRunde() {
-        
-    }
-
 }

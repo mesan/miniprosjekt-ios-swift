@@ -9,6 +9,10 @@
 import UIKit
 
 class TimeglassViewController: UIViewController {
+    
+    @IBAction func naviger() {
+        self.performSegueWithIdentifier("vunnet", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

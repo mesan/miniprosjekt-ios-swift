@@ -16,6 +16,8 @@ enum rundestatuser {
 }
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var velgord:OrdvelgerViewController!
 
     let rundeTid:Int = 5 // sekunder
     // TODO: fyll oppgaveord fra ordbok
@@ -45,8 +47,8 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func testknapp(sender:UIButton) {
-        velgOrd()
-        startRunde()
+//        velgOrd()
+//        startRunde()
     }
 
 //TODO: Lag funksjonalitet for å bestemme antall sekunder i rundetiden
