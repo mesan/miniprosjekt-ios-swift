@@ -13,6 +13,7 @@
 		9576ADD619C8764E004C00ED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9576ADD419C8764E004C00ED /* LaunchScreen.xib */; };
 		9576ADE219C8764E004C00ED /* First_CharadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576ADE119C8764E004C00ED /* First_CharadeTests.swift */; };
 		9576ADED19C87E01004C00ED /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9576ADEB19C87E01004C00ED /* iPhone.storyboard */; };
+		957E9AE319D08BB60005010B /* AirHorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 957E9AE219D08BB60005010B /* AirHorn.mp3 */; };
 		95F2191319D05AC700468278 /* RundeVunnetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191219D05AC700468278 /* RundeVunnetViewController.swift */; };
 		95F2191519D05CC200468278 /* OrdvelgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191419D05CC200468278 /* OrdvelgerViewController.swift */; };
 		95F2191719D05D3000468278 /* TimeglassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F2191619D05D3000468278 /* TimeglassViewController.swift */; };
@@ -42,6 +43,7 @@
 		9576ADE019C8764E004C00ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9576ADE119C8764E004C00ED /* First_CharadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = First_CharadeTests.swift; sourceTree = "<group>"; };
 		9576ADEC19C87E01004C00ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "First Charade/Base.lproj/iPhone.storyboard"; sourceTree = "<group>"; };
+		957E9AE219D08BB60005010B /* AirHorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AirHorn.mp3; sourceTree = "<group>"; };
 		95F2191219D05AC700468278 /* RundeVunnetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RundeVunnetViewController.swift; path = ../RundeVunnetViewController.swift; sourceTree = "<group>"; };
 		95F2191419D05CC200468278 /* OrdvelgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdvelgerViewController.swift; sourceTree = "<group>"; };
 		95F2191619D05D3000468278 /* TimeglassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeglassViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		9576ADC819C8764E004C00ED /* First Charade */ = {
 			isa = PBXGroup;
 			children = (
+				957E9AE419D08BBB0005010B /* Resources */,
 				95F2191219D05AC700468278 /* RundeVunnetViewController.swift */,
 				9576ADEB19C87E01004C00ED /* iPhone.storyboard */,
 				95F2191819D0605700468278 /* RundeTaptViewController.swift */,
@@ -128,6 +131,14 @@
 				9576ADE019C8764E004C00ED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		957E9AE419D08BBB0005010B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				957E9AE219D08BB60005010B /* AirHorn.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			files = (
 				9576ADD619C8764E004C00ED /* LaunchScreen.xib in Resources */,
 				9576ADED19C87E01004C00ED /* iPhone.storyboard in Resources */,
+				957E9AE319D08BB60005010B /* AirHorn.mp3 in Resources */,
 				9576ADD319C8764E004C00ED /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
