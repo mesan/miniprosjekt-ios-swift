@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		96234E7719C88905006811D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96234E7619C88905006811D5 /* CoreData.framework */; };
-		96234EA919C88C0C006811D5 /* FaghelgApp.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 96234EA819C88C0C006811D5 /* FaghelgApp.xcdatamodel */; };
-		96234EB119C891F5006811D5 /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB019C891F5006811D5 /* Responsible.swift */; };
-		96234EB319C891F6006811D5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB219C891F6006811D5 /* Event.swift */; };
-		96234EB519C89564006811D5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB419C89564006811D5 /* Program.swift */; };
+		96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */; };
+		96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */; };
+		96234EF819C8B3D8006811D5 /* FaghelgApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96234EF619C8B3D8006811D5 /* FaghelgApp.xcdatamodeld */; };
+		96234EFC19C8B66C006811D5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EFB19C8B66C006811D5 /* Event.swift */; };
+		96234EFE19C8B66C006811D5 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EFD19C8B66C006811D5 /* Program.swift */; };
+		96234F0019C8B6AD006811D5 /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EFF19C8B6AD006811D5 /* Responsible.swift */; };
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
 		9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */; };
 		9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */; };
@@ -55,10 +57,13 @@
 
 /* Begin PBXFileReference section */
 		96234E7619C88905006811D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		96234EA819C88C0C006811D5 /* FaghelgApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaghelgApp.xcdatamodel; sourceTree = "<group>"; };
-		96234EB019C891F5006811D5 /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
-		96234EB219C891F6006811D5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		96234EB419C89564006811D5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLagringTableViewController.swift; sourceTree = "<group>"; };
+		96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponisbleDetailViewController.swift; sourceTree = "<group>"; };
+		96234EF519C8B11D006811D5 /* FaghelgApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FaghelgApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		96234EF719C8B3D8006811D5 /* FaghelgApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaghelgApp.xcdatamodel; sourceTree = "<group>"; };
+		96234EFB19C8B66C006811D5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		96234EFD19C8B66C006811D5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		96234EFF19C8B6AD006811D5 /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +121,9 @@
 		9F8D4CAF19BE4A6100DA5A61 /* FaghelgApp */ = {
 			isa = PBXGroup;
 			children = (
-				96234EA819C88C0C006811D5 /* FaghelgApp.xcdatamodel */,
+				96234EF519C8B11D006811D5 /* FaghelgApp-Bridging-Header.h */,
+				96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */,
+				96234EF619C8B3D8006811D5 /* FaghelgApp.xcdatamodeld */,
 				9FF6490B19C87E25004BCFEB /* Domain */,
 				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
@@ -126,6 +133,7 @@
 				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
 				9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */,
 				9F8D4CB019BE4A6100DA5A61 /* Supporting Files */,
+				96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */,
 			);
 			path = FaghelgApp;
 			sourceTree = "<group>";
@@ -167,9 +175,9 @@
 		9FF6490B19C87E25004BCFEB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				96234EB219C891F6006811D5 /* Event.swift */,
-				96234EB019C891F5006811D5 /* Responsible.swift */,
-				96234EB419C89564006811D5 /* Program.swift */,
+				96234EFD19C8B66C006811D5 /* Program.swift */,
+				96234EFB19C8B66C006811D5 /* Event.swift */,
+				96234EFF19C8B6AD006811D5 /* Responsible.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -297,13 +305,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */,
+				96234F0019C8B6AD006811D5 /* Responsible.swift in Sources */,
 				9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */,
-				96234EB319C891F6006811D5 /* Event.swift in Sources */,
-				96234EA919C88C0C006811D5 /* FaghelgApp.xcdatamodel in Sources */,
-				96234EB119C891F5006811D5 /* Responsible.swift in Sources */,
+				96234EF819C8B3D8006811D5 /* FaghelgApp.xcdatamodeld in Sources */,
 				9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */,
-				96234EB519C89564006811D5 /* Program.swift in Sources */,
+				96234EFC19C8B66C006811D5 /* Event.swift in Sources */,
 				9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */,
+				96234EFE19C8B66C006811D5 /* Program.swift in Sources */,
+				96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
 			);
@@ -517,6 +527,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		96234EF619C8B3D8006811D5 /* FaghelgApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				96234EF719C8B3D8006811D5 /* FaghelgApp.xcdatamodel */,
+			);
+			currentVersion = 96234EF719C8B3D8006811D5 /* FaghelgApp.xcdatamodel */;
+			path = FaghelgApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9F8D4CA519BE4A6100DA5A61 /* Project object */;
 }

@@ -13,8 +13,8 @@ class Event: NSManagedObject {
 
     @NSManaged var start: NSDate
     @NSManaged var end: NSDate
-    @NSManaged var title: String
     @NSManaged var desc: String
+    @NSManaged var title: String
     @NSManaged var hostNames: String
     @NSManaged var tags: String
     @NSManaged var responsible: Responsible

@@ -12,7 +12,7 @@ import CoreData
 class Responsible: NSManagedObject {
 
     @NSManaged var id: String
-    @NSManaged var fullName: String
     @NSManaged var shortName: String
+    @NSManaged var fullName: String
 
 }
