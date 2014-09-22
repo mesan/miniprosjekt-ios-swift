@@ -21,6 +21,9 @@ class RundeVunnetViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func startNesteRunde() {
+        self.performSegueWithIdentifier("ny runde", sender: self)
+    }
 
     /*
     // MARK: - Navigation
