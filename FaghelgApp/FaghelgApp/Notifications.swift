@@ -10,4 +10,5 @@ import Foundation
 
 struct Notifications {
     static let programNotificationId: String = "ProgramFetchedNotification"
+    static let employeesNotificationId: String = "EmployeesFetchedNotification"
 }

@@ -119,31 +119,45 @@
             <point key="canvasLocation" x="330" y="840"/>
         </scene>
         <!--Ansatte-->
-        <scene sceneID="6CE-mm-R0f">
+        <scene sceneID="Us2-97-1id">
             <objects>
-                <viewController title="Ansatte" id="k7E-R1-nXu" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FsI-4E-Tfb"/>
-                        <viewControllerLayoutGuide type="bottom" id="OVw-24-eUQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sKS-lH-rfh">
+                <tableViewController title="Ansatte" id="nEK-Lz-r3L" customClass="EmployeeViewController" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ez-nB-SOg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ansatte kompis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM8-Y8-jRH">
-                                <rect key="frame" x="100" y="273" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Ansatte" id="pyI-OY-QYG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eNn-w5-KKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="wN1-zy-G26" customClass="EmployeeCell" customModule="FaghelgApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wN1-zy-G26" id="rDM-sZ-GqL">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-km-EQF">
+                                            <rect key="frame" x="113" y="27" width="162" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
+                                            <rect key="frame" x="8" y="2" width="85" height="85"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="employeeImage" destination="tg8-oW-doA" id="s5G-Lu-tl3"/>
+                                    <outlet property="fullName" destination="3ht-km-EQF" id="7nd-IM-s3h"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Ansatte" id="CEU-qM-QPc"/>
+                    <connections>
+                        <outlet property="employeeList" destination="5ez-nB-SOg" id="Vr0-fz-fft"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iek-3S-jMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="166"/>
+            <point key="canvasLocation" x="-214" y="144"/>
         </scene>
         <!--Program-->
         <scene sceneID="gQE-Hb-9bk">
@@ -195,8 +209,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="aJl-tZ-Sgq" kind="relationship" relationship="viewControllers" id="Pqf-yF-uVW"/>
-                        <segue destination="k7E-R1-nXu" kind="relationship" relationship="viewControllers" id="Aqf-2e-0OA"/>
                         <segue destination="SX8-c4-Jgj" kind="relationship" relationship="viewControllers" id="6UF-5n-4l2"/>
+                        <segue destination="nEK-Lz-r3L" kind="relationship" relationship="viewControllers" id="X0b-HT-i3V"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BT8-NZ-eOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
