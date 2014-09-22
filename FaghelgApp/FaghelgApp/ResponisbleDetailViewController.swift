@@ -29,7 +29,7 @@ class ResponisbleDetailViewController: UIViewController {
     }
     
     @IBAction func done(sender: AnyObject) {
-        createResponsible()
+        createPerson()
         dismissViewController()
     }
     
@@ -41,9 +41,9 @@ class ResponisbleDetailViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    func createResponsible(){
-        let entityDescription = NSEntityDescription.entityForName("Responsible", inManagedObjectContext: managedObjectContext!)
-        let resp = Responsible(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
+    func createPerson(){
+        let entityDescription = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext!)
+        let resp = Person(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
         resp.id = txtId.text
         resp.shortName = txtShortName.text
         resp.fullName = txtFullName.text

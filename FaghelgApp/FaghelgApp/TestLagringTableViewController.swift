@@ -53,7 +53,7 @@ class TestLagringTableViewController: UITableViewController, NSFetchedResultsCon
     }
     
     func responsibleTaskRequest() ->NSFetchRequest{
-        let fetchRequest = NSFetchRequest(entityName: "Responsible")
+        let fetchRequest = NSFetchRequest(entityName: "Person")
         let sortDescriptor = NSSortDescriptor(key: "shortName", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
@@ -64,7 +64,7 @@ class TestLagringTableViewController: UITableViewController, NSFetchedResultsCon
         
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        let resp = fetchedResultController.objectAtIndexPath(indexPath) as Responsible
+        let resp = fetchedResultController.objectAtIndexPath(indexPath) as Person
         cell.textLabel?.text = resp.shortName
         // Configure the cell...
 

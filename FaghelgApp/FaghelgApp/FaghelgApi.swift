@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import CoreData
 
 protocol FaghelgApiProtocol {
     func didRecieveResponse(results: NSDictionary)
@@ -28,7 +29,11 @@ class FaghelgApi : NSObject {
                 //println(jsonDict!["numberOfEvents"])
                 //println(jsonDict)
                 
-                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: Program(dict: jsonDict!))
+                var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+                
+                var program = Program(entity: NSEntityDescription.entityForName("Program", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: managedObjectContext)
+                program.setData(jsonDict!)
+                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: program)
         }
     }
 }

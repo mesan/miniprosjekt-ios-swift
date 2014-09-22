@@ -11,16 +11,20 @@ import CoreData
 
 class Program: NSManagedObject {
 
-    @NSManaged var numberOfEvents: NSNumber
-    @NSManaged var events: NSSet
+    @NSManaged var numberOfEvents: NSNumber!
+    @NSManaged var events: NSMutableSet!
     
-    init(dict: NSDictionary) {
+    func setData(dict: NSDictionary) {
+
         numberOfEvents = dict["numberOfEvents"] as? Int
         
-        events = []
+        events = NSMutableSet()
         var eventsDict: NSArray = dict["events"] as NSArray
         for eventDict in eventsDict as [NSDictionary] {
-            events!.append(Event(dict: eventDict));
+            var event = Event(entity: NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)!, insertIntoManagedObjectContext: self.managedObjectContext)
+            event.setData(eventDict)
+            
+            events!.addObject(event)
         }
     }
 }

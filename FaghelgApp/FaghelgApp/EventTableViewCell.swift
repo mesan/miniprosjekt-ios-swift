@@ -33,7 +33,7 @@ class EventTableViewCell: UITableViewCell {
         var durationSeconds = event.end.timeIntervalSinceDate(event.start)
         var durationMinutes = durationSeconds / 60
         durationLabel.text = String(format: "%d", durationMinutes)
-        abstractLabel.text = event.description
+        abstractLabel.text = event.desc
         titleLabel.text = event.title
     }
 }

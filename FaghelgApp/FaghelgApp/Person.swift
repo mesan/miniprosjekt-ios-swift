@@ -1,5 +1,5 @@
 //
-//  Responsible.swift
+//  Person.swift
 //  FaghelgApp
 //
 //  Created by Lars Kristian Nymoen on 16/09/14.
@@ -11,11 +11,11 @@ import CoreData
 
 class Person: NSManagedObject {
 
-    @NSManaged var id: String
-    @NSManaged var shortName: String
-    @NSManaged var fullName: String
+    @NSManaged var id: String?
+    @NSManaged var shortName: String?
+    @NSManaged var fullName: String?
     
-    init(dict: NSDictionary) {
+    func setData(dict: NSDictionary) {
         id = dict["id"] as? String
         fullName = dict["fullName"] as? String
         shortName = dict["shortName"] as? String
