@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F70970D19C8A8C000D805CB /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */; };
+		9F70970F19C8AA7700D805CB /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */; };
 		96234E7719C88905006811D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96234E7619C88905006811D5 /* CoreData.framework */; };
 		96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */; };
 		96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */; };
@@ -64,6 +66,8 @@
 		96234EFB19C8B66C006811D5 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		96234EFD19C8B66C006811D5 /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		96234EFF19C8B6AD006811D5 /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
+		9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,10 @@
 		9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaghelgApi.swift; sourceTree = "<group>"; };
 		9FCD686B19BF402700443776 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = lib/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		9FF648FB19C87424004BCFEB /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
+		9FF6490C19C87E3E004BCFEB /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		9FF6490E19C87EA9004BCFEB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9FF6491019C87FDB004BCFEB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		9FF6491319C88F41004BCFEB /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F70970919C8A85200D805CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9F70970B19C8A89500D805CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
+				9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */,
+				9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9F8D4CA419BE4A6100DA5A61 = {
 			isa = PBXGroup;
 			children = (
@@ -124,13 +150,12 @@
 				96234EF519C8B11D006811D5 /* FaghelgApp-Bridging-Header.h */,
 				96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */,
 				96234EF619C8B3D8006811D5 /* FaghelgApp.xcdatamodeld */,
+				9F70970B19C8A89500D805CB /* Views */,
+				9F70970919C8A85200D805CB /* ViewControllers */,
 				9FF6490B19C87E25004BCFEB /* Domain */,
-				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
+				9FF6491319C88F41004BCFEB /* Notifications.swift */,
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
 				9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */,
-				9F8D4CB619BE4A6100DA5A61 /* DataViewController.swift */,
-				9F8D4CB819BE4A6100DA5A61 /* ModelController.swift */,
-				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
 				9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */,
 				9F8D4CB019BE4A6100DA5A61 /* Supporting Files */,
 				96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */,
@@ -175,9 +200,9 @@
 		9FF6490B19C87E25004BCFEB /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				96234EFD19C8B66C006811D5 /* Program.swift */,
-				96234EFB19C8B66C006811D5 /* Event.swift */,
-				96234EFF19C8B6AD006811D5 /* Responsible.swift */,
+				9FF6490E19C87EA9004BCFEB /* Event.swift */,
+				9FF6490C19C87E3E004BCFEB /* Program.swift */,
+				9FF6491019C87FDB004BCFEB /* Person.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -286,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F70970D19C8A8C000D805CB /* EventTableViewCell.xib in Resources */,
 				9F8D4CBC19BE4A6100DA5A61 /* Main.storyboard in Resources */,
 				9F8D4CBE19BE4A6100DA5A61 /* Images.xcassets in Resources */,
 			);
@@ -307,6 +333,7 @@
 			files = (
 				96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */,
 				96234F0019C8B6AD006811D5 /* Responsible.swift in Sources */,
+				9F70970F19C8AA7700D805CB /* EventTableViewCell.swift in Sources */,
 				9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */,
 				96234EF819C8B3D8006811D5 /* FaghelgApp.xcdatamodeld in Sources */,
 				9F8D4CB919BE4A6100DA5A61 /* ModelController.swift in Sources */,
@@ -314,8 +341,11 @@
 				9F8D4CB719BE4A6100DA5A61 /* DataViewController.swift in Sources */,
 				96234EFE19C8B66C006811D5 /* Program.swift in Sources */,
 				96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */,
+				9FF6491119C87FDB004BCFEB /* Person.swift in Sources */,
+				9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
+				9FF6491419C88F41004BCFEB /* Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

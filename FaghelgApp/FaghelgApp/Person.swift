@@ -9,10 +9,15 @@
 import Foundation
 import CoreData
 
-class Responsible: NSManagedObject {
+class Person: NSManagedObject {
 
     @NSManaged var id: String
     @NSManaged var shortName: String
     @NSManaged var fullName: String
-
+    
+    init(dict: NSDictionary) {
+        id = dict["id"] as? String
+        fullName = dict["fullName"] as? String
+        shortName = dict["shortName"] as? String
+    }
 }
