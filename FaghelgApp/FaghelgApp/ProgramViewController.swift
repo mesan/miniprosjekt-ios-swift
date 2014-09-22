@@ -70,7 +70,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         if (program.events != nil) {
-            //var eventsArray: NSArray = program.events.allObjects
             var eventsArray: NSArray = program.getAllEvents()
             var event : Event! = eventsArray[indexPath.row] as Event
             cell.setEvent(event);
@@ -86,7 +85,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        //var cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as EventTableViewCell
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
             return 160
@@ -96,7 +94,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = self.tableView.cellForRowAtIndexPath(indexPath) as EventTableViewCell
         var previousIndexPath : NSIndexPath?
         
         if (self.selectedIndexPath == nil) {
@@ -109,9 +106,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             previousIndexPath = self.selectedIndexPath
             self.selectedIndexPath = indexPath
         }
-        
-
-        //cell.extraInfoView.hidden = !cell.extraInfoView.hidden
         
         var indexPaths = [NSIndexPath]()
         indexPaths.append(indexPath);

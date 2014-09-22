@@ -17,8 +17,6 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var extraInfoView: UIView!
-    
-    var isExpanded : Bool = false
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
