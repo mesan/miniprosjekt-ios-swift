@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import BrightFutures
 
 protocol FaghelgApiProtocol {
     func didRecieveResponse(results: NSDictionary)
@@ -34,23 +35,27 @@ class FaghelgApi : NSObject {
         }
     }
     
-    // get a list of employees
-    func getEmployees() {
-        
+    // returns a promise of a list of employees
+    func getEmployees() -> Future<[Person]> {
+        let promise = Promise<[Person]>()
         Alamofire.request(.GET, "http://faghelg.herokuapp.com/persons")
             .responseJSON{(request, response, JSON, error) in
                 
-                var error: NSError?
-                var personsArr = JSON as NSArray
+                // handle errors
+                if error != nil {
+                    promise.error(error!)
+                    return
+                }
                 
+                // success: convert from JSON object to list of persons
+                var personsArr = JSON as NSArray
                 var persons:[Person] = []
                 for value in personsArr {
                     var jsonDict = value as NSDictionary
                     persons.append(Person(dict: jsonDict));
                 }
-                
-                NSNotificationCenter.defaultCenter().postNotificationName(Notifications.employeesNotificationId, object: persons)
-                
+                promise.success(persons)
         }
+        return promise.future
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BrightFutures
 
 class EmployeeViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,18 +19,20 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "employeesFetched:", name: Notifications.employeesNotificationId, object: nil)
         faghelgApi.getEmployees()
+            .onSuccess { employees in
+                self.employees = employees
+                
+                // reload view
+                self.tableView.reloadData()
+            }.onFailure { error in
+                // display error
+                println("error: \(error)")
+            }
         
         self.employeeList.delegate = self
         self.employeeList.dataSource = self
     }
-    
-    func employeesFetched(notification: NSNotification) {
-        employees = notification.object as [Person]
-        self.tableView.reloadData()
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +43,6 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource, UITa
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return employees.count
     }
-    
     
     // create table cells
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -54,14 +56,4 @@ class EmployeeViewController: UITableViewController, UITableViewDataSource, UITa
         // return the cell
         return employeeCell 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
