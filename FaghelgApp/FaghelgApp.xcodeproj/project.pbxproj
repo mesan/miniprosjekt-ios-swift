@@ -25,7 +25,6 @@
 		9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490C19C87E3E004BCFEB /* Program.swift */; };
 		9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490E19C87EA9004BCFEB /* Event.swift */; };
 		9FF6491119C87FDB004BCFEB /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491019C87FDB004BCFEB /* Person.swift */; };
-		9FF6491419C88F41004BCFEB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6491319C88F41004BCFEB /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		9FF6490C19C87E3E004BCFEB /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		9FF6490E19C87EA9004BCFEB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9FF6491019C87FDB004BCFEB /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		9FF6491319C88F41004BCFEB /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +178,6 @@
 				9F70970B19C8A89500D805CB /* Views */,
 				9F70970919C8A85200D805CB /* ViewControllers */,
 				9FF6490B19C87E25004BCFEB /* Domain */,
-				9FF6491319C88F41004BCFEB /* Notifications.swift */,
 				9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */,
 				9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */,
 				9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */,
@@ -388,7 +385,6 @@
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
 				1D1AC14F19D0801B00628488 /* EmployeeViewController.swift in Sources */,
-				9FF6491419C88F41004BCFEB /* Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BrightFutures
 
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,7 +17,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var tableView: UITableView!
     var program : Program!
     let cellIdentifier = "eventCell"
-    var cellHidden : Bool = true
     
     var selectedIndexPath: NSIndexPath?
 
@@ -24,24 +24,19 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         // Do view setup here.
         
-        registerNotifications()
         self.tableView.registerNib(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
 
         faghelgApi.getProgram()
-    }
-    
-    func registerNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "programFetched:", name: Notifications.programNotificationId, object: nil)
-    }
-    
-    func programFetched(notification: NSNotification) {
-        var program: Program = notification.object as Program
-        self.program = program;
-        self.tableView.reloadData();
-        
-        scrollToActualEvent()
-        //Vi ønsker å scrolle når appen åpnes og første viewet som dukker opp er ProgramViewet.
-        //Må også håndtere at brukeren kan trykke på home knappen, åpne knappen og få appen til å scrolle til aktuelle da også.
+            .onSuccess { program in
+                self.program = program;
+                self.tableView.reloadData()
+                
+                self.scrollToActualEvent()
+                //Vi ønsker å scrolle når appen åpnes og første viewet som dukker opp er ProgramViewet.
+                //Må også håndtere at brukeren kan trykke på home knappen, åpne knappen og få appen til å scrolle til aktuelle da også.
+            }.onFailure { error in
+                println("error: \(error)")
+            }
     }
     
     func scrollToActualEvent() {

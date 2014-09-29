@@ -18,46 +18,37 @@ class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate{
     var fetchedEventController : NSFetchedResultsController = NSFetchedResultsController()
     var fetchedPersonController : NSFetchedResultsController = NSFetchedResultsController()
 
-    
-    //Ayhan push test
-    func getProgram() {
-        var jsonDict: NSDictionary?
+    func getProgram() -> Future<Program?> {
+        let promise = Promise<Program?>()
         Alamofire.request(.GET, "http://faghelg.herokuapp.com/program")
             .responseJSON {(request, response, JSON, error) in
-                // TODO: actually handle the response
-                //println(request)
-                //println(response)
-                //println(JSON)
-                //println(error)
                 
-                var error: NSError?
-                jsonDict = JSON as? NSDictionary
+                // handle errors
+                if error != nil {
+                    promise.error(error!)
+                    return
+                }
                 
-                //let jsonDict = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as NSDictionary
-                
-                //println(jsonDict!["numberOfEvents"])
-                //println(jsonDict)
-                
-                
-                
+                let jsonDict: NSDictionary? = JSON as? NSDictionary
+
                 var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
                 
                 self.fetchedProgramController = self.getProgramResultsController()
                 self.fetchedProgramController.delegate = self
                 self.fetchedProgramController.performFetch(nil)
                 
-                if jsonDict == nil{
-
-                    var fetchedProgram: Program? = self.fetchedProgramController.fetchedObjects?.first as? Program
-                    NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: fetchedProgram)
-                    
-                } else{
-                    
-                    var program = Program(entity: NSEntityDescription.entityForName("Program", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: managedObjectContext)
-                    program.setData(jsonDict!)
-                    NSNotificationCenter.defaultCenter().postNotificationName(Notifications.programNotificationId, object: program)
+                var program: Program?
+                if jsonDict == nil {
+                    program = self.fetchedProgramController.fetchedObjects?.first as? Program
+                } else {
+                    program = Program(entity: NSEntityDescription.entityForName("Program", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: managedObjectContext)
+                    program!.setData(jsonDict!)
                 }
+                
+                promise.success(program)
         }
+        
+        return promise.future;
     }
     
     // returns a promise of a list of employees
