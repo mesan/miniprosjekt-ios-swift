@@ -17,14 +17,6 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var personImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var extraInfoView: UIView!
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder);
-    }
     
     func setEvent(event: Event) {
         let dateStringFormatter = NSDateFormatter()

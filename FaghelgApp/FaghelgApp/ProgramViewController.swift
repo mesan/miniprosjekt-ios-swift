@@ -65,10 +65,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as EventTableViewCell
         
-        if (cell == nil) {
-            cell = EventTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
-        }
-        
         if (program.events != nil) {
             var eventsArray: NSArray = program.getAllEvents()
             var event : Event! = eventsArray[indexPath.row] as Event
@@ -98,11 +94,9 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         
         if (self.selectedIndexPath == nil) {
             self.selectedIndexPath = indexPath
-        }
-        else if (self.selectedIndexPath?.row == indexPath.row) {
+        } else if (self.selectedIndexPath?.row == indexPath.row) {
             self.selectedIndexPath = nil
-        }
-        else {
+        } else {
             previousIndexPath = self.selectedIndexPath
             self.selectedIndexPath = indexPath
         }
