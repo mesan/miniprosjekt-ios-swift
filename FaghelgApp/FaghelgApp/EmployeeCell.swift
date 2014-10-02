@@ -18,6 +18,9 @@ class EmployeeCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        // Make cells not selectable
+        self.userInteractionEnabled = false
+        
         // Wrap full name
         fullName.lineBreakMode = NSLineBreakMode.ByWordWrapping
         fullName.numberOfLines = 0
@@ -27,6 +30,8 @@ class EmployeeCell: UITableViewCell {
         employeeImage.clipsToBounds = true
         employeeImage.layer.borderWidth = 1.0
         employeeImage.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        
 
         
     }
