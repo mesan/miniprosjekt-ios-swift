@@ -181,6 +181,9 @@
                                     <segment title="Fredag"/>
                                     <segment title="Lørdag"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filter:" destination="aJl-tZ-Sgq" eventType="valueChanged" id="i8j-QG-Nz9"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
