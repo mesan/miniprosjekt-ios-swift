@@ -12,13 +12,20 @@ class TimeglassViewController: UIViewController {
     @IBOutlet var tidIgjenLabel : UILabel!
     var timer = NSTimer()
     var tidIgjen = 10
-    
+
+    var spill: Spill!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         visGjenståendeTid()
         let updateTime : Selector = "oppdaterGjenstaendeTid"
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: updateTime, userInfo: nil, repeats: true)
+
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.spill = appDelegate.spill
+        tidIgjen = spill.rundetid
+        visGjenståendeTid()
     }
 
     override func didReceiveMemoryWarning() {

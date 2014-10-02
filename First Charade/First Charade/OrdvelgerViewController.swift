@@ -19,6 +19,7 @@ class OrdvelgerViewController: UIViewController {
 
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.spill = appDelegate.spill
+        nesteOrd()
     }
 
     override func didReceiveMemoryWarning() {

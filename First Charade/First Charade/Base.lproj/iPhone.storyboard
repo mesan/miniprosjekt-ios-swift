@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="O7a-0g-p9O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ka9-7c-8eb">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="O0c-Tz-MjK">
+            <objects>
+                <navigationController id="Ka9-7c-8eb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P5y-Dx-ijc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="O7a-0g-p9O" kind="relationship" relationship="rootViewController" id="pfc-jv-afU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJe-z7-ojW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1171" y="-397"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="psY-go-hiy">
             <objects>
@@ -30,7 +46,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startRunde" destination="O7a-0g-p9O" eventType="touchUpInside" id="ZPD-tg-cIU"/>
                                     <segue destination="EXn-8I-pFd" kind="custom" id="g2g-F5-5ko"/>
                                 </connections>
                             </button>
@@ -63,6 +78,7 @@
                             <outletCollection property="gestureRecognizers" destination="XLw-a0-6cE" appends="YES" id="Bsb-1g-koF"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Z1u-CD-eHy"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -182,6 +198,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="d0x-Gw-Ts9"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -281,6 +298,7 @@
                             <outletCollection property="gestureRecognizers" destination="n1J-BL-LQX" appends="YES" id="as1-iq-ugG"/>
                         </connections>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -312,6 +330,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="9al-mj-KI2"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
