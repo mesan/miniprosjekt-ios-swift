@@ -17,7 +17,7 @@ class Event: NSManagedObject {
     @NSManaged var title: String!
     @NSManaged var hostNames: String!
     @NSManaged var tags: String?
-    @NSManaged var responsible: Person!
+    @NSManaged var responsible: Person?
     
     func setData(dict: NSDictionary) {
         let startTime = dict["start"] as Double
@@ -28,9 +28,14 @@ class Event: NSManagedObject {
         desc = dict["description"] as? String
         hostNames = dict["hostNames"] as? String
         
-        var responsibleDict = dict["responsible"] as NSDictionary
-        responsible = Person(entity: NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: self.managedObjectContext)
-        responsible.setData(responsibleDict)
+        if (dict["responsible"] != nil) {
+            var responsibleDict: NSDictionary? = dict["responsible"] as? NSDictionary
+            
+            responsible = Person(entity: NSEntityDescription.entityForName("Person", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: self.managedObjectContext)
+            
+            responsible!.setData(responsibleDict!)
+        }
+        
         tags = dict["tags"] as? String
         
         self.managedObjectContext.save(nil)
