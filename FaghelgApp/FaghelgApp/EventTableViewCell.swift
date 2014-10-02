@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EventTableViewCell: UITableViewCell {
     
@@ -20,15 +21,58 @@ class EventTableViewCell: UITableViewCell {
     
     func setEvent(event: Event) {
         let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.dateFormat = "hh:mm"
+        dateStringFormatter.dateFormat = "HH:mm"
         timeLabel.text = dateStringFormatter.stringFromDate(event.start)
         if (event.hostNames != nil) {
             nameLabel.text = event.hostNames
         }
-        var durationSeconds = event.end.timeIntervalSinceDate(event.start)
-        var durationMinutes = durationSeconds / 60
-        durationLabel.text = String(format: "%d", durationMinutes)
+        var durationSeconds:Double = event.end.timeIntervalSinceDate(event.start)
+        var durationMinutes:Double = durationSeconds / 60
+        var durationString: String = String(format: "%.0f", durationMinutes)
+        durationLabel.text = durationString
         abstractLabel.text = event.desc
         titleLabel.text = event.title
+        if (event.responsible != nil && event.responsible?.profileImageUrl != nil && event.responsible?.shortName != nil) {
+            var bgImage = getImage(event.responsible!.shortName!, profileImageUrl: event.responsible!.profileImageUrl!);
+            personImage.image = bgImage
+        }
+        else {
+            personImage.image = nil
+        }
+    }
+    
+    func getImage(shortName: String, profileImageUrl: String) -> UIImage {
+        var managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+        
+        var nsFetchRequest: NSFetchRequest = NSFetchRequest(entityName: "BildeDao")
+        nsFetchRequest.includesPendingChanges = false
+        nsFetchRequest.predicate = NSPredicate(format: "shortName = %@", shortName)
+        var existingBildeDaos: NSArray = managedObjectContext?.executeFetchRequest(nsFetchRequest, error: nil) as NSArray!
+        var existingBildeDao: BildeDao? = existingBildeDaos.firstObject as? BildeDao
+        //println((existingBildeDaos.firstObject as BildeDao).getDescription())
+        
+        if (existingBildeDao != nil) {
+            return UIImage(data: existingBildeDao!.imageData)
+        }
+        
+        var newBildeDao: BildeDao
+        newBildeDao = getImageFromWeb(profileImageUrl, shortName: shortName, managedObjectContext: managedObjectContext!)
+        newBildeDao.save()
+
+        return UIImage(data: newBildeDao.imageData)
+    }
+    
+    func getImageFromWeb(profileImageUrl: String, shortName: String, managedObjectContext: NSManagedObjectContext) -> BildeDao {
+        let url = NSURL.URLWithString(profileImageUrl);
+        var err: NSError?
+        
+
+        var imageData :NSData = NSData.dataWithContentsOfURL(url,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+        var bildeDao: BildeDao = BildeDao(entity: NSEntityDescription.entityForName("BildeDao", inManagedObjectContext: managedObjectContext)!, insertIntoManagedObjectContext: managedObjectContext)
+        
+        bildeDao.shortName = shortName
+        bildeDao.imageData = imageData
+        
+        return bildeDao
     }
 }

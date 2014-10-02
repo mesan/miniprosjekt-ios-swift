@@ -21,6 +21,8 @@
 		9F8D4CBE19BE4A6100DA5A61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */; };
 		9F8D4CCA19BE4A6100DA5A61 /* FaghelgAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */; };
 		9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */; };
+		9FF4906819DD90B800A42749 /* BildeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4906719DD90B800A42749 /* BildeDao.swift */; };
+		9FF4906A19DD91F000A42749 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF4906919DD91F000A42749 /* CoreImage.framework */; };
 		9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF648FB19C87424004BCFEB /* ProgramViewController.swift */; };
 		9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490C19C87E3E004BCFEB /* Program.swift */; };
 		9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490E19C87EA9004BCFEB /* Event.swift */; };
@@ -93,6 +95,8 @@
 		9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaghelgAppTests.swift; sourceTree = "<group>"; };
 		9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaghelgApi.swift; sourceTree = "<group>"; };
 		9FCD686B19BF402700443776 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = lib/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		9FF4906719DD90B800A42749 /* BildeDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BildeDao.swift; sourceTree = "<group>"; };
+		9FF4906919DD91F000A42749 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		9FF648FB19C87424004BCFEB /* ProgramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramViewController.swift; sourceTree = "<group>"; };
 		9FF6490C19C87E3E004BCFEB /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		9FF6490E19C87EA9004BCFEB /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF4906A19DD91F000A42749 /* CoreImage.framework in Frameworks */,
 				1D1AC14D19D07CB500628488 /* BrightFutures.framework in Frameworks */,
 				96234E7719C88905006811D5 /* CoreData.framework in Frameworks */,
 			);
@@ -151,6 +156,7 @@
 		9F8D4CA419BE4A6100DA5A61 = {
 			isa = PBXGroup;
 			children = (
+				9FF4906919DD91F000A42749 /* CoreImage.framework */,
 				1D1AC14319D07CAC00628488 /* BrightFutures.xcodeproj */,
 				96234E7619C88905006811D5 /* CoreData.framework */,
 				9FCD686B19BF402700443776 /* Alamofire.xcodeproj */,
@@ -172,6 +178,7 @@
 		9F8D4CAF19BE4A6100DA5A61 /* FaghelgApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FF4906319DD90A800A42749 /* Dao */,
 				963636AA19D06E1500021DA1 /* FaghelgApp.xcdatamodeld */,
 				96234EF519C8B11D006811D5 /* FaghelgApp-Bridging-Header.h */,
 				96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */,
@@ -219,6 +226,14 @@
 				9FCD687319BF402700443776 /* AlamofireTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9FF4906319DD90A800A42749 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				9FF4906719DD90B800A42749 /* BildeDao.swift */,
+			);
+			name = Dao;
 			sourceTree = "<group>";
 		};
 		9FF6490B19C87E25004BCFEB /* Domain */ = {
@@ -376,6 +391,7 @@
 				96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */,
 				9F70970F19C8AA7700D805CB /* EventTableViewCell.swift in Sources */,
 				963636AC19D06E1500021DA1 /* FaghelgApp.xcdatamodeld in Sources */,
+				9FF4906819DD90B800A42749 /* BildeDao.swift in Sources */,
 				9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */,
 				9FF6490F19C87EA9004BCFEB /* Event.swift in Sources */,
 				9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */,
@@ -509,6 +525,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FaghelgApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaghelgApp/FaghelgApp-Bridging-Header.h";
@@ -524,6 +541,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FaghelgApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "FaghelgApp/FaghelgApp-Bridging-Header.h";
