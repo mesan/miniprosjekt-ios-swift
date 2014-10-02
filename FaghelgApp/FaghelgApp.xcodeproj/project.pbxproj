@@ -15,13 +15,14 @@
 		96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */; };
 		96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */; };
 		963636AC19D06E1500021DA1 /* FaghelgApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963636AA19D06E1500021DA1 /* FaghelgApp.xcdatamodeld */; };
-		9F70970D19C8A8C000D805CB /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */; };
 		9F70970F19C8AA7700D805CB /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */; };
 		9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CB219BE4A6100DA5A61 /* AppDelegate.swift */; };
-		9F8D4CBC19BE4A6100DA5A61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */; };
 		9F8D4CBE19BE4A6100DA5A61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBD19BE4A6100DA5A61 /* Images.xcassets */; };
 		9F8D4CCA19BE4A6100DA5A61 /* FaghelgAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CC919BE4A6100DA5A61 /* FaghelgAppTests.swift */; };
 		9F8D4CD419BE4B2000DA5A61 /* FaghelgApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4CD319BE4B2000DA5A61 /* FaghelgApi.swift */; };
+		9F8E0F3019DDBF7F006E12AA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCD687119BF402700443776 /* Alamofire.framework */; };
+		9F8E0F3119DDBFD9006E12AA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCD687119BF402700443776 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9F8E0F3219DDC023006E12AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */; };
 		9FF4906819DD90B800A42749 /* BildeDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4906719DD90B800A42749 /* BildeDao.swift */; };
 		9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF648FB19C87424004BCFEB /* ProgramViewController.swift */; };
 		9FF6490D19C87E3E004BCFEB /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6490C19C87E3E004BCFEB /* Program.swift */; };
@@ -43,20 +44,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = E9DF0820194470060083F7F2;
 			remoteInfo = BrightFuturesTests;
-		};
-		4524AAB419D08C7900CCF884 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1D1AC14319D07CAC00628488 /* BrightFutures.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E9DF0814194470060083F7F2;
-			remoteInfo = BrightFutures;
-		};
-		845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
 		};
 		9F8D4CC419BE4A6100DA5A61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -88,6 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9F8E0F3119DDBFD9006E12AA /* Alamofire.framework in Embed Frameworks */,
 				4524AAB319D08C7900CCF884 /* BrightFutures.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -104,7 +92,6 @@
 		96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponisbleDetailViewController.swift; sourceTree = "<group>"; };
 		96234EF519C8B11D006811D5 /* FaghelgApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FaghelgApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		963636AB19D06E1500021DA1 /* FaghelgApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FaghelgApp.xcdatamodel; sourceTree = "<group>"; };
-		9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		9F8D4CAD19BE4A6100DA5A61 /* FaghelgApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaghelgApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4CB119BE4A6100DA5A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8E0F3019DDBF7F006E12AA /* Alamofire.framework in Frameworks */,
 				4524AAB219D08C7900CCF884 /* BrightFutures.framework in Frameworks */,
 				96234E7719C88905006811D5 /* CoreData.framework in Frameworks */,
 			);
@@ -167,7 +155,6 @@
 			children = (
 				1D1AC15019D0804500628488 /* EmployeeCell.swift */,
 				9F8D4CBA19BE4A6100DA5A61 /* Main.storyboard */,
-				9F70970C19C8A8C000D805CB /* EventTableViewCell.xib */,
 				9F70970E19C8AA7700D805CB /* EventTableViewCell.swift */,
 			);
 			name = Views;
@@ -281,8 +268,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				845FD60119BF4157007B6AE4 /* PBXTargetDependency */,
-				4524AAB519D08C7900CCF884 /* PBXTargetDependency */,
 			);
 			name = FaghelgApp;
 			productName = FaghelgApp;
@@ -390,8 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F70970D19C8A8C000D805CB /* EventTableViewCell.xib in Resources */,
-				9F8D4CBC19BE4A6100DA5A61 /* Main.storyboard in Resources */,
+				9F8E0F3219DDC023006E12AA /* Main.storyboard in Resources */,
 				9F8D4CBE19BE4A6100DA5A61 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,16 +421,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4524AAB519D08C7900CCF884 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BrightFutures;
-			targetProxy = 4524AAB419D08C7900CCF884 /* PBXContainerItemProxy */;
-		};
-		845FD60119BF4157007B6AE4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */;
-		};
 		9F8D4CC519BE4A6100DA5A61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F8D4CAC19BE4A6100DA5A61 /* FaghelgApp */;
