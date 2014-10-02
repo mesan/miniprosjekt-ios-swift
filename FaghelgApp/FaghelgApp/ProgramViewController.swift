@@ -15,7 +15,10 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     var faghelgApi: FaghelgApi = FaghelgApi()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dayFilter: UISegmentedControl!
+    
     var program : Program!
+    var filteredEvents : [Event!] = []
     let cellIdentifier = "eventCell"
     
     var selectedIndexPath: NSIndexPath?
@@ -48,6 +51,16 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    func filter() {
+        if (program == nil) {
+            return
+        }
+        
+        let today = NSDate()
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        //events = program.events.allObjects.filter() { (event: Event) -> Bool in return event.start. }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (program != nil) {
