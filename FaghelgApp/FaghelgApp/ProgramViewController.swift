@@ -162,7 +162,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            return 160
+            return 200
         }
         
         return 70

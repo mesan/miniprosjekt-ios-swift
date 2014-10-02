@@ -26,6 +26,11 @@ class EventTableViewCell: UITableViewCell {
         titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         titleLabel.numberOfLines = 0
         
+        // Wrap event name
+        abstractLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        abstractLabel.numberOfLines = 0
+        
+        
         // Rounding employee image
         personImage.layer.cornerRadius = personImage.frame.size.width / 2
         personImage.clipsToBounds = true
@@ -40,10 +45,19 @@ class EventTableViewCell: UITableViewCell {
         if (event.hostNames != nil) {
             nameLabel.text = event.hostNames
         }
+        else {
+            nameLabel.text = nil
+        }
         var durationSeconds:Double = event.end.timeIntervalSinceDate(event.start)
         var durationMinutes:Double = durationSeconds / 60
-        var durationString: String = String(format: "%.0f min", durationMinutes)
-        durationLabel.text = durationString
+        var durationString: String? = String(format: "%.0f min", durationMinutes)
+        if (durationString != nil) {
+            durationLabel.text = durationString
+        }
+        else {
+            durationLabel.text = nil
+        }
+        
         abstractLabel.text = event.desc
         titleLabel.text = event.title
         if (event.responsible != nil && event.responsible?.profileImageUrl != nil && event.responsible?.shortName != nil) {
