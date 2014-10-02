@@ -64,7 +64,7 @@ class TimeglassViewController: UIViewController {
         if (rundeStatus == .igang) {
             timer.invalidate()
             rundeStatus = .vunnet
-            view.backgroundColor = UIColor.greenColor()
+            view.backgroundColor = UIColor(red:0.0, green:0.5, blue:0.0, alpha:1.0)
             visOrd()
         }
     }
@@ -72,7 +72,7 @@ class TimeglassViewController: UIViewController {
     func tapt() {
         timer.invalidate()
         rundeStatus = .tapt
-        view.backgroundColor = UIColor.redColor()
+        view.backgroundColor = UIColor(red:0.5, green:0.0, blue:0.0, alpha:1.0)
         visOrd()
         // spill sørgemars
     }
