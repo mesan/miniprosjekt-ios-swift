@@ -119,45 +119,67 @@
             <point key="canvasLocation" x="330" y="840"/>
         </scene>
         <!--Ansatte-->
-        <scene sceneID="Us2-97-1id">
+        <scene sceneID="gCU-7A-dMi">
             <objects>
-                <tableViewController title="Ansatte" id="nEK-Lz-r3L" customClass="EmployeeViewController" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ez-nB-SOg">
+                <viewController title="Ansatte" id="L0a-cQ-NrB" customClass="EmployeeViewControllerTwo" customModule="FaghelgApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gjr-3t-HJV"/>
+                        <viewControllerLayoutGuide type="bottom" id="J4Y-Dd-ZGn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xsS-nd-9Vb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="wN1-zy-G26" customClass="EmployeeCell" customModule="FaghelgApp" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wN1-zy-G26" id="rDM-sZ-GqL">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-km-EQF">
-                                            <rect key="frame" x="113" y="27" width="162" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
-                                            <rect key="frame" x="8" y="2" width="85" height="85"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Nl-SkW">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="wN1-zy-G26" customClass="EmployeeCell" customModule="FaghelgApp" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wN1-zy-G26" id="rDM-sZ-GqL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-km-EQF">
+                                                    <rect key="frame" x="113" y="27" width="162" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
+                                                    <rect key="frame" x="8" y="2" width="85" height="85"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="employeeImage" destination="tg8-oW-doA" id="s5G-Lu-tl3"/>
+                                            <outlet property="fullName" destination="3ht-km-EQF" id="7nd-IM-s3h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="employeeImage" destination="tg8-oW-doA" id="s5G-Lu-tl3"/>
-                                    <outlet property="fullName" destination="3ht-km-EQF" id="7nd-IM-s3h"/>
+                                    <outlet property="dataSource" destination="L0a-cQ-NrB" id="a9S-YX-N5W"/>
+                                    <outlet property="delegate" destination="L0a-cQ-NrB" id="XQU-Ec-tK1"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Ansatte" id="CEU-qM-QPc"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="pIB-M9-DXM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pIB-M9-DXM"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ansatte" id="Olf-iv-P0Q"/>
                     <connections>
-                        <outlet property="employeeList" destination="5ez-nB-SOg" id="Vr0-fz-fft"/>
+                        <outlet property="employeeList" destination="IUg-Nl-SkW" id="c4Y-QJ-cBf"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iek-3S-jMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="az3-b4-jPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-214" y="144"/>
+            <point key="canvasLocation" x="-220" y="140"/>
         </scene>
         <!--Program-->
         <scene sceneID="gQE-Hb-9bk">
@@ -210,6 +232,7 @@
                     <connections>
                         <segue destination="aJl-tZ-Sgq" kind="relationship" relationship="viewControllers" id="Pqf-yF-uVW"/>
                         <segue destination="nEK-Lz-r3L" kind="relationship" relationship="viewControllers" id="X0b-HT-i3V"/>
+
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BT8-NZ-eOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

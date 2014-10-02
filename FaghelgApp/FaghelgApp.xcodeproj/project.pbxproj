@@ -10,6 +10,9 @@
 		1D1AC14D19D07CB500628488 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1AC14A19D07CAC00628488 /* BrightFutures.framework */; };
 		1D1AC14F19D0801B00628488 /* EmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AC14E19D0801B00628488 /* EmployeeViewController.swift */; };
 		1D1AC15119D0804500628488 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AC15019D0804500628488 /* EmployeeCell.swift */; };
+                4524AAAE19D083A900CCF884 /* EmployeeViewControllerTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524AAAD19D083A900CCF884 /* EmployeeViewControllerTwo.swift */; };
+                4524AAB219D08C7900CCF884 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1AC14A19D07CAC00628488 /* BrightFutures.framework */; };
+                4524AAB319D08C7900CCF884 /* BrightFutures.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1AC14A19D07CAC00628488 /* BrightFutures.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96234E7719C88905006811D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96234E7619C88905006811D5 /* CoreData.framework */; };
 		96234EB919C89DD0006811D5 /* TestLagringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */; };
 		96234EF119C8A861006811D5 /* ResponisbleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */; };
@@ -44,6 +47,13 @@
 			remoteGlobalIDString = E9DF0820194470060083F7F2;
 			remoteInfo = BrightFuturesTests;
 		};
+                4524AAB419D08C7900CCF884 /* PBXContainerItemProxy */ = {
+                        isa = PBXContainerItemProxy;
+                        containerPortal = 1D1AC14319D07CAC00628488 /* BrightFutures.xcodeproj */;
+                        proxyType = 1;
+                        remoteGlobalIDString = E9DF0814194470060083F7F2;
+                        remoteInfo = BrightFutures;
+                };
 		845FD60019BF4157007B6AE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FCD686B19BF402700443776 /* Alamofire.xcodeproj */;
@@ -74,10 +84,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+                4524AAB619D08C7900CCF884 /* Embed Frameworks */ = {
+                        isa = PBXCopyFilesBuildPhase;
+                        buildActionMask = 2147483647;
+                        dstPath = "";
+                        dstSubfolderSpec = 10;
+                        files = (
+                                4524AAB319D08C7900CCF884 /* BrightFutures.framework in Embed Frameworks */,
+                        );
+                        name = "Embed Frameworks";
+                        runOnlyForDeploymentPostprocessing = 0;
+                };
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1D1AC14319D07CAC00628488 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = lib/BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		1D1AC14E19D0801B00628488 /* EmployeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewController.swift; sourceTree = "<group>"; };
 		1D1AC15019D0804500628488 /* EmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
+                4524AAAD19D083A900CCF884 /* EmployeeViewControllerTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeViewControllerTwo.swift; sourceTree = "<group>"; };
 		96234E7619C88905006811D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		96234EB819C89DD0006811D5 /* TestLagringTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLagringTableViewController.swift; sourceTree = "<group>"; };
 		96234EF019C8A861006811D5 /* ResponisbleDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponisbleDetailViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF4906A19DD91F000A42749 /* CoreImage.framework in Frameworks */,
-				1D1AC14D19D07CB500628488 /* BrightFutures.framework in Frameworks */,
+                                4524AAB219D08C7900CCF884 /* BrightFutures.framework in Frameworks */,
 				96234E7719C88905006811D5 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +162,7 @@
 			children = (
 				1D1AC14E19D0801B00628488 /* EmployeeViewController.swift */,
 				9FF648FB19C87424004BCFEB /* ProgramViewController.swift */,
+                                4524AAAD19D083A900CCF884 /* EmployeeViewControllerTwo.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -256,11 +281,13 @@
 				9F8D4CA919BE4A6100DA5A61 /* Sources */,
 				9F8D4CAA19BE4A6100DA5A61 /* Frameworks */,
 				9F8D4CAB19BE4A6100DA5A61 /* Resources */,
+                                4524AAB619D08C7900CCF884 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				845FD60119BF4157007B6AE4 /* PBXTargetDependency */,
+                                4524AAB519D08C7900CCF884 /* PBXTargetDependency */,
 			);
 			name = FaghelgApp;
 			productName = FaghelgApp;
@@ -400,6 +427,7 @@
 				9FF6491119C87FDB004BCFEB /* Person.swift in Sources */,
 				9F8D4CB319BE4A6100DA5A61 /* AppDelegate.swift in Sources */,
 				9FF648FC19C87424004BCFEB /* ProgramViewController.swift in Sources */,
+                                4524AAAE19D083A900CCF884 /* EmployeeViewControllerTwo.swift in Sources */,
 				1D1AC14F19D0801B00628488 /* EmployeeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +443,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+                4524AAB519D08C7900CCF884 /* PBXTargetDependency */ = {
+                        isa = PBXTargetDependency;
+                        name = BrightFutures;
+                        targetProxy = 4524AAB419D08C7900CCF884 /* PBXContainerItemProxy */;
+                };
 		845FD60119BF4157007B6AE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
