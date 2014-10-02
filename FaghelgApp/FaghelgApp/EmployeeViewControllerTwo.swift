@@ -32,13 +32,14 @@ class EmployeeViewControllerTwo: UIViewController, UITableViewDataSource, UITabl
             .onSuccess { employees in
                 self.employees = employees
 
-                // reload view
-                self.employeeList.reloadData()
+                // reload view using main thread 
+                NSOperationQueue.mainQueue().addOperationWithBlock(){
+                    self.employeeList.reloadData()
+                }
             }.onFailure { error in
                 // display error
                 println("error: \(error)")
         }
-
     }
 
     override func didReceiveMemoryWarning() {
