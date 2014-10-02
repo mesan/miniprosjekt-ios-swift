@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ka9-7c-8eb">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -162,36 +161,6 @@
             </objects>
             <point key="canvasLocation" x="78" y="-358"/>
         </scene>
-        <!--Runde Tapt View Controller-->
-        <scene sceneID="lNK-s0-J8X">
-            <objects>
-                <viewController id="bmZ-P2-Xe8" customClass="RundeTaptViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IqG-pW-R0V">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.74312420280612246" green="0.0080636454339447772" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="5o6-tE-sK2" appends="YES" id="0XQ-2o-xGf"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" id="d0x-Gw-Ts9"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <segue destination="EXn-8I-pFd" kind="custom" identifier="ny runde" id="ncf-dA-mg3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="owO-Md-Z8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="5o6-tE-sK2">
-                    <connections>
-                        <action selector="startNesteRunde" destination="bmZ-P2-Xe8" id="Agk-wa-Vhi"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="157" y="604"/>
-        </scene>
         <!--Ordvelger View Controller-->
         <scene sceneID="ld1-Hc-C91">
             <objects>
@@ -281,8 +250,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tidIgjenLabel" destination="ILb-8y-bd5" id="LxM-Sb-vaZ"/>
-                        <segue destination="bmZ-P2-Xe8" kind="custom" identifier="tapt" id="YL7-U9-wQ4"/>
-                        <segue destination="NcV-qJ-T1z" kind="custom" identifier="vunnet" id="f9x-ae-CYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTL-Eg-0lu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,43 +261,10 @@
             </objects>
             <point key="canvasLocation" x="-566" y="604"/>
         </scene>
-        <!--Runde Vunnet View Controller-->
-        <scene sceneID="p7Z-XZ-JIX">
-            <objects>
-                <viewController id="NcV-qJ-T1z" customClass="RundeVunnetViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oDZ-Gy-ymg">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15026472998178542" green="0.86581234056122447" blue="0.28414566082788117" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="pPd-fq-dPe" appends="YES" id="Reg-Ll-QuM"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" id="9al-mj-KI2"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <segue destination="EXn-8I-pFd" kind="custom" identifier="ny runde" id="yxc-RG-Zvd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FbO-5t-Gpv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pPd-fq-dPe">
-                    <connections>
-                        <action selector="startNesteRunde" destination="NcV-qJ-T1z" id="HD2-jK-Fbk"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="157" y="1073"/>
-        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="g2g-F5-5ko"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum rundestatuser {
-    case velgOrd
-    case igang
-    case vunnet
-    case tapt
-}
-
 class ViewController: UIViewController {
     
     // MARK: Constructor / Destructor
@@ -26,5 +19,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    
 }
 

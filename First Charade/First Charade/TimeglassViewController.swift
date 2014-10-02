@@ -8,24 +8,34 @@
 
 import UIKit
 
+enum rundestatuser {
+    case igang
+    case vunnet
+    case tapt
+}
+
 class TimeglassViewController: UIViewController {
     @IBOutlet var tidIgjenLabel : UILabel!
+
     var timer = NSTimer()
-    var tidIgjen = 10
+    var tidIgjen : Int = 10
+    var rundeStatus = rundestatuser.igang
+    var rundeord : String = ""
+    var gjenstaendeRundeTid : Int = 0
 
     var spill: Spill!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        visGjenståendeTid()
-        let updateTime : Selector = "oppdaterGjenstaendeTid"
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: updateTime, userInfo: nil, repeats: true)
-
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.spill = appDelegate.spill
+
+        rundeord = spill.valgtOrd
         tidIgjen = spill.rundetid
         visGjenståendeTid()
+
+        startRunde()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +45,13 @@ class TimeglassViewController: UIViewController {
         timer.invalidate()
     }
     
+    func startRunde() {
+        let updateTime : Selector = "oppdaterGjenstaendeTid"
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: updateTime, userInfo: nil, repeats: true)
+        view.backgroundColor = UIColor.blueColor()
+        gjenstaendeRundeTid = spill.rundetid
+    }
+
     func oppdaterGjenstaendeTid() {
         tidIgjen--
         if (tidIgjen <= 0) {
@@ -43,17 +60,31 @@ class TimeglassViewController: UIViewController {
         visGjenståendeTid()
     }
     
+    @IBAction func vunnet() {
+        if (rundeStatus == .igang) {
+            timer.invalidate()
+            rundeStatus = .vunnet
+            view.backgroundColor = UIColor.greenColor()
+            visOrd()
+        }
+    }
+
+    func tapt() {
+        timer.invalidate()
+        rundeStatus = .tapt
+        view.backgroundColor = UIColor.redColor()
+        visOrd()
+        // spill sørgemars
+    }
+    
     func visGjenståendeTid() {
         tidIgjenLabel.text = String(tidIgjen)
     }
     
-    @IBAction func vunnet() {
-        self.performSegueWithIdentifier("vunnet", sender: self)
+    func visOrd() {
+        tidIgjenLabel.text = rundeord
     }
-
-    func tapt() {
-        self.performSegueWithIdentifier("tapt", sender: self)
-    }
+    
     
     /*
     // MARK: - Navigation

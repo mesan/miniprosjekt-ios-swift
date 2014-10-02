@@ -9,7 +9,6 @@
 import UIKit
 
 class OrdvelgerViewController: UIViewController {
-    @IBOutlet var timeglass : TimeglassViewController!
     @IBOutlet var valgtOrd : UILabel!
 
     var spill: Spill!

@@ -18,7 +18,8 @@ class Spill {
     ]
 
     var rundetid:Int = 30
-    var ordbok:Int = 0;
+    var ordbok:Int = 0
+    var valgtOrd:String = ""
 
     func ordbokNavn() -> String {
         if (ordbok >= 0 && ordbok < ordbøker.count) {
@@ -32,6 +33,8 @@ class Spill {
             ordbok = 0
         }
         let tilfeldigIndeks = Int(arc4random_uniform(UInt32(ord[ordbok].count)))
-        return ord[ordbok][tilfeldigIndeks]
+        valgtOrd = ord[ordbok][tilfeldigIndeks]
+        return valgtOrd
     }
+
 }
