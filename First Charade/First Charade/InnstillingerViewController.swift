@@ -25,6 +25,9 @@ class InnstillingerViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         rundetider = spill.rundetider
         ordbøker = spill.ordbøker
+        
+        rundetid.selectRow(rundetider.indexOfObject(spill.rundetid), inComponent: 0, animated: true)
+        ordbok.selectRow(ordbøker.indexOfObject(spill.ordbokNavn()), inComponent: 0, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
