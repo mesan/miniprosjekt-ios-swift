@@ -131,7 +131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Nl-SkW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Nl-SkW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -177,10 +177,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="Vyq-ST-UW2"/>
-                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="trailing" secondItem="Gjr-3t-HJV" secondAttribute="trailing" id="bva-hy-38S"/>
-                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="bottom" secondItem="J4Y-Dd-ZGn" secondAttribute="top" id="dyo-xD-tbN"/>
-                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="leading" secondItem="Gjr-3t-HJV" secondAttribute="leading" id="nNg-VZ-FHO"/>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="pIB-M9-DXM"/>
                         </constraints>
                         <variation key="default">
@@ -210,8 +206,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-6n-SHs">
-                                <rect key="frame" x="0.0" y="20" width="320" height="491"/>
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AiD-6n-SHs">
+                                <rect key="frame" x="0.0" y="56" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" rowHeight="165" id="5Ja-OC-bSU" customClass="EventTableViewCell" customModule="FaghelgApp" customModuleProvider="target">
@@ -277,11 +273,23 @@
                                     <outlet property="delegate" destination="aJl-tZ-Sgq" id="slh-c8-4xD"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-3G-xlZ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="29"/>
+                                <segments>
+                                    <segment title="Torsdag"/>
+                                    <segment title="Fredag"/>
+                                    <segment title="Lørdag"/>
+                                </segments>
+                                <connections>
+                                    <action selector="filter:" destination="aJl-tZ-Sgq" eventType="valueChanged" id="i8j-QG-Nz9"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Program" id="9ub-0h-1v7"/>
                     <connections>
+                        <outlet property="dayFilter" destination="RUv-3G-xlZ" id="yLL-br-4ne"/>
                         <outlet property="tableView" destination="AiD-6n-SHs" id="o07-He-zic"/>
                     </connections>
                 </viewController>

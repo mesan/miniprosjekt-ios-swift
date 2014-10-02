@@ -12,10 +12,36 @@ import BrightFutures
 
 class ProgramViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    enum Day : Int {
+        case Sunday = 1
+        case Monday
+        case Tuesday
+        case Wednesday
+        case Thursday
+        case Friday
+        case Saturday
+        
+        var description : String {
+            switch(self) {
+                case Sunday: return "Søndag"
+                case Monday: return "Mandag"
+                case Tuesday: return "Tirsdag"
+                case Wednesday: return "Onsdag"
+                case Thursday: return "Torsdag"
+                case Friday: return "Fredag"
+                case Saturday: return "Lørdag"
+            }
+        }
+    }
+    
     var faghelgApi: FaghelgApi = FaghelgApi()
     
     @IBOutlet weak var tableView: UITableView!
-    var program : Program!
+    @IBOutlet weak var dayFilter: UISegmentedControl!
+    
+    var allEvents: [Event] = []
+    var filteredEvents : [Event] = []
+    var eventDates: [NSDate] = []
     let cellIdentifier = "eventCell"
     
     var selectedIndexPath: NSIndexPath?
@@ -28,48 +54,106 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
 
         faghelgApi.getProgram()
             .onSuccess { program in
-                self.program = program;
-                self.tableView.reloadData()
+                self.allEvents = program!.events.allObjects as [Event]
+                self.allEvents.sort { (event1, event2) -> Bool in
+                    return event1.start.compare(event2.start) == NSComparisonResult.OrderedAscending
+                }
                 
-                self.scrollToActualEvent()
-                //Vi ønsker å scrolle når appen åpnes og første viewet som dukker opp er ProgramViewet.
-                //Må også håndtere at brukeren kan trykke på home knappen, åpne knappen og få appen til å scrolle til aktuelle da også.
+                let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+                
+                self.eventDates = []
+                for event in self.allEvents {
+                    let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear, fromDate: event.start)
+                    let date = calendar.dateFromComponents(dateComponents)!
+                    
+                    if (!contains(self.eventDates, date)) {
+                        self.eventDates.append(date)
+                    }
+                }
+                
+                let today = self.currentDayOfWeek()
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.setupDayFilter(today)
+                    self.filterEvents()
+                    self.tableView.reloadData()
+                    
+                    self.scrollToCurrentEvent()
+                })
             }.onFailure { error in
                 println("error: \(error)")
             }
     }
     
-    func scrollToActualEvent() {
-        if (self.program != nil) {
-            var eventer: NSArray = self.program.events.allObjects
-            var indexForActualEvent = self.program.getIndexForActualEvent()
-            var indexPath = NSIndexPath(forRow: indexForActualEvent, inSection: 0)
-            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition:UITableViewScrollPosition.Top, animated: true)
+    func setupDayFilter(selectedDay: Day) {
+        self.dayFilter.removeAllSegments()
+        
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        var selectedIndex = 0
+        for (var i = 0; i < eventDates.count; i++) {
+            let day = calendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: eventDates[i])
+            self.dayFilter.insertSegmentWithTitle(Day.fromRaw(day)!.description, atIndex: i, animated: false)
+            
+            if (day == selectedDay.toRaw()) {
+                selectedIndex = i
+            }
+        }
+        
+        self.dayFilter.selectedSegmentIndex = selectedIndex
+    }
+    
+    func currentDayOfWeek() -> Day {
+        let today = NSDate()
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let day = calendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: today)
+        
+        return Day.fromRaw(day)!
+    }
+    
+    func scrollToCurrentEvent() {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let currentHour = calendar.component(NSCalendarUnit.CalendarUnitHour, fromDate: NSDate())
+        
+        var currentEventIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        for (index, event: Event) in enumerate(self.filteredEvents) {
+            let eventHour = calendar.component(NSCalendarUnit.CalendarUnitHour, fromDate: event.start)
+            
+            if (currentHour == eventHour) {
+                currentEventIndexPath = NSIndexPath(forRow: index, inSection: 0)
+            }
+        }
+        
+        self.tableView.scrollToRowAtIndexPath(currentEventIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated: true)
+    }
+    
+    @IBAction func filter(sender: UISegmentedControl) {
+        self.filterEvents()
+        self.tableView.reloadData()
+    }
+    
+    func filterEvents() {
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let date = eventDates[dayFilter.selectedSegmentIndex]
+        
+        filteredEvents = allEvents.filter() { (event: Event) -> Bool in
+            return calendar.compareDate(date, toDate: event.start, toUnitGranularity: NSCalendarUnit.CalendarUnitDay) == NSComparisonResult.OrderedSame
         }
     }
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (program != nil) {
-            return program.numberOfEvents!
-        }
-        
-        return 0
+        return filteredEvents.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : EventTableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as EventTableViewCell
         
-        if (program.events != nil) {
-            var eventsArray: NSArray = program.getAllEvents()
-            var event : Event! = eventsArray[indexPath.row] as Event
-            cell.setEvent(event);
-            
-            if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-                cell.extraInfoView.hidden = false
-            } else {
-                cell.extraInfoView.hidden = true;
-            }
+        var event : Event! = filteredEvents[indexPath.row] as Event
+        cell.setEvent(event);
+        
+        if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
+            cell.extraInfoView.hidden = false
+        } else {
+            cell.extraInfoView.hidden = true;
         }
         
         return cell
