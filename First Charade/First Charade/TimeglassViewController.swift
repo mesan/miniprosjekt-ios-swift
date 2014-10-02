@@ -60,13 +60,20 @@ class TimeglassViewController: UIViewController {
         visGjenståendeTid()
     }
     
-    @IBAction func vunnet() {
+    @IBAction func trykket() {
         if (rundeStatus == .igang) {
-            timer.invalidate()
-            rundeStatus = .vunnet
-            view.backgroundColor = UIColor(red:0.0, green:0.5, blue:0.0, alpha:1.0)
-            visOrd()
+            vunnet()
+        } else {
+            // Gå til velg nytt ord
+            self.navigationController?.resignFirstResponder() // funker ikke....
         }
+    }
+    
+    func vunnet() {
+        timer.invalidate()
+        rundeStatus = .vunnet
+        view.backgroundColor = UIColor(red:0.0, green:0.5, blue:0.0, alpha:1.0)
+        visOrd()
     }
 
     func tapt() {
