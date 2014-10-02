@@ -9,7 +9,7 @@
 import Foundation
 
 class Spill {
-    let rundetider = [30, 60, 90, 120, 180] // sekunder
+    let rundetider = [5, 10, 20, 30, 60, 90, 120, 180] // sekunder
     let ordbøker = ["Matretter", "Dyr", "Programmeringspråk"]
     let ord = [
         ["Bacalao", "Spagetti bolognese", "Pizza", "Fenalår"],
