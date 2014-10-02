@@ -14,11 +14,13 @@ class Person: NSManagedObject {
     @NSManaged var id: String?
     @NSManaged var shortName: String?
     @NSManaged var fullName: String?
+    @NSManaged var profileImageUrl: String?
     
     func setData(dict: NSDictionary) {
         id = dict["id"] as? String
         fullName = dict["fullName"] as? String
         shortName = dict["shortName"] as? String
+        profileImageUrl = dict["profileImageUrl"] as? String
         
         self.managedObjectContext.save(nil)
     }
