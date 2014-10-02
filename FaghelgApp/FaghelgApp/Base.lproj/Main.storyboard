@@ -149,18 +149,18 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
                                                     <rect key="frame" x="8" y="2" width="85" height="85"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="85" id="5zt-1J-Yxs"/>
+                                                        <constraint firstAttribute="width" constant="85" id="wwD-FL-ZXv"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="tg8-oW-doA" firstAttribute="top" secondItem="rDM-sZ-GqL" secondAttribute="topMargin" constant="-6" id="4Gh-HE-Gju"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3ht-km-EQF" secondAttribute="bottom" constant="13" id="J0T-Sp-mAR"/>
-                                                <constraint firstItem="tg8-oW-doA" firstAttribute="leading" secondItem="rDM-sZ-GqL" secondAttribute="leadingMargin" id="MEL-Z0-QwS"/>
-                                                <constraint firstItem="3ht-km-EQF" firstAttribute="top" secondItem="rDM-sZ-GqL" secondAttribute="topMargin" constant="19" id="PEn-BY-Z3k"/>
-                                                <constraint firstItem="tg8-oW-doA" firstAttribute="centerY" secondItem="rDM-sZ-GqL" secondAttribute="centerY" id="WES-Re-Fv5"/>
-                                                <constraint firstItem="3ht-km-EQF" firstAttribute="leading" secondItem="tg8-oW-doA" secondAttribute="trailing" constant="20" id="ZAm-1Z-Uav"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3ht-km-EQF" secondAttribute="trailing" constant="37" id="cwl-Dp-Rgu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3ht-km-EQF" secondAttribute="bottom" constant="13" id="FY9-QL-tIQ"/>
+                                                <constraint firstItem="3ht-km-EQF" firstAttribute="top" secondItem="rDM-sZ-GqL" secondAttribute="topMargin" constant="19" id="Nf6-WV-2tp"/>
+                                                <constraint firstItem="tg8-oW-doA" firstAttribute="centerY" secondItem="rDM-sZ-GqL" secondAttribute="centerY" id="Skx-3x-aG0"/>
+                                                <constraint firstItem="tg8-oW-doA" firstAttribute="leading" secondItem="rDM-sZ-GqL" secondAttribute="leadingMargin" id="fdj-XE-8jz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3ht-km-EQF" secondAttribute="trailing" constant="37" id="gcq-bw-7tW"/>
+                                                <constraint firstItem="3ht-km-EQF" firstAttribute="leading" secondItem="tg8-oW-doA" secondAttribute="trailing" constant="20" id="hLe-lV-Qrf"/>
+                                                <constraint firstItem="tg8-oW-doA" firstAttribute="top" secondItem="rDM-sZ-GqL" secondAttribute="topMargin" constant="-6" id="nxx-Fs-zh0"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
