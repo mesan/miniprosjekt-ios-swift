@@ -19,6 +19,20 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var extraInfoView: UIView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // Wrap event name
+        titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        titleLabel.numberOfLines = 0
+        
+        // Rounding employee image
+        personImage.layer.cornerRadius = personImage.frame.size.width / 2
+        personImage.clipsToBounds = true
+        personImage.layer.borderWidth = 1.0
+        personImage.layer.borderColor = UIColor.whiteColor().CGColor
+    }
+    
     func setEvent(event: Event) {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.dateFormat = "HH:mm"
@@ -28,7 +42,7 @@ class EventTableViewCell: UITableViewCell {
         }
         var durationSeconds:Double = event.end.timeIntervalSinceDate(event.start)
         var durationMinutes:Double = durationSeconds / 60
-        var durationString: String = String(format: "%.0f", durationMinutes)
+        var durationString: String = String(format: "%.0f min", durationMinutes)
         durationLabel.text = durationString
         abstractLabel.text = event.desc
         titleLabel.text = event.title
@@ -49,7 +63,6 @@ class EventTableViewCell: UITableViewCell {
         nsFetchRequest.predicate = NSPredicate(format: "shortName = %@", shortName)
         var existingBildeDaos: NSArray = managedObjectContext?.executeFetchRequest(nsFetchRequest, error: nil) as NSArray!
         var existingBildeDao: BildeDao? = existingBildeDaos.firstObject as? BildeDao
-        //println((existingBildeDaos.firstObject as BildeDao).getDescription())
         
         if (existingBildeDao != nil) {
             return UIImage(data: existingBildeDao!.imageData)

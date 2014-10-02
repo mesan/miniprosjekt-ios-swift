@@ -24,7 +24,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         // Do view setup here.
         
-        self.tableView.registerNib(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        //self.tableView.registerNib(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
 
         faghelgApi.getProgram()
             .onSuccess { program in
@@ -81,7 +81,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             return 160
         }
         
-        return 60
+        return 70
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

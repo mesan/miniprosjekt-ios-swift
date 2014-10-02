@@ -32,6 +32,10 @@ class Program: NSManagedObject {
         self.managedObjectContext.save(nil)
     }
     
+    func deleteProgram() {
+        
+    }
+    
     func getAllEvents() -> NSArray{
         
         //return events.allObjects
