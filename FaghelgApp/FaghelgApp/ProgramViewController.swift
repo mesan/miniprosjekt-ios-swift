@@ -164,10 +164,15 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            return 200
+            let text = self.filteredEvents[indexPath.row].desc;
+            
+            // Magic...
+            return 120 + (text != nil ? (CGFloat(text!.utf16Count) / 2) + 60 : 0)
         }
         
-        return 70
+        let text = self.filteredEvents[indexPath.row].title;
+        
+        return 70 + (text != nil ? CGFloat(text!.utf16Count) / 2 : 0)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
