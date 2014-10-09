@@ -67,7 +67,6 @@ class TimeglassViewController: UIViewController {
             vunnet()
         } else {
             // Gå til velg nytt ord
-            let ordvelgerViewController = storyboard?.instantiateViewControllerWithIdentifier("OrdvelgerViewController") as OrdvelgerViewController
             navigationController?.popViewControllerAnimated(true)
         }
     }
