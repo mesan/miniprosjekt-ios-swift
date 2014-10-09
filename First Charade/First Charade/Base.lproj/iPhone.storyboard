@@ -8,7 +8,10 @@
         <!--Navigation Controller-->
         <scene sceneID="O0c-Tz-MjK">
             <objects>
-                <navigationController hidesBarsOnTap="YES" id="Ka9-7c-8eb" sceneMemberID="viewController">
+                <navigationController id="Ka9-7c-8eb" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P5y-Dx-ijc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -19,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJe-z7-ojW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1171" y="-397"/>
+            <point key="canvasLocation" x="-1292" y="-358"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="psY-go-hiy">
@@ -30,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rQF-YT-cqK">
-                                <rect key="frame" x="157.5" y="157.99999961830645" width="254.5" height="142"/>
+                                <rect key="frame" x="157.5" y="157.99999940816977" width="254.5" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="1" minY="0.0" maxX="-1" maxY="0.0"/>
@@ -39,15 +42,15 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EXn-8I-pFd" kind="custom" id="g2g-F5-5ko"/>
+                                    <segue destination="EXn-8I-pFd" kind="push" id="g2g-F5-5ko"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" id="opk-qL-X3c">
-                                <rect key="frame" x="519" y="267.99999961830645" width="33" height="32"/>
+                                <rect key="frame" x="519" y="267.99999940816974" width="33" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="settingsicon"/>
                                 <connections>
-                                    <segue destination="D8Y-xy-EUV" kind="custom" identifier="innstillinger" id="DZr-mh-4A1"/>
+                                    <segue destination="D8Y-xy-EUV" kind="push" identifier="innstillinger" id="DZr-mh-4A1"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bakgrunn" id="Pao-YV-P7n">
@@ -59,9 +62,6 @@
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" id="Z1u-CD-eHy" propertyAccessControl="all"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOB-yz-thJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="XLw-a0-6cE">
@@ -77,7 +77,7 @@
             <objects>
                 <viewController id="D8Y-xy-EUV" customClass="InnstillingerViewController" customModule="First_Charade" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CG2-2d-sr8">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9Bw-F5-Ujh">
@@ -147,8 +147,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationItem key="navigationItem" id="5dg-se-EeB"/>
                     <connections>
                         <outlet property="ordbok" destination="xea-cs-tHo" id="OXn-pX-msB"/>
                         <outlet property="rundetid" destination="x8i-rD-Arh" id="RY4-kQ-JDv"/>
@@ -192,7 +191,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1tn-AW-3iu" kind="custom" id="nyt-gI-Yat"/>
+                                    <segue destination="1tn-AW-3iu" kind="push" id="nyt-gI-Yat"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LvH-R7-gjL">
@@ -213,7 +212,7 @@
                             <outletCollection property="gestureRecognizers" destination="FwV-a1-zD6" appends="YES" id="q9I-Qh-Xa9"/>
                         </connections>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationItem key="navigationItem" id="KDA-na-DD4"/>
                     <connections>
                         <outlet property="valgtOrd" destination="R4P-o3-YTV" id="I9I-Ml-lQC"/>
                     </connections>
@@ -258,8 +257,7 @@
                             <outletCollection property="gestureRecognizers" destination="n1J-BL-LQX" appends="YES" id="as1-iq-ugG"/>
                         </connections>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationItem key="navigationItem" id="HIL-5w-mkE"/>
                     <connections>
                         <outlet property="tidIgjenLabel" destination="ILb-8y-bd5" id="LxM-Sb-vaZ"/>
                     </connections>
