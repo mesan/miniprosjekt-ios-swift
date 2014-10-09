@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum rundestatuser {
     case igang
@@ -22,6 +23,7 @@ class TimeglassViewController: UIViewController {
     var rundeStatus = rundestatuser.igang
     var rundeord : String = ""
     var gjenstaendeRundeTid : Int = 0
+    var audioPlayer = AVAudioPlayer()
 
     var spill: Spill!
 
@@ -82,6 +84,11 @@ class TimeglassViewController: UIViewController {
         view.backgroundColor = UIColor(red:0.5, green:0.0, blue:0.0, alpha:1.0)
         visOrd()
         // spill sørgemars
+
+        var airHorn = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("AirHorn", ofType: "mp3")!)
+        audioPlayer = AVAudioPlayer(contentsOfURL: airHorn, error: nil)
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
     func visGjenståendeTid() {
