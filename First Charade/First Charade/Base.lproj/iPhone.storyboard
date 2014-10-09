@@ -103,14 +103,14 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordbok" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="SDr-o2-rXt">
-                                <rect key="frame" x="16" y="20" width="259" height="62"/>
+                                <rect key="frame" x="16" y="45" width="259" height="62"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sekunder per runde" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="Qg5-wF-0TC">
-                                <rect key="frame" x="293" y="20" width="259" height="62"/>
+                                <rect key="frame" x="293" y="45" width="259" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
