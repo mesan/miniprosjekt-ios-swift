@@ -67,7 +67,8 @@ class TimeglassViewController: UIViewController {
             vunnet()
         } else {
             // Gå til velg nytt ord
-            self.navigationController?.resignFirstResponder() // funker ikke....
+            let ordvelgerViewController = storyboard?.instantiateViewControllerWithIdentifier("OrdvelgerViewController") as OrdvelgerViewController
+            navigationController?.popViewControllerAnimated(true)
         }
     }
     

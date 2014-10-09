@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="O0c-Tz-MjK">
             <objects>
-                <navigationController id="Ka9-7c-8eb" sceneMemberID="viewController">
+                <navigationController hidesBarsOnTap="YES" id="Ka9-7c-8eb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P5y-Dx-ijc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -29,10 +29,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bakgrunn" id="Pao-YV-P7n">
-                                <rect key="frame" x="-75" y="0.0" width="550" height="293"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rQF-YT-cqK">
                                 <rect key="frame" x="133" y="157.99999961830645" width="215" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
@@ -54,6 +50,10 @@
                                     <segue destination="D8Y-xy-EUV" kind="custom" identifier="innstillinger" id="DZr-mh-4A1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bakgrunn" id="Pao-YV-P7n">
+                                <rect key="frame" x="-86" y="-43" width="550" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -162,7 +162,7 @@
         <!--Ordvelger View Controller-->
         <scene sceneID="ld1-Hc-C91">
             <objects>
-                <viewController id="EXn-8I-pFd" customClass="OrdvelgerViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdvelgerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EXn-8I-pFd" customClass="OrdvelgerViewController" customModule="First_Charade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E4x-Wv-HfN">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

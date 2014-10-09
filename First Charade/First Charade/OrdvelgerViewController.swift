@@ -18,6 +18,15 @@ class OrdvelgerViewController: UIViewController {
 
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.spill = appDelegate.spill
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         nesteOrd()
     }
 
