@@ -124,6 +124,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         
+        self.selectedIndexPath = currentEventIndexPath
         self.tableView.scrollToRowAtIndexPath(currentEventIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated: true)
     }
     
