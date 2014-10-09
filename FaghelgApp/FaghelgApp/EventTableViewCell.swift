@@ -92,7 +92,6 @@ class EventTableViewCell: UITableViewCell {
     func getImageFromWeb(profileImageUrl: String, shortName: String, managedObjectContext: NSManagedObjectContext) -> BildeDao {
         let url = NSURL.URLWithString(profileImageUrl);
         var err: NSError?
-        
 
         var imageData :NSData = NSData.dataWithContentsOfURL(url,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
         var bildeDao: BildeDao = BildeDao(entity: NSEntityDescription.entityForName("BildeDao", inManagedObjectContext: managedObjectContext)!, insertIntoManagedObjectContext: managedObjectContext)
