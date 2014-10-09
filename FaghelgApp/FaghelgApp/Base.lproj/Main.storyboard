@@ -32,7 +32,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ukjent" translatesAutoresizingMaskIntoConstraints="NO" id="tg8-oW-doA">
                                                     <rect key="frame" x="8" y="2" width="85" height="85"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="85" id="wwD-FL-ZXv"/>
@@ -145,7 +145,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5yD-cu-riy">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ukjent" translatesAutoresizingMaskIntoConstraints="NO" id="5yD-cu-riy">
                                                     <rect key="frame" x="11" y="16" width="44" height="44"/>
                                                 </imageView>
                                             </subviews>
@@ -215,6 +215,7 @@
     </scenes>
     <resources>
         <image name="ansatte" width="48" height="48"/>
-        <image name="program" width="48" height="48"/>
+        <image name="program" width="32" height="32"/>
+        <image name="ukjent" width="256" height="256"/>
     </resources>
 </document>

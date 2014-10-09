@@ -60,12 +60,16 @@ class EventTableViewCell: UITableViewCell {
         
         abstractLabel.text = event.desc
         titleLabel.text = event.title
-        if (event.responsible != nil && event.responsible?.profileImageUrl != nil && event.responsible?.shortName != nil) {
+        if (event.responsible == nil && event.hostNames != nil && event.hostNames.lowercaseString == "faggruppen") {
+            var bgImage = getImage(event.hostNames.lowercaseString, profileImageUrl: "http://faghelg.s3-website-eu-west-1.amazonaws.com/" + event.hostNames.lowercaseString + ".png");
+            personImage.image = bgImage
+        }
+        else if (event.responsible != nil && event.responsible?.profileImageUrl != nil && event.responsible?.shortName != nil) {
             var bgImage = getImage(event.responsible!.shortName!, profileImageUrl: event.responsible!.profileImageUrl!);
             personImage.image = bgImage
         }
         else {
-            personImage.image = nil
+            personImage.image = UIImage(named: "ukjent");
         }
     }
     
@@ -91,9 +95,10 @@ class EventTableViewCell: UITableViewCell {
     
     func getImageFromWeb(profileImageUrl: String, shortName: String, managedObjectContext: NSManagedObjectContext) -> BildeDao {
         let url = NSURL.URLWithString(profileImageUrl);
-        var err: NSError?
-
+        var err: NSError? = nil
+        
         var imageData :NSData = NSData.dataWithContentsOfURL(url,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+        
         var bildeDao: BildeDao = BildeDao(entity: NSEntityDescription.entityForName("BildeDao", inManagedObjectContext: managedObjectContext)!, insertIntoManagedObjectContext: managedObjectContext)
         
         bildeDao.shortName = shortName
