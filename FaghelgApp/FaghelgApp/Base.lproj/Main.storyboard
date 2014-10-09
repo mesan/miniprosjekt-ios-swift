@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Nl-SkW">
+                            <tableView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-Nl-SkW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -64,7 +64,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="bottom" secondItem="J4Y-Dd-ZGn" secondAttribute="top" id="AOb-U6-ZaP"/>
+                            <constraint firstItem="J4Y-Dd-ZGn" firstAttribute="top" secondItem="IUg-Nl-SkW" secondAttribute="bottom" constant="8" id="JPz-ps-zYf"/>
+                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="YoB-xC-jNe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IUg-Nl-SkW" secondAttribute="trailing" constant="-16" id="duY-wj-fbR"/>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="trailing" secondItem="J4Y-Dd-ZGn" secondAttribute="trailing" id="eSm-nX-JYZ"/>
+                            <constraint firstItem="IUg-Nl-SkW" firstAttribute="leading" secondItem="xsS-nd-9Vb" secondAttribute="leadingMargin" constant="-16" id="hyC-AO-5M6"/>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="leading" secondItem="Gjr-3t-HJV" secondAttribute="leading" id="kXt-kL-2Al"/>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="pIB-M9-DXM"/>
                             <constraint firstItem="IUg-Nl-SkW" firstAttribute="top" secondItem="Gjr-3t-HJV" secondAttribute="bottom" id="qGj-6F-shT"/>
@@ -122,17 +126,17 @@
                                                         <constraint firstAttribute="height" constant="21" id="BEh-Mg-RIO"/>
                                                         <constraint firstAttribute="width" constant="43" id="wKX-P2-bIG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Nyttig logging" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-hv-T71">
-                                                    <rect key="frame" x="108" y="11" width="194" height="57"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Nyttig logging" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-hv-T71">
+                                                    <rect key="frame" x="113" y="11" width="189" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view hidden="YES" autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-QI-5gh">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-QI-5gh">
                                                     <rect key="frame" x="11" y="75" width="298" height="116"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Torbjørn Skyberg Knutsen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-Tt-EkP">
@@ -149,7 +153,7 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Erfaring fra logging på FR" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-SL-8tR">
                                                             <rect key="frame" x="0.0" y="52" width="298" height="64"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -170,7 +174,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="5GC-hv-T71" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="100" id="0uZ-2X-rjh"/>
+                                                <constraint firstItem="5GC-hv-T71" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="105" id="0uZ-2X-rjh"/>
                                                 <constraint firstItem="5GC-hv-T71" firstAttribute="centerY" secondItem="W3G-1R-l16" secondAttribute="centerY" id="39p-NZ-EP5"/>
                                                 <constraint firstItem="5GC-hv-T71" firstAttribute="top" secondItem="Wpi-fH-vOQ" secondAttribute="topMargin" constant="3" id="62T-OU-r4x"/>
                                                 <constraint firstItem="5yD-cu-riy" firstAttribute="top" secondItem="Wpi-fH-vOQ" secondAttribute="topMargin" constant="10" id="8TL-hk-phr"/>
@@ -254,5 +258,6 @@
     <resources>
         <image name="ansatte" width="48" height="48"/>
         <image name="program" width="32" height="32"/>
+        <image name="ukjent" width="256" height="256"/>
     </resources>
 </document>

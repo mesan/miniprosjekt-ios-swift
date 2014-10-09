@@ -49,8 +49,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        
-        //self.tableView.registerNib(UINib(nibName: "EventTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
 
         faghelgApi.getProgram()
             .onSuccess { program in
@@ -130,6 +128,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func filter(sender: UISegmentedControl) {
         self.filterEvents()
+        self.selectedIndexPath = nil;
         self.tableView.reloadData()
     }
     
@@ -155,7 +154,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
             cell.extraInfoView.hidden = false
         } else {
-            cell.extraInfoView.hidden = true;
+            cell.extraInfoView.hidden = true
         }
         
         return cell
@@ -165,13 +164,12 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
             let text = self.filteredEvents[indexPath.row].desc;
-            
             // Magic...
             return 120 + (text != nil ? (CGFloat(text!.utf16Count) / 2) + 60 : 0)
         }
         
-        let text = self.filteredEvents[indexPath.row].title;
-        
+        let text = self.filteredEvents[indexPath.row].title
+        // More magic...
         return 70 + (text != nil ? CGFloat(text!.utf16Count) / 2 : 0)
     }
     
