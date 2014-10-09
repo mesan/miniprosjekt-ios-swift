@@ -120,6 +120,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             
             if (currentHour == eventHour) {
                 currentEventIndexPath = NSIndexPath(forRow: index, inSection: 0)
+                break
             }
         }
         
