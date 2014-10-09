@@ -10,11 +10,19 @@ import Foundation
 
 class Spill {
     let rundetider = [5, 10, 20, 30, 60, 90, 120, 180] // sekunder
-    let ordbøker = ["Matretter", "Dyr", "Programmeringspråk"]
+    let ordbøker = [
+        "Matretter",
+        "Dyr",
+        "Programmeringspråk",
+        "Drikkevarer",
+        "Land"
+    ]
     let ord = [
-        ["Bacalao", "Spagetti bolognese", "Pizza", "Fenalår"],
+        ["Bacalao", "Spagetti bolognese", "Pizza", "Fenalår", "Surstrømming"],
         ["Elefant", "Mus", "Ulv", "Sau", "Sommerfugl", "Dinosaur"],
-        ["C++", "ASM", "Swift", "Perl", "JavaScript", "Java"]
+        ["C++", "ASM", "Swift", "Perl", "JavaScript", "Java"],
+        ["Øl", "Karsk", "Cola", "Vodka", "Te", "Kaffe", "Vann"],
+        ["Norge", "Sverige", "Danmark", "USA", "Russland", "India", "Kina", "Egypt"]
     ]
 
     var rundetid:Int = 30
