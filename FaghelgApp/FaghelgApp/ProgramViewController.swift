@@ -49,6 +49,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.tableView.rowHeight = UITableViewAutomaticDimension
 
         faghelgApi.getProgram()
             .onSuccess { program in
@@ -152,25 +153,20 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.setEvent(event);
         
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            cell.extraInfoView.hidden = false
+            cell.showExtraInfoView(true)
         } else {
-            cell.extraInfoView.hidden = true
+            cell.showExtraInfoView(false)
         }
         
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            let text = self.filteredEvents[indexPath.row].desc;
-            // Magic...
-            return 120 + (text != nil ? (CGFloat(text!.utf16Count) / 2) + 60 : 0)
+            return 200
         }
         
-        let text = self.filteredEvents[indexPath.row].title
-        // More magic...
-        return 70 + (text != nil ? CGFloat(text!.utf16Count) / 2 : 0)
+        return 70
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

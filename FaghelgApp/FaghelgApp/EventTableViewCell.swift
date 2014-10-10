@@ -19,23 +19,21 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var extraInfoView: UIView!
     
+    // Constraints used for automatic resizing, by editing their values
+    @IBOutlet weak var durationLabelBottomSpace: NSLayoutConstraint!
+    @IBOutlet weak var durationLabelTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var extraInfoViewHeight: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Wrap event name
-        titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        titleLabel.numberOfLines = 0
-        
-        // Wrap event name
-        abstractLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        abstractLabel.numberOfLines = 0
-        
-        
+
         // Rounding employee image
         personImage.layer.cornerRadius = personImage.frame.size.width / 2
         personImage.clipsToBounds = true
         personImage.layer.borderWidth = 1.0
         personImage.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        self.showExtraInfoView(false)
     }
     
     func setEvent(event: Event) {
@@ -71,6 +69,20 @@ class EventTableViewCell: UITableViewCell {
         else {
             personImage.image = UIImage(named: "ukjent");
         }
+    }
+    
+    func showExtraInfoView(show: Bool) {
+        if (show) {
+            self.extraInfoViewHeight.constant = 1000
+            self.durationLabelBottomSpace.constant = 5
+            self.durationLabelTopSpace.constant = 5
+        } else {
+            self.durationLabelBottomSpace.constant = 0
+            self.durationLabelTopSpace.constant = 0
+            self.extraInfoViewHeight.constant = 0
+        }
+        
+        self.extraInfoView.hidden = !show
     }
     
     func getImage(shortName: String, profileImageUrl: String) -> UIImage {

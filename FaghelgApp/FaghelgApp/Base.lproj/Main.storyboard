@@ -163,7 +163,7 @@
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-QI-5gh">
                                                     <rect key="frame" x="13" y="73" width="294" height="73"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Torbjørn Skyberg Knutsen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-Tt-EkP">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Torbjørn Skyberg Knutsen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-Tt-EkP">
                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="FuC-eb-cAF"/>
@@ -172,7 +172,7 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-hE-bpJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 min" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-hE-bpJ">
                                                             <rect key="frame" x="0.0" y="26" width="294" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" id="kFc-Jb-MzZ"/>
@@ -199,7 +199,7 @@
                                                         <constraint firstItem="h7v-hE-bpJ" firstAttribute="top" secondItem="OXG-Tt-EkP" secondAttribute="bottom" constant="5" id="Te5-Px-Z3B"/>
                                                         <constraint firstAttribute="trailing" secondItem="h7v-hE-bpJ" secondAttribute="trailing" id="VA1-JF-gJM"/>
                                                         <constraint firstAttribute="trailing" secondItem="wFn-SL-8tR" secondAttribute="trailing" id="fRb-7G-SYY"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="gaa-Ns-xSr"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="gaa-Ns-xSr"/>
                                                         <constraint firstItem="wFn-SL-8tR" firstAttribute="leading" secondItem="ezT-QI-5gh" secondAttribute="leading" id="mjo-l2-BkJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="OXG-Tt-EkP" secondAttribute="trailing" id="n96-8v-fbO"/>
                                                         <constraint firstItem="wFn-SL-8tR" firstAttribute="top" secondItem="h7v-hE-bpJ" secondAttribute="bottom" constant="5" id="qWz-xG-1Y1"/>
@@ -224,6 +224,7 @@
                                             <outlet property="durationLabelBottomSpace" destination="qWz-xG-1Y1" id="M66-Q8-Ax7"/>
                                             <outlet property="durationLabelTopSpace" destination="Te5-Px-Z3B" id="Vrc-Gd-5Ko"/>
                                             <outlet property="extraInfoView" destination="ezT-QI-5gh" id="HUp-U8-d6k"/>
+                                            <outlet property="extraInfoViewHeight" destination="gaa-Ns-xSr" id="04q-sw-r4T"/>
                                             <outlet property="nameLabel" destination="OXG-Tt-EkP" id="GIH-zg-Ede"/>
                                             <outlet property="personImage" destination="5yD-cu-riy" id="1oL-Pr-DtC"/>
                                             <outlet property="timeLabel" destination="W3G-1R-l16" id="Qza-sM-TWJ"/>
