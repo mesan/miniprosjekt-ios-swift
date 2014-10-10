@@ -110,7 +110,7 @@
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" rowHeight="200" id="5Ja-OC-bSU" customClass="EventTableViewCell" customModule="FaghelgApp" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ja-OC-bSU" id="Wpi-fH-vOQ">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="5Ja-OC-bSU" id="Wpi-fH-vOQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAD-bf-M2h">
@@ -150,10 +150,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="HHb-u9-7eC"/>
                                                         <constraint firstAttribute="trailing" secondItem="5GC-hv-T71" secondAttribute="trailing" id="HOU-TK-FY8"/>
                                                         <constraint firstAttribute="centerY" secondItem="5yD-cu-riy" secondAttribute="centerY" id="JTt-hs-IAK"/>
                                                         <constraint firstAttribute="bottom" secondItem="5GC-hv-T71" secondAttribute="bottom" constant="5" id="JYx-rA-R5e"/>
+                                                        <constraint firstItem="5yD-cu-riy" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="top" constant="8" id="gek-xd-2CL"/>
                                                         <constraint firstItem="5GC-hv-T71" firstAttribute="leading" secondItem="W3G-1R-l16" secondAttribute="trailing" constant="5" id="igQ-2c-E1y"/>
                                                         <constraint firstItem="5GC-hv-T71" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="top" constant="5" id="kYD-Na-nq7"/>
                                                         <constraint firstItem="5yD-cu-riy" firstAttribute="centerY" secondItem="W3G-1R-l16" secondAttribute="centerY" constant="0.5" id="nzp-F8-aqH"/>
@@ -202,17 +202,11 @@
                                                 <constraint firstItem="ezT-QI-5gh" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="bottom" constant="5" id="860-0r-nwa"/>
                                                 <constraint firstItem="ezT-QI-5gh" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="5" id="Qcr-GQ-Nbf"/>
                                                 <constraint firstItem="ezT-QI-5gh" firstAttribute="centerX" secondItem="Wpi-fH-vOQ" secondAttribute="centerX" id="RHA-Pp-pKL"/>
-                                                <constraint firstItem="ezT-QI-5gh" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="bottom" constant="23" id="avD-Cz-lqe"/>
                                                 <constraint firstItem="YAD-bf-M2h" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="5" id="bwY-R5-SLU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="YAD-bf-M2h" secondAttribute="trailing" constant="5" id="qLu-Pk-ICp"/>
                                                 <constraint firstItem="YAD-bf-M2h" firstAttribute="top" secondItem="Wpi-fH-vOQ" secondAttribute="topMargin" id="twR-aw-l47"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ezT-QI-5gh" secondAttribute="bottom" id="zbY-J5-ATW"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="avD-Cz-lqe"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="abstractLabel" destination="wFn-SL-8tR" id="cAm-B9-MZ9"/>
