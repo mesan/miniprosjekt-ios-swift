@@ -134,6 +134,10 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func filterEvents() {
+        if (eventDates.isEmpty) {
+            return;
+        }
+        
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
         let date = eventDates[dayFilter.selectedSegmentIndex]
         
