@@ -24,9 +24,17 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var durationLabelTopSpace: NSLayoutConstraint!
     @IBOutlet weak var extraInfoViewHeight: NSLayoutConstraint!
     
+    var durationLabelBottomSpaceConstaintConstant: CGFloat = 0
+    var durationLabelTopSpaceConstraintConstant: CGFloat = 0
+    var extraInfoViewHeightConstraintConstant: CGFloat = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+    
+        self.durationLabelBottomSpaceConstaintConstant = self.durationLabelBottomSpace.constant
+        self.durationLabelTopSpaceConstraintConstant = self.durationLabelTopSpace.constant
+        self.extraInfoViewHeightConstraintConstant = self.extraInfoViewHeight.constant
+        
         // Rounding employee image
         personImage.layer.cornerRadius = personImage.frame.size.width / 2
         personImage.clipsToBounds = true
@@ -73,9 +81,15 @@ class EventTableViewCell: UITableViewCell {
     
     func showExtraInfoView(show: Bool) {
         if (show) {
-            self.extraInfoViewHeight.constant = 1000
-            self.durationLabelBottomSpace.constant = 5
-            self.durationLabelTopSpace.constant = 5
+            self.extraInfoViewHeight.constant = self.extraInfoViewHeightConstraintConstant
+            // dipatch_after ensures that there's a small delay before the constraints are updated,
+            // which for some reason prevents constraint validation errors .
+            // It probably allows the height constraint to fully take effect, since making the spacing between elements in a
+            // 0 height view would cause validation errors.
+            dispatch_after(1, dispatch_get_main_queue(), {
+                self.durationLabelBottomSpace.constant = self.durationLabelBottomSpaceConstaintConstant
+                self.durationLabelTopSpace.constant = self.durationLabelTopSpaceConstraintConstant
+            });
         } else {
             self.durationLabelBottomSpace.constant = 0
             self.durationLabelTopSpace.constant = 0

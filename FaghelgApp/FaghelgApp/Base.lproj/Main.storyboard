@@ -166,7 +166,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Torbjørn Skyberg Knutsen" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-Tt-EkP">
                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="FuC-eb-cAF"/>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="FuC-eb-cAF"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -175,7 +175,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 min" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-hE-bpJ">
                                                             <rect key="frame" x="0.0" y="26" width="294" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="kFc-Jb-MzZ"/>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="kFc-Jb-MzZ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -184,7 +184,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Erfaring fra logging på FR" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-SL-8tR">
                                                             <rect key="frame" x="0.0" y="52" width="294" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" id="f8t-Hm-IYE"/>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="f8t-Hm-IYE"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
