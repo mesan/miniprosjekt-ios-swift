@@ -167,6 +167,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="FuC-eb-cAF"/>
+                                                                <constraint firstAttribute="width" constant="294" id="eiB-p7-1Cq"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -175,6 +176,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 min" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-hE-bpJ">
                                                             <rect key="frame" x="0.0" y="26" width="294" height="21"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" constant="294" id="fbN-zO-fX8"/>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="kFc-Jb-MzZ"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -184,6 +186,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Erfaring fra logging på FR" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFn-SL-8tR">
                                                             <rect key="frame" x="0.0" y="52" width="294" height="21"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" constant="294" id="7Wy-cH-eaA"/>
                                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="f8t-Hm-IYE"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -199,7 +202,7 @@
                                                         <constraint firstItem="h7v-hE-bpJ" firstAttribute="top" secondItem="OXG-Tt-EkP" secondAttribute="bottom" constant="5" id="Te5-Px-Z3B"/>
                                                         <constraint firstAttribute="trailing" secondItem="h7v-hE-bpJ" secondAttribute="trailing" id="VA1-JF-gJM"/>
                                                         <constraint firstAttribute="trailing" secondItem="wFn-SL-8tR" secondAttribute="trailing" id="fRb-7G-SYY"/>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1000" id="gaa-Ns-xSr"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" priority="999" constant="1000" id="gaa-Ns-xSr"/>
                                                         <constraint firstItem="wFn-SL-8tR" firstAttribute="leading" secondItem="ezT-QI-5gh" secondAttribute="leading" id="mjo-l2-BkJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="OXG-Tt-EkP" secondAttribute="trailing" id="n96-8v-fbO"/>
                                                         <constraint firstItem="wFn-SL-8tR" firstAttribute="top" secondItem="h7v-hE-bpJ" secondAttribute="bottom" constant="5" id="qWz-xG-1Y1"/>
@@ -208,12 +211,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ezT-QI-5gh" secondAttribute="trailing" constant="5" id="10F-Rz-4Lo"/>
-                                                <constraint firstItem="ezT-QI-5gh" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="bottom" constant="5" id="860-0r-nwa"/>
+                                                <constraint firstItem="ezT-QI-5gh" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="bottom" priority="999" constant="5" id="860-0r-nwa"/>
                                                 <constraint firstItem="ezT-QI-5gh" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="5" id="Qcr-GQ-Nbf"/>
-                                                <constraint firstItem="ezT-QI-5gh" firstAttribute="centerX" secondItem="Wpi-fH-vOQ" secondAttribute="centerX" id="RHA-Pp-pKL"/>
+                                                <constraint firstItem="YAD-bf-M2h" firstAttribute="trailing" secondItem="ezT-QI-5gh" secondAttribute="trailing" id="Sox-7R-STX"/>
                                                 <constraint firstItem="YAD-bf-M2h" firstAttribute="leading" secondItem="Wpi-fH-vOQ" secondAttribute="leadingMargin" constant="5" id="bwY-R5-SLU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YAD-bf-M2h" secondAttribute="trailing" constant="5" id="qLu-Pk-ICp"/>
                                                 <constraint firstItem="YAD-bf-M2h" firstAttribute="top" secondItem="Wpi-fH-vOQ" secondAttribute="topMargin" id="twR-aw-l47"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="ezT-QI-5gh" secondAttribute="bottom" id="zbY-J5-ATW"/>
                                             </constraints>
