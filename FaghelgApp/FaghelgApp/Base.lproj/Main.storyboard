@@ -110,21 +110,21 @@
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" rowHeight="160" id="5Ja-OC-bSU" customClass="EventTableViewCell" customModule="FaghelgApp" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="5Ja-OC-bSU" id="Wpi-fH-vOQ">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="5Ja-OC-bSU" id="Wpi-fH-vOQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAD-bf-M2h" userLabel="Header">
-                                                    <rect key="frame" x="13" y="8" width="294" height="60"/>
+                                                    <rect key="frame" x="13" y="8" width="294" height="54"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="5yD-cu-riy">
-                                                            <rect key="frame" x="0.0" y="8" width="44" height="44"/>
+                                                            <rect key="frame" x="0.0" y="5" width="44" height="44"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="44" id="09O-sS-x5c"/>
                                                                 <constraint firstAttribute="width" constant="44" id="SNG-wR-lcI"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="17:35" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3G-1R-l16">
-                                                            <rect key="frame" x="52" y="19" width="44" height="21"/>
+                                                            <rect key="frame" x="52" y="16" width="44" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="44" id="9eS-io-vse"/>
                                                                 <constraint firstAttribute="width" constant="43" id="wKX-P2-bIG"/>
@@ -138,8 +138,8 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Nyttig logging" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-hv-T71">
-                                                            <rect key="frame" x="101" y="5" width="193" height="50"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Nyttig logging" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-hv-T71">
+                                                            <rect key="frame" x="101" y="0.0" width="193" height="54"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="193" id="tvJ-FQ-ra8"/>
                                                             </constraints>
@@ -150,18 +150,20 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="5GC-hv-T71" secondAttribute="centerY" id="BCi-P8-WSY"/>
+                                                        <constraint firstItem="5yD-cu-riy" firstAttribute="centerY" secondItem="W3G-1R-l16" secondAttribute="centerY" constant="0.5" id="GOJ-9c-Bx5"/>
                                                         <constraint firstAttribute="trailing" secondItem="5GC-hv-T71" secondAttribute="trailing" id="HOU-TK-FY8"/>
-                                                        <constraint firstAttribute="centerY" secondItem="5yD-cu-riy" secondAttribute="centerY" id="JTt-hs-IAK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="5GC-hv-T71" secondAttribute="bottom" constant="5" id="JYx-rA-R5e"/>
-                                                        <constraint firstItem="5yD-cu-riy" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="top" constant="8" id="gek-xd-2CL"/>
-                                                        <constraint firstItem="5GC-hv-T71" firstAttribute="leading" secondItem="W3G-1R-l16" secondAttribute="trailing" constant="5" id="igQ-2c-E1y"/>
-                                                        <constraint firstItem="5GC-hv-T71" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="top" constant="5" id="kYD-Na-nq7"/>
-                                                        <constraint firstItem="5yD-cu-riy" firstAttribute="centerY" secondItem="W3G-1R-l16" secondAttribute="centerY" constant="0.5" id="nzp-F8-aqH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5GC-hv-T71" secondAttribute="bottom" id="JYx-rA-R5e"/>
+                                                        <constraint firstItem="5GC-hv-T71" firstAttribute="top" secondItem="YAD-bf-M2h" secondAttribute="top" id="Kcf-GY-rpZ"/>
+                                                        <constraint firstItem="W3G-1R-l16" firstAttribute="leading" secondItem="5yD-cu-riy" secondAttribute="trailing" constant="8" id="fcP-UU-Uhx"/>
+                                                        <constraint firstItem="5yD-cu-riy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="YAD-bf-M2h" secondAttribute="top" constant="5" id="gek-xd-2CL"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5yD-cu-riy" secondAttribute="bottom" constant="5" id="mDC-5T-2c7"/>
                                                         <constraint firstItem="5yD-cu-riy" firstAttribute="leading" secondItem="YAD-bf-M2h" secondAttribute="leading" id="yH8-fb-acG"/>
+                                                        <constraint firstItem="5GC-hv-T71" firstAttribute="centerY" secondItem="W3G-1R-l16" secondAttribute="centerY" constant="0.5" id="z51-sj-vh9"/>
                                                     </constraints>
                                                 </view>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezT-QI-5gh" userLabel="Body">
-                                                    <rect key="frame" x="13" y="73" width="294" height="73"/>
+                                                    <rect key="frame" x="13" y="67" width="294" height="73"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Torbjørn Skyberg Knutsen" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXG-Tt-EkP">
                                                             <rect key="frame" x="0.0" y="0.0" width="294" height="21"/>
