@@ -19,20 +19,14 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var extraInfoView: UIView!
     
-    // Constraints used for automatic resizing, by editing their values
-    @IBOutlet weak var durationLabelBottomSpace: NSLayoutConstraint!
-    @IBOutlet weak var durationLabelTopSpace: NSLayoutConstraint!
+    // Constraint used for automatic resizing
     @IBOutlet weak var extraInfoViewHeight: NSLayoutConstraint!
     
-    var durationLabelBottomSpaceConstaintConstant: CGFloat = 0
-    var durationLabelTopSpaceConstraintConstant: CGFloat = 0
     var extraInfoViewHeightConstraintConstant: CGFloat = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
     
-        self.durationLabelBottomSpaceConstaintConstant = self.durationLabelBottomSpace.constant
-        self.durationLabelTopSpaceConstraintConstant = self.durationLabelTopSpace.constant
         self.extraInfoViewHeightConstraintConstant = self.extraInfoViewHeight.constant
         
         // Rounding employee image
@@ -40,8 +34,6 @@ class EventTableViewCell: UITableViewCell {
         personImage.clipsToBounds = true
         personImage.layer.borderWidth = 1.0
         personImage.layer.borderColor = UIColor.whiteColor().CGColor
-        
-        self.showExtraInfoView(false)
     }
     
     func setEvent(event: Event) {
@@ -82,21 +74,12 @@ class EventTableViewCell: UITableViewCell {
     func showExtraInfoView(show: Bool) {
         if (show) {
             self.extraInfoViewHeight.constant = self.extraInfoViewHeightConstraintConstant
-            // dipatch_after ensures that there's a small delay before the constraints are updated,
-            // which for some reason prevents constraint validation errors .
-            // It probably allows the height constraint to fully take effect, since making the spacing between elements in a
-            // 0 height view would cause validation errors.
-            dispatch_after(1, dispatch_get_main_queue(), {
-                self.durationLabelBottomSpace.constant = self.durationLabelBottomSpaceConstaintConstant
-                self.durationLabelTopSpace.constant = self.durationLabelTopSpaceConstraintConstant
-            });
         } else {
-            self.durationLabelBottomSpace.constant = 0
-            self.durationLabelTopSpace.constant = 0
             self.extraInfoViewHeight.constant = 0
         }
         
         self.extraInfoView.hidden = !show
+        self.layoutIfNeeded()
     }
     
     func getImage(shortName: String, profileImageUrl: String) -> UIImage {

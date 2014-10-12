@@ -53,34 +53,42 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
 
         faghelgApi.getProgram()
             .onSuccess { program in
-                self.allEvents = program!.events.allObjects as [Event]
-                self.allEvents.sort { (event1, event2) -> Bool in
-                    return event1.start.compare(event2.start) == NSComparisonResult.OrderedAscending
-                }
-                
-                let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-                
-                self.eventDates = []
-                for event in self.allEvents {
-                    let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear, fromDate: event.start)
-                    let date = calendar.dateFromComponents(dateComponents)!
-                    
-                    if (!contains(self.eventDates, date)) {
-                        self.eventDates.append(date)
-                    }
-                }
-                
-                let today = self.currentDayOfWeek()
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.setupDayFilter(today)
-                    self.filterEvents()
-                    self.tableView.reloadData()
-                    
-                    self.scrollToCurrentEvent()
-                })
+                self.process(program)
             }.onFailure { error in
                 println("error: \(error)")
             }
+    }
+    
+    func process(program: Program?) {
+        if (program == nil) {
+            return
+        }
+        
+        self.allEvents = program!.events.allObjects as [Event]
+        self.allEvents.sort { (event1, event2) -> Bool in
+            return event1.start.compare(event2.start) == NSComparisonResult.OrderedAscending
+        }
+        
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        
+        self.eventDates = []
+        for event in self.allEvents {
+            let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear, fromDate: event.start)
+            let date = calendar.dateFromComponents(dateComponents)!
+            
+            if (!contains(self.eventDates, date)) {
+                self.eventDates.append(date)
+            }
+        }
+        
+        let today = self.currentDayOfWeek()
+        dispatch_async(dispatch_get_main_queue(), {
+            self.setupDayFilter(today)
+            self.filterEvents()
+            self.tableView.reloadData()
+            
+            self.scrollToCurrentEvent()
+        })
     }
     
     func setupDayFilter(selectedDay: Day) {
@@ -166,11 +174,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (self.selectedIndexPath != nil && self.selectedIndexPath!.row == indexPath.row) {
-            return 200
-        }
-        
-        return 70
+        return UITableViewAutomaticDimension
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -191,6 +195,6 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
             indexPaths.append(previousIndexPath!)
         }
         
-        self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.None)
+        self.tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
     }
 }
