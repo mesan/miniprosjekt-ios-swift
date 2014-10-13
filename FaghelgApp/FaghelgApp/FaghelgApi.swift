@@ -8,6 +8,9 @@ protocol FaghelgApiProtocol {
 }
 
 class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate{
+
+    let HOST = "http://faghelg.herokuapp.com";
+
     var data: NSMutableData = NSMutableData()
     var delegate: FaghelgApiProtocol?
     
@@ -20,7 +23,7 @@ class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate{
 
     func getProgram() -> Future<Program?> {
         let promise = Promise<Program?>()
-        Alamofire.request(.GET, "http://faghelg.herokuapp.com/program")
+        Alamofire.request(.GET, HOST + "/program")
             .responseJSON {(request, response, JSON, error) in
                 
                 // handle errors
@@ -54,7 +57,7 @@ class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate{
     // returns a promise of a list of employees
     func getEmployees() -> Future<[Person]> {
         let promise = Promise<[Person]>()
-        Alamofire.request(.GET, "http://faghelg.herokuapp.com/persons")
+        Alamofire.request(.GET, HOST + "/persons")
             .responseJSON{(request, response, JSON, error) in
                 
                 // handle errors
