@@ -7,19 +7,19 @@ protocol FaghelgApiProtocol {
     func didRecieveResponse(results: NSDictionary)
 }
 
-class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate{
-
+class FaghelgApi : NSObject, NSFetchedResultsControllerDelegate {
+    
     let HOST = "http://faghelg.herokuapp.com";
-
+    
     var data: NSMutableData = NSMutableData()
     var delegate: FaghelgApiProtocol?
     
     let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
-    var fetchedResultController : NSFetchedResultsController = NSFetchedResultsController()
-    var fetchedProgramController : NSFetchedResultsController = NSFetchedResultsController()
-    var fetchedEventController : NSFetchedResultsController = NSFetchedResultsController()
-    var fetchedPersonController : NSFetchedResultsController = NSFetchedResultsController()
+    var fetchedResultController = NSFetchedResultsController()
+    var fetchedProgramController = NSFetchedResultsController()
+    var fetchedEventController = NSFetchedResultsController()
+    var fetchedPersonController = NSFetchedResultsController()
 
     func getProgram() -> Future<Program?> {
         let promise = Promise<Program?>()
