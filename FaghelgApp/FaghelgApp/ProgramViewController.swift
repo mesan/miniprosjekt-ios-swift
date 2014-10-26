@@ -73,11 +73,11 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.eventDates = []
         for event in self.allEvents {
-            let dateComponents = calendar.components(NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear, fromDate: event.start)
-            let date = calendar.dateFromComponents(dateComponents)!
+            let dateComponents = calendar?.components(NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitYear, fromDate: event.start)
+            let date = calendar?.dateFromComponents(dateComponents!)
             
-            if (!contains(self.eventDates, date)) {
-                self.eventDates.append(date)
+            if (!contains(self.eventDates, date!)) {
+                self.eventDates.append(date!)
             }
         }
         
@@ -98,10 +98,10 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         
         var selectedIndex = 0
         for (var i = 0; i < eventDates.count; i++) {
-            let day = calendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: eventDates[i])
-            self.dayFilter.insertSegmentWithTitle(Day.fromRaw(day)!.description, atIndex: i, animated: false)
+            let day = calendar?.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: eventDates[i])
+            self.dayFilter.insertSegmentWithTitle(Day(rawValue: day!)!.description, atIndex: i, animated: false)
             
-            if (day == selectedDay.toRaw()) {
+            if (day == selectedDay.rawValue) {
                 selectedIndex = i
             }
         }
@@ -112,18 +112,18 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
     func currentDayOfWeek() -> Day {
         let today = NSDate()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let day = calendar.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: today)
+        let day = calendar?.component(NSCalendarUnit.CalendarUnitWeekday, fromDate: today)
         
-        return Day.fromRaw(day)!
+        return Day(rawValue: day!)!
     }
     
     func scrollToCurrentEvent() {
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        let currentHour = calendar.component(NSCalendarUnit.CalendarUnitHour, fromDate: NSDate())
+        let currentHour = calendar?.component(NSCalendarUnit.CalendarUnitHour, fromDate: NSDate())
         
         var currentEventIndexPath = NSIndexPath(forRow: 0, inSection: 0)
         for (index, event: Event) in enumerate(self.filteredEvents) {
-            let eventHour = calendar.component(NSCalendarUnit.CalendarUnitHour, fromDate: event.start)
+            let eventHour = calendar?.component(NSCalendarUnit.CalendarUnitHour, fromDate: event.start)
             
             if (currentHour == eventHour) {
                 currentEventIndexPath = NSIndexPath(forRow: index, inSection: 0)
@@ -150,7 +150,7 @@ class ProgramViewController: UIViewController, UITableViewDataSource, UITableVie
         let date = eventDates[dayFilter.selectedSegmentIndex]
         
         filteredEvents = allEvents.filter() { (event: Event) -> Bool in
-            return calendar.compareDate(date, toDate: event.start, toUnitGranularity: NSCalendarUnit.CalendarUnitDay) == NSComparisonResult.OrderedSame
+            return calendar?.compareDate(date, toDate: event.start, toUnitGranularity: NSCalendarUnit.CalendarUnitDay) == NSComparisonResult.OrderedSame
         }
     }
     

@@ -92,21 +92,21 @@ class EventTableViewCell: UITableViewCell {
         var existingBildeDao: BildeDao? = existingBildeDaos.firstObject as? BildeDao
         
         if (existingBildeDao != nil) {
-            return UIImage(data: existingBildeDao!.imageData)
+            return UIImage(data: existingBildeDao!.imageData)!
         }
         
         var newBildeDao: BildeDao
         newBildeDao = getImageFromWeb(profileImageUrl, shortName: shortName, managedObjectContext: managedObjectContext!)
         newBildeDao.save()
 
-        return UIImage(data: newBildeDao.imageData)
+        return UIImage(data: newBildeDao.imageData)!
     }
     
     func getImageFromWeb(profileImageUrl: String, shortName: String, managedObjectContext: NSManagedObjectContext) -> BildeDao {
-        let url = NSURL.URLWithString(profileImageUrl);
+        let url = NSURL(string:profileImageUrl);
         var err: NSError? = nil
         
-        var imageData :NSData = NSData.dataWithContentsOfURL(url,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)
+        var imageData :NSData = NSData(contentsOfURL: url!,options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &err)!
         
         var bildeDao: BildeDao = BildeDao(entity: NSEntityDescription.entityForName("BildeDao", inManagedObjectContext: managedObjectContext)!, insertIntoManagedObjectContext: managedObjectContext)
         

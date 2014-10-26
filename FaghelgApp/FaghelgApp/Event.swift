@@ -38,7 +38,7 @@ class Event: NSManagedObject {
         
         tags = dict["tags"] as? String
         
-        self.managedObjectContext.save(nil)
+        self.managedObjectContext?.save(nil)
     }
     
 }

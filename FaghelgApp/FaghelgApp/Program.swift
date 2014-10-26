@@ -29,7 +29,7 @@ class Program: NSManagedObject {
             event.setData(eventDict)
             
         }
-        self.managedObjectContext.save(nil)
+        self.managedObjectContext?.save(nil)
     }
     
     func deleteProgram() {

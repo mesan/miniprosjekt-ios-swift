@@ -22,6 +22,6 @@ class Person: NSManagedObject {
         shortName = dict["shortName"] as? String
         profileImageUrl = dict["profileImageUrl"] as? String
         
-        self.managedObjectContext.save(nil)
+        self.managedObjectContext!.save(nil)
     }
 }

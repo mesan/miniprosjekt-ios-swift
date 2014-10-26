@@ -15,11 +15,11 @@ class BildeDao: NSManagedObject {
     @NSManaged var shortName: String
     
     func save() {
-        self.managedObjectContext.save(nil);
+        self.managedObjectContext?.save(nil);
     }
     
     func rollback() {
-        self.managedObjectContext.rollback();
+        self.managedObjectContext?.rollback();
     }
     
     func getDescription() -> String {
