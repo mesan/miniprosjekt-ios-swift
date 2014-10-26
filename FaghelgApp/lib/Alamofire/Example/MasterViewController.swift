@@ -34,10 +34,6 @@ class MasterViewController: UITableViewController {
         super.awakeFromNib()
 
         self.navigationItem.titleView = self.titleImageView
-//        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-//            self.clearsSelectionOnViewWillAppear = false
-//            self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
-//        }
     }
 
     // MARK: - UIViewController
@@ -56,7 +52,7 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let detailViewController = segue.destinationViewController.topViewController as? DetailViewController {
             func requestForSegue(segue: UIStoryboardSegue) -> Request? {
-                switch segue.identifier {
+                switch segue.identifier as String! {
                     case "GET":
                         return Alamofire.request(.GET, "http://httpbin.org/get")
                     case "POST":

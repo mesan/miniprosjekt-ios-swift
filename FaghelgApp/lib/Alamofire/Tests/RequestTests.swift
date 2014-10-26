@@ -30,7 +30,7 @@ class AlamofireRequestInitializationTestCase: XCTestCase {
         let request = Alamofire.request(.GET, URL)
 
         XCTAssertNotNil(request.request, "request should not be nil")
-        XCTAssertEqual(request.request.URL, NSURL(string: URL), "request URL should be equal")
+        XCTAssertEqual(request.request.URL, NSURL(string: URL)!, "request URL should be equal")
         XCTAssertNil(request.response, "response should be nil")
     }
 
@@ -39,7 +39,7 @@ class AlamofireRequestInitializationTestCase: XCTestCase {
         let request = Alamofire.request(.GET, URL, parameters: ["foo": "bar"])
 
         XCTAssertNotNil(request.request, "request should not be nil")
-        XCTAssertNotEqual(request.request.URL, NSURL(string: URL), "request URL should be equal")
+        XCTAssertNotEqual(request.request.URL, NSURL(string: URL)!, "request URL should be equal")
         XCTAssertEqual(request.request.URL.query!, "foo=bar", "query is incorrect")
         XCTAssertNil(request.response, "response should be nil")
     }
@@ -62,9 +62,69 @@ class AlamofireRequestResponseTestCase: XCTestCase {
                     XCTAssertNil(error, "error should be nil")
                  }
 
-        waitForExpectationsWithTimeout(10){ error in
+        waitForExpectationsWithTimeout(10) { (error) in
             XCTAssertNil(error, "\(error)")
         }
     }
 }
 
+class AlamofireRequestDescriptionTestCase: XCTestCase {
+    func testRequestDescription() {
+        let URL = "http://httpbin.org/get"
+        let request = Alamofire.request(.GET, URL)
+
+        XCTAssertEqual(request.description, "GET http://httpbin.org/get", "incorrect request description")
+
+        let expectation = expectationWithDescription("\(URL)")
+
+        request.response { (_, response,_,_) in
+            expectation.fulfill()
+
+            XCTAssertEqual(request.description, "GET http://httpbin.org/get (\(response!.statusCode))", "incorrect request description")
+        }
+
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+}
+
+class AlamofireRequestDebugDescriptionTestCase: XCTestCase {
+    private func cURLCommandComponents(request: Request) -> [String] {
+        return request.debugDescription.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).filter { $0 != "" && $0 != "\\" }
+    }
+
+    // MARK: -
+
+    func testGETRequestDebugDescription() {
+        let URL = "http://httpbin.org/get"
+        let request = Alamofire.request(.GET, URL)
+        let components = cURLCommandComponents(request)
+
+        XCTAssert(components[0..<3] == ["$", "curl", "-i"], "components should be equal")
+        XCTAssert(!contains(components, "-X"), "command should not contain explicit -X flag")
+        XCTAssert(components.last! == "\"\(URL)\"", "URL component should be equal")
+    }
+
+    func testPOSTRequestDebugDescription() {
+        let URL = "http://httpbin.org/post"
+        let request = Alamofire.request(.POST, URL)
+        let components = cURLCommandComponents(request)
+
+        XCTAssert(components[0..<3] == ["$", "curl", "-i"], "components should be equal")
+        XCTAssert(components[3..<5] == ["-X", "POST"], "command should contain explicit -X flag")
+        XCTAssert(components.last! == "\"\(URL)\"", "URL component should be equal")
+    }
+
+    func testPOSTRequestWithJSONParametersDebugDescription() {
+        let URL = "http://httpbin.org/post"
+        let request = Alamofire.request(.POST, URL, parameters: ["foo": "bar"], encoding: .JSON)
+        let components = cURLCommandComponents(request)
+
+        XCTAssert(components[0..<3] == ["$", "curl", "-i"], "components should be equal")
+        XCTAssert(components[3..<5] == ["-X", "POST"], "command should contain explicit -X flag")
+        XCTAssert(request.debugDescription.rangeOfString("-H \"Content-Type: application/json\"") != nil)
+        XCTAssert(request.debugDescription.rangeOfString("-d \"{\\\"foo\\\":\\\"bar\\\"}\"") != nil)
+        XCTAssert(components.last! == "\"\(URL)\"", "URL component should be equal")
+    }
+}

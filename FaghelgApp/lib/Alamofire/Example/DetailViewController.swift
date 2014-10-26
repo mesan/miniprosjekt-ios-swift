@@ -29,18 +29,14 @@ class DetailViewController: UITableViewController {
     }
 
     var request: Alamofire.Request? {
-        willSet {
-            if self.request != nil {
-                self.request?.cancel()
-                self.refreshControl?.endRefreshing()
-                self.headers.removeAll()
-                self.body = nil
-                self.elapsedTime = nil
-            }
-        }
-
         didSet {
+            oldValue?.cancel()
+
             self.title = self.request?.description
+            self.refreshControl?.endRefreshing()
+            self.headers.removeAll()
+            self.body = nil
+            self.elapsedTime = nil
         }
     }
 
@@ -90,7 +86,7 @@ class DetailViewController: UITableViewController {
     // MARK: UITableViewDataSource
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch Sections.fromRaw(section)! {
+        switch Sections(rawValue: section)! {
         case .Headers:
             return self.headers.count
         case .Body:
@@ -102,20 +98,20 @@ class DetailViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        switch Sections.fromRaw(indexPath.section)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .Headers:
             let cell = self.tableView.dequeueReusableCellWithIdentifier("Header") as UITableViewCell
             let field = self.headers.keys.array.sorted(<)[indexPath.row]
             let value = self.headers[field]
 
-            cell.textLabel!.text = field
+            cell.textLabel.text = field
             cell.detailTextLabel!.text = value
 
             return cell
         case .Body:
             let cell = self.tableView.dequeueReusableCellWithIdentifier("Body") as UITableViewCell
 
-            cell.textLabel!.text = self.body
+            cell.textLabel.text = self.body
 
             return cell
         }
@@ -128,16 +124,20 @@ class DetailViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String {
-        switch Sections.fromRaw(section)! {
+        if self.tableView(tableView, numberOfRowsInSection: section) == 0 {
+            return ""
+        }
+
+        switch Sections(rawValue: section)! {
         case .Headers:
-            return self.headers.isEmpty ? "" : "Headers"
+            return "Headers"
         case .Body:
-            return self.body == nil ? "" : "Body"
+            return "Body"
         }
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch Sections.fromRaw(indexPath.section)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .Body:
             return 300
         default:
@@ -146,12 +146,14 @@ class DetailViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String {
-        switch Sections.fromRaw(section)! {
-        case .Body:
-            return self.elapsedTime == nil ? "" : "Elapsed Time: \(self.elapsedTime!) sec"
-        default:
-            return ""
+        if Sections(rawValue: section)! == .Body && self.elapsedTime != nil {
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.numberStyle = .DecimalStyle
+
+            return "Elapsed Time: \(numberFormatter.stringFromNumber(self.elapsedTime!)) sec"
         }
+
+        return ""
     }
 }
 
